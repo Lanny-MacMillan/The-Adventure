@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/CreatedBy.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Level/Scenes/TitleScreen.unity
+    guid: 8ac6602c7669f4abba0fc4d3b50728d5
+  - enabled: 1
+    path: Assets/Level/Scenes/WorldMap.unity
+    guid: bbaf356092c234b77bf25810e66fc498
+  - enabled: 1
+    path: Assets/Level/Scenes/ChurchInterior.unity
+    guid: 15b7fdebf7d244f19b153ca948585a3f
+  - enabled: 1
+    path: Assets/Level/Scenes/WoodShed.unity
+    guid: fe660336a5e2345e98975400e02560ca
   m_configObjects: {}

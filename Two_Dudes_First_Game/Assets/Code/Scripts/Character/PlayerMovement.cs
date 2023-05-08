@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             FallTime = 0;
         }
 
-        if (FallTime == 7)
+        if (FallTime == 4)
         {
             Debug.Log("FREEFALLING");
             FreeFall = true;
