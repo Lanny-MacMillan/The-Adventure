@@ -7,16 +7,18 @@ using UnityEngine.UIElements;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
+    private float speed = 5f;
     private float FallTime = 0;
     private float jumpingPower = 16f;
-    private bool isFacingRight = true;
-    //private bool grounded = false;
+    public bool isFacingRight = true;
+
+    public bool attack = false;
     private float lastY;
     public bool Falling = false;
     public bool FreeFall = false;
     public bool jump = false;
     public float FallingThreshold = -0.01f;  //Adjust in inspector to appropriate value for the speed you want to trigger detecting a fall, probably by just testing (use negative numbers probably)
+    float horizontalMove = 0f;
 
     //public CharacterController controller;
     public Animator animator;
@@ -25,7 +27,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    float horizontalMove = 0f;
+
+    // Projectile
+    public SaltBehaviour ProjectilePrefab;
+    public Transform LaunchOffset;
 
     void Start()
     {
@@ -56,11 +61,25 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Jump", true);
         }
 
-
-
+        // Allows the release of jump for shorter or longer jumps
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+
+        // Salt Attack / Set Animation
+        if (Input.GetButtonDown("Fire1"))
+        {
+            // Instantiate salt prefab at the launch offset position, facing charaters direction
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            animator.SetBool("Attack", true);
+            //animator.SetBool("Attack", false);
+        }
+
+        //  Reset Salt Attack Animation 
+        if (Input.GetButtonUp("Fire1"))
+        {
+            animator.SetBool("Attack", false);
         }
 
         // sets public state when player is fall/freefalling
@@ -90,18 +109,16 @@ public class PlayerMovement : MonoBehaviour
             FallTime = 0;
         }
 
-        if (FallTime == 4)
+        if (FallTime >= 4)
         {
             Debug.Log("FREEFALLING");
             FreeFall = true;
         }
+
         else if (IsGrounded() || !Falling)
         {
-            //Debug.Log("GROUNDED");
-
             FreeFall = false;
             FallTime = 0;
-
         }
     }
 
@@ -118,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("Falling", true);
         }
+
         if (!FreeFall || IsGrounded())
         {
             animator.SetBool("Falling", false);
@@ -126,7 +144,6 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             animator.SetBool("Falling", false);
-
         }
     }
 
