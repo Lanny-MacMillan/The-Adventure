@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,7 +11,10 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5f;
     private float FallTime = 0;
     private float jumpingPower = 16f;
+    private Inventory inventory;
     public bool isFacingRight = true;
+
+    public static PlayerMovement Instance { get; private set; }
 
     public bool attack = false;
     private float lastY;
@@ -26,11 +30,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private UI_Inventory uiInventory;
 
 
     // Projectile
     public SaltBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
+
+    void Awake() // inventory functions
+    {
+        Instance = this;
+
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
+
+        //ItemWorld.SpawnItemWorld(new Vector3(3, -8), new Item { itemType = Item.ItemType.BasementKey, amount = 1 });
+        //ItemWorld.SpawnItemWorld(new Vector3(4, -8), new Item { itemType = Item.ItemType.TreeHouseKey, amount = 1 });
+        //ItemWorld.SpawnItemWorld(new Vector3(6, -8), new Item { itemType = Item.ItemType.BathroomKey, amount = 1 });
+    }
 
     void Start()
     {
