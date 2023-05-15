@@ -18,11 +18,25 @@ public class UI_Inventory : MonoBehaviour
 
     public void SetInventory (Inventory inventory) {
         this.inventory = inventory;
+
+        inventory.OnListItemsChanged += Inventory_OnItemListChanged;
+
+        RefreshInventoryItems();
+    }
+
+    private void Inventory_OnItemListChanged(object sender, System.EventArgs e)
+    {
         RefreshInventoryItems();
     }
 
     private void RefreshInventoryItems ()
     {
+        foreach (Transform child in itemSlotContainer)
+        {
+            if (child == itemSlotTemplate) continue;
+            Destroy(child.gameObject);
+        }
+
         int x = 58;
         int y = -284;
         float itemSlotCellSize = 85;

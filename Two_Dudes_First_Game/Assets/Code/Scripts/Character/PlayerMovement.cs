@@ -41,17 +41,30 @@ public class PlayerMovement : MonoBehaviour
     {
         Instance = this;
 
-        inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
 
-        ItemWorld.SpawnItemWorld(new Vector3(3, -8), new Item { itemType = Item.ItemType.BasementKey, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(4, -8), new Item { itemType = Item.ItemType.TreeHouseKey, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(6, -8), new Item { itemType = Item.ItemType.Cross, amount = 1 });
+
+        //ItemWorld.SpawnItemWorld(new Vector3(3, -8), new Item { itemType = Item.ItemType.BasementKey, amount = 1 });
+        //ItemWorld.SpawnItemWorld(new Vector3(4, -8), new Item { itemType = Item.ItemType.TreeHouseKey, amount = 1 });
+        //ItemWorld.SpawnItemWorld(new Vector3(6, -8), new Item { itemType = Item.ItemType.Cross, amount = 1 });
     }
 
     void Start()
     {
         lastY = transform.position.y;
+
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
+        if (itemWorld != null)
+        {
+            //Touching item
+            inventory.AddItem(itemWorld.GetItem());
+            itemWorld.DestroySelf();
+        }
     }
 
     void Update()
