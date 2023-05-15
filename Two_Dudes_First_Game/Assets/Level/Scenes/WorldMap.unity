@@ -8945,6 +8945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900525a221d6b497685dcfa49a290831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfItemWorld: {fileID: 3489260438068211952, guid: fd7e168916c114a94880550fd2162d25, type: 3}
   WoodShedKey: {fileID: 21300000, guid: a1f0a9c0bdbf6498c9d8a2f5d7c12cc0, type: 3}
   BathroomKey: {fileID: 21300000, guid: 271958b3482cb44cea2a0c5896e2b664, type: 3}
   TreeHouseKey: {fileID: 21300000, guid: 7f19d0978b4d44f2a851c6caacfa9211, type: 3}

@@ -44,9 +44,9 @@ public class PlayerMovement : MonoBehaviour
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
 
-        //ItemWorld.SpawnItemWorld(new Vector3(3, -8), new Item { itemType = Item.ItemType.BasementKey, amount = 1 });
-        //ItemWorld.SpawnItemWorld(new Vector3(4, -8), new Item { itemType = Item.ItemType.TreeHouseKey, amount = 1 });
-        //ItemWorld.SpawnItemWorld(new Vector3(6, -8), new Item { itemType = Item.ItemType.BathroomKey, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(3, -8), new Item { itemType = Item.ItemType.BasementKey, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(4, -8), new Item { itemType = Item.ItemType.TreeHouseKey, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(6, -8), new Item { itemType = Item.ItemType.Cross, amount = 1 });
     }
 
     void Start()

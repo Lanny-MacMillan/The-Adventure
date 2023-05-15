@@ -13,6 +13,7 @@ public class ItemAssets : MonoBehaviour
         Instance = this;
     }
 
+    public Transform pfItemWorld;
 
     // public Sprite calls for a sprite component with the label of woodshed, bathroom etc.
     public Sprite WoodShedKey;
