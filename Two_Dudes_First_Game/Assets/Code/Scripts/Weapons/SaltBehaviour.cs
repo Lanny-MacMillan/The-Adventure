@@ -16,10 +16,7 @@ public class SaltBehaviour : MonoBehaviour
         {
             // facing right, tranform salt to right side of player
             transform.position += speed * Time.deltaTime * transform.right;
-        }
-
-        else
-        {
+        } else {
             // facing left, tranform salt to left side of player
             transform.position += speed * Time.deltaTime * -transform.right;
 
@@ -28,7 +25,7 @@ public class SaltBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag== "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             Destroy(gameObject);
             Debug.Log("Ground Hit!");
