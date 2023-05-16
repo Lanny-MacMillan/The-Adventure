@@ -41,11 +41,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Instance = this;
 
-
-
         //ItemWorld.SpawnItemWorld(new Vector3(3, -8), new Item { itemType = Item.ItemType.BasementKey, amount = 1 });
-        //ItemWorld.SpawnItemWorld(new Vector3(4, -8), new Item { itemType = Item.ItemType.TreeHouseKey, amount = 1 });
-        //ItemWorld.SpawnItemWorld(new Vector3(6, -8), new Item { itemType = Item.ItemType.Cross, amount = 1 });
+
     }
 
     void Start()

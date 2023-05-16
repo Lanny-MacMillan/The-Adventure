@@ -10,16 +10,18 @@ public class UI_Inventory : MonoBehaviour
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
 
-    private void Awake () {
-            itemSlotContainer = transform.Find("itemSlotContainer");
-            itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+    private void Awake()
+    {
+        itemSlotContainer = transform.Find("itemSlotContainer");
+        itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
     }
 
 
-    public void SetInventory (Inventory inventory) {
+    public void SetInventory(Inventory inventory)
+    {
         this.inventory = inventory;
 
-        inventory.OnListItemsChanged += Inventory_OnItemListChanged;
+        inventory.OnItemListChanged += Inventory_OnItemListChanged;
 
         RefreshInventoryItems();
     }
@@ -37,10 +39,12 @@ public class UI_Inventory : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+
         int x = 58;
         int y = -284;
         float itemSlotCellSize = 85;
-        foreach ( Item item in inventory.GetItemList())
+
+        foreach (Item item in inventory.GetItemList())
         {
             // creates new itemSlotContainer and itemSlotTemplate sets itemSlotTemplate to active
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
@@ -48,7 +52,7 @@ public class UI_Inventory : MonoBehaviour
 
             // places newly created itemSlot Container and template based off x, y position set in this function above.
             // Places Item sprite w/in the 'image' component
-            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
+            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, -y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
 

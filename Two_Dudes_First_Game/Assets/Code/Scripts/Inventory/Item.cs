@@ -32,4 +32,21 @@ public class Item {
             case ItemType.Cross:            return ItemAssets.Instance.Cross;
         }
     }
+
+    public bool IsStackable()
+    {
+        switch (itemType)
+        {
+            default:
+            //case ItemType.HealthPotion:
+            //    return true;
+            case ItemType.WoodShedKey:
+            case ItemType.BathroomKey:
+            case ItemType.TreeHouseKey:
+            case ItemType.BasementKey:
+            case ItemType.BedroomKey:
+            case ItemType.Cross:
+                return false;
+        }
+    }
 }
