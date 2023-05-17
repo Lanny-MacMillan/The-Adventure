@@ -20,4 +20,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/WoodShed.unity
     guid: fe660336a5e2345e98975400e02560ca
+  - enabled: 1
+    path: Assets/Level/Scenes/HouseInterior2ndFloor.unity
+    guid: be839c3159bc84d26a477476d8045718
+  - enabled: 1
+    path: Assets/Level/Scenes/Kitchen.unity
+    guid: da9f21056bb9e4dc4b29211b360551ff
+  - enabled: 1
+    path: Assets/Level/Scenes/Bedroom.unity
+    guid: ed49eb574451045c392c01e5cf4f773f
+  - enabled: 1
+    path: Assets/Level/Scenes/Basement.unity
+    guid: 41ebca8d875604da993a07894287e98a
+  - enabled: 1
+    path: Assets/Level/Scenes/HouseInterior1stFloor.unity
+    guid: d8bba58d9b795407481e1676857588e9
+  - enabled: 1
+    path: Assets/Level/Scenes/Attic.unity
+    guid: 3ecb8c40481074b3b9e1bf9583e4c36b
+  - enabled: 1
+    path: Assets/Level/Scenes/Bathroom.unity
+    guid: f1f19ec1531c34e159fa2cfaa12373ac
   m_configObjects: {}
