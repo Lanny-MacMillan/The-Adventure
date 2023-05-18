@@ -12,7 +12,7 @@ public class SaltBehaviour : MonoBehaviour
     private void Update()
     {
         // probably not best practice, seems resource heavy searching for the PlayerChar every frame
-        if (GameObject.Find("PlayerChar").GetComponent<PlayerMovement>().isFacingRight)
+        if (GameObject.Find("PlayerChar(Master)").GetComponent<PlayerMovement>().isFacingRight)
         {
             // facing right, tranform salt to right side of player
             transform.position += speed * Time.deltaTime * transform.right;
@@ -28,13 +28,16 @@ public class SaltBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             Destroy(gameObject);
-            Debug.Log("Ground Hit!");
         }
-        if (collision.gameObject.tag == "Enemy")
+
+        // so on collision we will try and see if they have an Enemy Ghost Component, extract enemyComponent and apply functions
+        if (collision.gameObject.TryGetComponent<EnemyGhost>(out EnemyGhost enemyComponent))
         {
+            Debug.Log("Hit!");
             Destroy(gameObject);
-            Debug.Log("Enemy Hit!");
+            enemyComponent.TakeDamage(1);
         }
+
 
     }
 

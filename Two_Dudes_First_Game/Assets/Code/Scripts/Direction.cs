@@ -8,7 +8,7 @@ public class Direction : MonoBehaviour
 
     Transform leftWayPoint, rightWayPoint;
     Vector3 localScale;
-    bool movingRight = true;
+    bool movingRight = false;
     Rigidbody2D rb;
 
     // put your data in the Update and call on it in the fixed update
