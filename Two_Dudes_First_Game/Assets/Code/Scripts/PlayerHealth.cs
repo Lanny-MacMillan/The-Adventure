@@ -9,6 +9,13 @@ public class PlayerHealth : MonoBehaviour
 
     public SpriteRenderer playerChar;
     public PlayerMovement playerMovement;
+
+    public GameManagerScript gameManager;
+    public bool isDead;
+
+    //public CharacterController controller;
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +26,18 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
-        if(health <= 0)
+        if(health <= 0 && !isDead)
         {
-            playerChar.enabled = false;
+            isDead = true;
+            //playerChar.enabled = false;
             playerMovement.enabled = false;
-            //Destroy(gameObject);
+            animator.SetBool("isDead", true);
+            Invoke("gameOver", 2);
         }
+    }
+
+    private void gameOver()
+    {
+        gameManager.gameOver();
     }
 }

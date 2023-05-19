@@ -76,8 +76,9 @@ public class PlayerMovement : MonoBehaviour
 
         // when player in grounded or removes jump input animation will stop
         if (Input.GetButtonUp("Jump")  || Falling || IsGrounded())
-        {  
+        {
             animator.SetBool("Jump", false);
+
         }
 
         // Jump if player is on the ground, set by IsGrounded()

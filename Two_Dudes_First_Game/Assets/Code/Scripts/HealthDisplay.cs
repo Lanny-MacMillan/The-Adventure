@@ -16,7 +16,7 @@ public class HealthDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class HealthDisplay : MonoBehaviour
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            if(i <health)
+            if (i < health)
             {
                 hearts[i].sprite = fullHeart;
             }
@@ -35,7 +35,7 @@ public class HealthDisplay : MonoBehaviour
             {
                 hearts[i].sprite = emptyHeart;
             }
-            if(i < maxHealth)
+            if (i < maxHealth)
             {
                 hearts[i].enabled = true;
             }
