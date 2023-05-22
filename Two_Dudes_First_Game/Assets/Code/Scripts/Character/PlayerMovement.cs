@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool attack = false;
     private float lastY;
+    public float lastX;
     public bool Falling = false;
     public bool FreeFall = false;
     public bool jump = false;
@@ -48,11 +49,12 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         lastY = transform.position.y;
+        lastX = transform.position.x;
 
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ItemWorld itemWorld = collision.GetComponent<ItemWorld>();
@@ -66,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
+        lastX = transform.position.x;
         horizontal = Input.GetAxisRaw("Horizontal");
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
 
