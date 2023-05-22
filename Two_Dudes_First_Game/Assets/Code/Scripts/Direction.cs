@@ -10,7 +10,6 @@ public class Direction : MonoBehaviour
     Vector3 localScale;
     bool movingRight = false;
     Rigidbody2D rb;
-
     // put your data in the Update and call on it in the fixed update
     void Start()
     {

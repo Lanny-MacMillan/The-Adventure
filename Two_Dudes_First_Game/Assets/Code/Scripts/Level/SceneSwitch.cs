@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
+    public Animator animator;
 
+    public float transitionTime = 1f;
     public static string prevScene;
     public static string currentScene;
+
 
     public virtual void Start() // start method is overriden or used in World.cs
     {
@@ -16,7 +19,9 @@ public class SceneSwitch : MonoBehaviour
 
     public void SwitchScene(string sceneName)
     {
+
         prevScene = currentScene;
         SceneManager.LoadScene(sceneName);
     }
+
 }
