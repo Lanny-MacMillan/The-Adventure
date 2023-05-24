@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
+
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        lastY = transform.position.y;
         lastX = transform.position.x;
         horizontal = Input.GetAxisRaw("Horizontal");
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
