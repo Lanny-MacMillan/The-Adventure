@@ -32,7 +32,7 @@ public class MakeButton : MonoBehaviour
         }
         else
         {
-            hero.GetComponent<FighterAction>().SelectAttack("run");
+            hero.GetComponent<FighterAction>().SelectAttack("defend");
         }
     }
 }
