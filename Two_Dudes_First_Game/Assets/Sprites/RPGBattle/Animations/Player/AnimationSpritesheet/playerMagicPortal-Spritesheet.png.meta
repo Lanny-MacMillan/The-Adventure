@@ -1,0 +1,904 @@
+fileFormatVersion: 2
+guid: e652c6d96f6f14581aa4712e654cf774
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737e50243f8bb405fb4e1b04ab8ee1f8
+      internalID: 2041600897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1440
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d41fb3ad3f884fe9aaf2ec6bc560fd9
+      internalID: -30577725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1440
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8356e1db6658e4643ad1d18ae2c0a8b2
+      internalID: -497705745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1440
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88d4b8346f0e437899c41289cc7d2d9
+      internalID: -337073929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1440
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00dd94426c78495caff8feaf0270fce
+      internalID: 637592322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 1440
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83138a8929e2b481a92e94f5383e83eb
+      internalID: -1907720453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 1440
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1343c5f6b9348cab2af0c5b39047bd
+      internalID: 632461394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9d7d0da136e446aa77e37b2962b80b
+      internalID: 1279012213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1080
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0021d9f02c94fa184111c98e15fdce
+      internalID: 353631967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1080
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78fdfa9996a84233bb362c15d18503c
+      internalID: 370388204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1080
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68964f0d8e572447f94f1406f7ec231f
+      internalID: 1258534978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1080
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb83a335f737b44ab90a7a9bbf9b35e4
+      internalID: 537678816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 1080
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78065c8b559b242c8b3fc498adee82f8
+      internalID: 2086708588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 1080
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3656d8690cf0d49b5b3113683daabf4b
+      internalID: -753827067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b047ac9afab4c8abad8a8eb65f9a95
+      internalID: 1702648138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 720
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb0edf4a43544ba59516e9554003996
+      internalID: -861298406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 720
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8c8805ef1114cc99e3d61b93d26e62
+      internalID: 154030413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 720
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e4ef7f9327a4fd0b0e485548adc867
+      internalID: 2034245892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 720
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb37142449abd4bafa8820824ee67df2
+      internalID: 813660037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 720
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80daf3b6f123f4205ad195849e835e88
+      internalID: -721754689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 720
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6174f7361cf44103a07a6a842e92212
+      internalID: 1730115945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e737a8e449cf9477682883061240bed8
+      internalID: -965921923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 360
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ca48c98cfbe4848affe05c421a6eaa
+      internalID: -1474766083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 360
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba539ee79a6a4f2c957dcb243705d2f
+      internalID: 2137158172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 360
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705feb54020b34cb78dce66262fc7674
+      internalID: -2083312258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 360
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77af88be8f044d30a0d5841694c1275
+      internalID: 1741483059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 360
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e2ef5be3b454ec4a7403caf6d42332
+      internalID: -1982838035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 360
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7374270486e414095dd30ce769c32d
+      internalID: 730220565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac289a8f7a7924db3bab788e9537fb1b
+      internalID: -201156557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63fe1834ca214d42a9bb4cfbef748a3
+      internalID: 132434103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 0
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f37642c2c0f463e98d857c14b519b8
+      internalID: -240446022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 0
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388a6475abbf54f439d8a2d112c680da
+      internalID: -1237613373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 0
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfecf51766fd460ea493c2062230aed
+      internalID: 1139047529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 0
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886fa960bd4a84900906ad10fe23cd1e
+      internalID: -1286849868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerMagicPortal-Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 0
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbeace6f1c33f4f89b868b63fb91dab7
+      internalID: -1586346449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      playerMagicPortal-Spritesheet_13: -753827067
+      playerMagicPortal-Spritesheet_16: 154030413
+      playerMagicPortal-Spritesheet_11: 537678816
+      playerMagicPortal-Spritesheet_28: -201156557
+      playerMagicPortal-Spritesheet_21: -965921923
+      playerMagicPortal-Spritesheet_17: 2034245892
+      playerMagicPortal-Spritesheet_0: 2041600897
+      playerMagicPortal-Spritesheet_6: 632461394
+      playerMagicPortal-Spritesheet_19: -721754689
+      playerMagicPortal-Spritesheet_24: -2083312258
+      playerMagicPortal-Spritesheet_1: -30577725
+      playerMagicPortal-Spritesheet_8: 353631967
+      playerMagicPortal-Spritesheet_23: 2137158172
+      playerMagicPortal-Spritesheet_9: 370388204
+      playerMagicPortal-Spritesheet_22: -1474766083
+      playerMagicPortal-Spritesheet_27: 730220565
+      playerMagicPortal-Spritesheet_14: 1702648138
+      playerMagicPortal-Spritesheet_15: -861298406
+      playerMagicPortal-Spritesheet_30: -240446022
+      playerMagicPortal-Spritesheet_34: -1586346449
+      playerMagicPortal-Spritesheet_12: 2086708588
+      playerMagicPortal-Spritesheet_33: -1286849868
+      playerMagicPortal-Spritesheet_4: 637592322
+      playerMagicPortal-Spritesheet_2: -497705745
+      playerMagicPortal-Spritesheet_7: 1279012213
+      playerMagicPortal-Spritesheet_5: -1907720453
+      playerMagicPortal-Spritesheet_29: 132434103
+      playerMagicPortal-Spritesheet_31: -1237613373
+      playerMagicPortal-Spritesheet_20: 1730115945
+      playerMagicPortal-Spritesheet_26: -1982838035
+      playerMagicPortal-Spritesheet_32: 1139047529
+      playerMagicPortal-Spritesheet_10: 1258534978
+      playerMagicPortal-Spritesheet_18: 813660037
+      playerMagicPortal-Spritesheet_3: -337073929
+      playerMagicPortal-Spritesheet_25: 1741483059
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

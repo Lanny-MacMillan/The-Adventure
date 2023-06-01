@@ -23,11 +23,19 @@ public class FighterAction : MonoBehaviour
     //[SerializeField]
     //private Sprite faceIcon;
 
+    // Projectile
+    public SaltBehaviour ProjectilePrefab;
+    public Transform LaunchOffset;
+
     private GameObject currentAttack;
     private GameObject meleeAttack;
     private GameObject magicAttack;
     private GameObject healSelf;
     private GameObject defend;
+
+    public Animator animator;
+    public Animator animatorMagic;
+    //private bool Melee = false;
 
     void Awake()
     {
@@ -47,27 +55,38 @@ public class FighterAction : MonoBehaviour
             victim = enemy;
         }
 
-        if (btn.CompareTo("melee") == 0) // compars to zero to get a yes or no
+        if (btn.CompareTo("melee") == 0) // compares to zero to get a yes or no
         {
             currentAttack = magicAttack;
             meleePrefab.GetComponent<AttackScript>().Attack(victim);
+            //Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            animator.SetBool("Salt", true);
+            Invoke("ResetConditionals", 2);
             Debug.Log("Melee Attack!");
         }
         else if (btn.CompareTo("magic") == 0)
         {
+            // magic animation here
             magicPrefab.GetComponent<AttackScript>().Attack(victim);
             Debug.Log("Magic Attack!");
         }
         else if (btn.CompareTo("heal") == 0)
         {
+            // heal animation here
             healPrefab.GetComponent<AttackScript>().Attack(victim);
             Debug.Log("Heal!");
         }
         else
         {
-            // Animation for defend
+            // defend animation here
+            // add 20 defense and return to base def after boss turn
             Debug.Log("Defend!");
         }
+    }
+    private void ResetConditionals()
+    {
+        animator.SetBool("Salt", false);
+
     }
 }
 

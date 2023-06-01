@@ -53,6 +53,7 @@ public class AttackScript : MonoBehaviour
             damage = multiplier * attackerStats.melee;
             if (magicAttack)
             {
+                // boss magic animation here maybe
                 damage = multiplier * attackerStats.magicRange;
             }
 

@@ -13,13 +13,17 @@ public class GameController : MonoBehaviour
 
     public Text battleText;
 
-    //private void Awake()
-    //{
-    //    battleMenu = GameObject.Find("ActionMenu");
-    //}
+    private void Awake()
+    {
+        battleMenu = GameObject.Find("ActionMenu");
+    }
 
-    // Start is called before the first frame update
     void Start()
+    {
+        Invoke("DelayedStartForAnimation", 4); // This just delays the initial battle functions so the intro animation for the boss can play
+    }
+
+    void DelayedStartForAnimation()
     {
         fighterStats = new List<FighterStats>(); // adding both Hero and Enemy and creating a list of stats and sorting based off speed
 
@@ -37,7 +41,6 @@ public class GameController : MonoBehaviour
         this.battleMenu.SetActive(false); // sets battle menu to false after attack has been made
 
         NextTurn();
-
     }
 
     // Update is called once per frame
@@ -64,8 +67,10 @@ public class GameController : MonoBehaviour
                 // if randomRange is equal to 1 enemy will melee attack, 0 will magic
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "magic";
                 currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                // boss animation here
+                // 0 for blood rain magic 
+                // 1 for mele hook attack
             }
-
         }
         else
         {
