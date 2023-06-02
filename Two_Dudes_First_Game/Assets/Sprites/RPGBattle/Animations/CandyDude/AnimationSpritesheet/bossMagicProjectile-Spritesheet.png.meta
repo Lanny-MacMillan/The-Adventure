@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,6 +69,42 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +114,742 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44084a67c376041e1b5969aece0f4859
+      internalID: -10066391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1536
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2647948b1ff224daebf90e49dd680040
+      internalID: -136850784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1536
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb753ddf45e474307b88e9a46acb0b8a
+      internalID: 1773368357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 1536
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35adb9e84e097462d8d1870bed0fe8d6
+      internalID: -1720171476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1536
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df88e3c7efeb24be691c9f562836fe07
+      internalID: 862186891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1536
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ce373d02dd04f3ba6df003f9007e2e
+      internalID: 241347480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1536
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3b55b5259454a96bb2fb62d41b3645
+      internalID: -782519207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edec8319cdfb94483810982337ef5ad5
+      internalID: -1198497298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1152
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f13101ec63414ecfaabc8f77c88bb4a
+      internalID: 1585553162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1152
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c44f665dc232421b90852a4b23e5413
+      internalID: 2082467120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 1152
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d36428cbaef4cb4bff0f4b84884c62
+      internalID: -3769023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1152
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9ae9a020cfb499f86cd341e5c6b264
+      internalID: -1089621653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1152
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b672d99b1a4e3469180649972ec029f6
+      internalID: -178890647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1152
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0081f6b557d3740fd96de1319686a87e
+      internalID: 574678421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd8a9780912c44ed9b4c601b56bc4cb
+      internalID: 1075185412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 768
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff406c37a47984d8695237202c481dff
+      internalID: 611450133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 768
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1c173b233d949ab843eb08d50e9220
+      internalID: 1404752125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 768
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2fcc7a9f99c40d1a542a02cb858e1f
+      internalID: -1351327877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 768
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48719916ce0f74abe909a902ecf29fab
+      internalID: -1221225376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 768
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0ad7ad58d124c538633fd610acd39c
+      internalID: -1690677740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 768
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959311b8c16e1405ba65fbc58d310b12
+      internalID: -2066677682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1bde12567ef3447f9a6a5cd36a02614
+      internalID: -1729320753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 384
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2514fd35305342a5bfc4e7339811858
+      internalID: -1856503242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 384
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d924898e100224cba9eca2bc477f10f0
+      internalID: 1111295470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 384
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b26e8913748640528e7043bebadcadd
+      internalID: -1986020745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 384
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9febd6ea01a4f47eabf5cb6d45d083b6
+      internalID: -2059385893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 384
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642c21cdc355f4ec4ab58aecbeb23d1f
+      internalID: -608520643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 384
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0257783bf7d54a0ba770ea6e5d4cb77
+      internalID: 2085651293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480dd74c2e103469eacf39b646ad2950
+      internalID: -662367148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea97805f45b8415b990b306d70c54fe
+      internalID: -710218281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbff538d21d7a4cbf800064db2d562f3
+      internalID: 1207285086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 0
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c5497b1f02e45d4874811081919492
+      internalID: 441216484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 0
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da237d88bd1e4f09819754a2c474021
+      internalID: 2146100943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 0
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35c06dc6a3724076862df715be04da1
+      internalID: -871814661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMagicProjectile-Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 0
+        width: 324
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dd1b998c8094214a5505766e4f0224
+      internalID: -1596755641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +860,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bossMagicProjectile-Spritesheet_32: 2146100943
+      bossMagicProjectile-Spritesheet_18: -1221225376
+      bossMagicProjectile-Spritesheet_19: -1690677740
+      bossMagicProjectile-Spritesheet_22: -1856503242
+      bossMagicProjectile-Spritesheet_27: 2085651293
+      bossMagicProjectile-Spritesheet_0: -10066391
+      bossMagicProjectile-Spritesheet_16: 1404752125
+      bossMagicProjectile-Spritesheet_8: 1585553162
+      bossMagicProjectile-Spritesheet_12: -178890647
+      bossMagicProjectile-Spritesheet_26: -608520643
+      bossMagicProjectile-Spritesheet_30: 1207285086
+      bossMagicProjectile-Spritesheet_6: -782519207
+      bossMagicProjectile-Spritesheet_2: 1773368357
+      bossMagicProjectile-Spritesheet_33: -871814661
+      bossMagicProjectile-Spritesheet_1: -136850784
+      bossMagicProjectile-Spritesheet_23: 1111295470
+      bossMagicProjectile-Spritesheet_3: -1720171476
+      bossMagicProjectile-Spritesheet_34: -1596755641
+      bossMagicProjectile-Spritesheet_7: -1198497298
+      bossMagicProjectile-Spritesheet_15: 611450133
+      bossMagicProjectile-Spritesheet_14: 1075185412
+      bossMagicProjectile-Spritesheet_11: -1089621653
+      bossMagicProjectile-Spritesheet_25: -2059385893
+      bossMagicProjectile-Spritesheet_10: -3769023
+      bossMagicProjectile-Spritesheet_4: 862186891
+      bossMagicProjectile-Spritesheet_5: 241347480
+      bossMagicProjectile-Spritesheet_21: -1729320753
+      bossMagicProjectile-Spritesheet_17: -1351327877
+      bossMagicProjectile-Spritesheet_9: 2082467120
+      bossMagicProjectile-Spritesheet_13: 574678421
+      bossMagicProjectile-Spritesheet_28: -662367148
+      bossMagicProjectile-Spritesheet_24: -1986020745
+      bossMagicProjectile-Spritesheet_20: -2066677682
+      bossMagicProjectile-Spritesheet_29: -710218281
+      bossMagicProjectile-Spritesheet_31: 441216484
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
