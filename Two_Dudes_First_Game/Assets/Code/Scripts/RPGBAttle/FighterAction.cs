@@ -26,6 +26,7 @@ public class FighterAction : MonoBehaviour
     // Projectile
     public SaltBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
+    public Transform LaunchOffsetMagic;
 
     private GameObject currentAttack;
     private GameObject meleeAttack;
@@ -68,6 +69,9 @@ public class FighterAction : MonoBehaviour
         {
             // magic animation here
             magicPrefab.GetComponent<AttackScript>().Attack(victim);
+            animatorMagic.SetBool("Magic", true);
+            Invoke("ResetConditionals", 2);
+
             Debug.Log("Magic Attack!");
         }
         else if (btn.CompareTo("heal") == 0)
@@ -86,6 +90,7 @@ public class FighterAction : MonoBehaviour
     private void ResetConditionals()
     {
         animator.SetBool("Salt", false);
+        animatorMagic.SetBool("Magic", false);
 
     }
 }
