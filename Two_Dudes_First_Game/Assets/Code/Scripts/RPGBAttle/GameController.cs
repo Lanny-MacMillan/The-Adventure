@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        Invoke("DelayedStartForAnimation", 4); // This just delays the initial battle functions so the intro animation for the boss can play
+        Invoke("DelayedStartForAnimation", 4); // This delays the initial battle functions so the intro animation for the boss can play
     }
 
     void DelayedStartForAnimation()
@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
         fighterStats.Add(currentEnemyStats);
 
         fighterStats.Sort(); // Sort fights to decide whos first
-        this.battleMenu.SetActive(false); // sets battle menu to false after attack has been made
+        //this.battleMenu.SetActive(false); // sets battle menu to false after attack has been made
 
         NextTurn();
     }
@@ -67,14 +67,16 @@ public class GameController : MonoBehaviour
                 // if randomRange is equal to 1 enemy will melee attack, 0 will magic
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "magic";
                 currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
-                // boss animation here
-                // 0 for blood rain magic 
-                // 1 for mele hook attack
             }
         }
         else
         {
             NextTurn();
         }
+    }
+
+    public void DisableButtons ()
+    {
+        this.battleMenu.SetActive(false);
     }
 }

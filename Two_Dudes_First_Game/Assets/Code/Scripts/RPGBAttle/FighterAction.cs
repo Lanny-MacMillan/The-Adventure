@@ -27,6 +27,7 @@ public class FighterAction : MonoBehaviour
     public SaltBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
     public Transform LaunchOffsetMagic;
+    public Transform LaunchOffsetHeal;
 
     private GameObject currentAttack;
     private GameObject meleeAttack;
@@ -34,22 +35,26 @@ public class FighterAction : MonoBehaviour
     private GameObject healSelf;
     private GameObject defend;
 
+    private FighterStats fighterStats;
+
     public Animator animator;
     public Animator animatorMagic;
-    //private bool Melee = false;
+    public Animator animatorHeal;
+
+    private AttackScript attackScript;
+    private GameController gameController;
+    private GameObject battleMenu;
 
     void Awake()
     {
         hero = GameObject.FindGameObjectWithTag("Hero");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        battleMenu = GameObject.Find("ActionMenu");
     }
 
     public void SelectAttack(string btn)
     { 
-        Debug.Log("tag: " + tag);
-        Debug.Log("tag: " + this.tag);
         GameObject victim = hero;
-        Debug.Log("melee tag: " + victim.tag);
 
         if ( tag == "Hero" )
         {
@@ -59,39 +64,73 @@ public class FighterAction : MonoBehaviour
         if (btn.CompareTo("melee") == 0) // compares to zero to get a yes or no
         {
             currentAttack = magicAttack;
-            meleePrefab.GetComponent<AttackScript>().Attack(victim);
-            //Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
-            animator.SetBool("Salt", true);
-            Invoke("ResetConditionals", 2);
-            Debug.Log("Melee Attack!");
+            if (tag == "Hero")
+            {
+                animator.SetBool("Salt", true); // player animation
+            }
+            if (tag == "Enemy")
+            {
+                animator.SetBool("Hook", true); // boss animation
+            }
+
+            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before hit lands or damage shows
+            meleePrefab.GetComponent<AttackScript>().Attack(victim); // Attack
+
+            this.battleMenu.SetActive(false); // Disables button action menu after click
         }
         else if (btn.CompareTo("magic") == 0)
         {
-            // magic animation here
-            magicPrefab.GetComponent<AttackScript>().Attack(victim);
-            animatorMagic.SetBool("Magic", true);
-            Invoke("ResetConditionals", 2);
+            if (tag == "Hero")
+            {
+                animatorMagic.SetBool("Magic", true); // need conditional to render button off if no mana
+            }
+            if (tag == "Enemy")
+            {
+                animatorMagic.SetBool("BossMagic", true); // boss animation
+            }
 
-            Debug.Log("Magic Attack!");
+            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before hit lands or damage shows
+            magicPrefab.GetComponent<AttackScript>().Attack(victim); // Magic Attack
+
+            this.battleMenu.SetActive(false); // Disables button action menu after click
         }
         else if (btn.CompareTo("heal") == 0)
         {
-            // heal animation here
-            healPrefab.GetComponent<AttackScript>().Attack(victim);
-            Debug.Log("Heal!");
+            animatorHeal.SetBool("Heal", true); // need conditional to render button off after one use
+
+            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before heal lands
+            healPrefab.GetComponent<AttackScript>().Heal(hero); // Heal
+            
+            this.battleMenu.SetActive(false); // Disables button action menu after click
         }
         else
         {
             // defend animation here
-            // add 20 defense and return to base def after boss turn
+            // add 100 defense and return to base def after boss turn
             Debug.Log("Defend!");
+
+            this.battleMenu.SetActive(false); // Disables button action menu after click
         }
     }
-    private void ResetConditionals()
-    {
-        animator.SetBool("Salt", false);
-        animatorMagic.SetBool("Magic", false);
 
+    private void ResetAnimationConditionals()
+    {
+        if (tag == "Hero")
+        {
+            animator.SetBool("Salt", false);
+            animatorMagic.SetBool("Magic", false);
+            animatorHeal.SetBool("Heal", false);
+            Debug.Log("RESET PLAYER ANIMATIONS!");
+
+        }
+        else if (tag == "Enemy")
+        {
+            animator.SetBool("Hook", false); 
+            animatorMagic.SetBool("BossMagic", false); 
+            Debug.Log("RESET BOSS ANIMATIONS!");
+
+        }
     }
+
 }
 

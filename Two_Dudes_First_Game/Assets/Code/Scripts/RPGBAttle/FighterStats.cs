@@ -59,6 +59,11 @@ public class FighterStats : MonoBehaviour, IComparable
 
         GameControllerObj = GameObject.Find("GameControllerObject");
     }
+    public void ReceiveHeal(float heal)
+    {
+        Debug.Log("Heal Received!!");
+        health = health + heal;
+    }
 
     public void ReceiveDamage(float damage)
     {
@@ -85,7 +90,7 @@ public class FighterStats : MonoBehaviour, IComparable
             GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
 
         }
-        Invoke("ContinueGame", 2);
+        Invoke("ContinueGame", 4);
     }
 
     public void updateMagicFill(float cost)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e4a4b9a339bc845e2a7009cae0801d79
+guid: 2c3979dc4359147ffbf24c33fb8d5b80
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_0
+      name: bossEntranceNew_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc3daf0676104d80921d91383f93ef6
-      internalID: -153385983
+      spriteID: 3cfc4532f956a4d1ba852c9ec17bf715
+      internalID: 1922337803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_1
+      name: bossEntranceNew_1
       rect:
         serializedVersion: 2
-        x: 768
+        x: 512
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9316e1e6d3eb64a2d84a2aaf35238810
-      internalID: -894390110
+      spriteID: 9020a8101d3124edb904418d408beff4
+      internalID: 1461543303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_2
+      name: bossEntranceNew_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba5642866fd64c61b5a2cc2e5f02bbc
+      internalID: -458089272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossEntranceNew_3
       rect:
         serializedVersion: 2
         x: 1536
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: accb507a6fa2a4e80a3cbbf705e096bb
-      internalID: 212631524
+      spriteID: 626487f0385114fdd99f238b9f21b4f5
+      internalID: -258451843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_3
+      name: bossEntranceNew_4
       rect:
         serializedVersion: 2
-        x: 2304
+        x: 2048
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +214,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ab08122d0db48ad8873e2be0d975e1
-      internalID: 1862065126
+      spriteID: d722fbb393cec45a592cfa21de6203c8
+      internalID: -720713444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_4
+      name: bossEntranceNew_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2706e465da20240f1a4fee5cc1247986
+      internalID: -569261234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossEntranceNew_6
       rect:
         serializedVersion: 2
         x: 3072
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,50 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 914a5d64f61914a56bfa0f9c015bd316
-      internalID: 851054868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 768
-        height: 768
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d31bd01b4e9144b3b8cd5a8d6880c0a1
-      internalID: 1872990892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 4608
-        y: 0
-        width: 768
-        height: 768
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3be2b762de2b244eaad7a6ce15ea6f90
-      internalID: -909365015
+      spriteID: 95e4286de5f394b23a52397877c3a2e5
+      internalID: -1160546053
       vertices: []
       indices: 
       edges: []
@@ -273,13 +273,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bossAttackProjectile-Spritesheet_6: -909365015
-      bossAttackProjectile-Spritesheet_4: 851054868
-      bossAttackProjectile-Spritesheet_0: -153385983
-      bossAttackProjectile-Spritesheet_2: 212631524
-      bossAttackProjectile-Spritesheet_5: 1872990892
-      bossAttackProjectile-Spritesheet_1: -894390110
-      bossAttackProjectile-Spritesheet_3: 1862065126
+      bossEntranceNew_1: 1461543303
+      bossEntranceNew_6: -1160546053
+      bossEntranceNew_4: -720713444
+      bossEntranceNew_3: -258451843
+      bossEntranceNew_2: -458089272
+      bossEntranceNew_5: -569261234
+      bossEntranceNew_0: 1922337803
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

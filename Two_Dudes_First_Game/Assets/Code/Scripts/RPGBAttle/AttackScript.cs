@@ -65,8 +65,17 @@ public class AttackScript : MonoBehaviour
         }
         else
         {
-            Invoke("SkipTurnContinueGame", 2);
+            Invoke("SkipTurnContinueGame", 3);
         }
+    }
+
+    public void Heal(GameObject owner)
+    {
+        targetStats = owner.GetComponent<FighterStats>();
+        targetStats.ReceiveHeal(20);
+
+        Invoke("SkipTurnContinueGame", 3);
+
     }
 
     void SkipTurnContinueGame()

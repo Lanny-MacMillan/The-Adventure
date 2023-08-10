@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e4a4b9a339bc845e2a7009cae0801d79
+guid: bf23259567c6e4b759ed1ce7c2c9daee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,160 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_0
+      name: bossMeleeSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35f23e009a63437dbc96c743eda9102
+      internalID: 1719542212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7edcba80972d41cfa8702b367d85949
+      internalID: 833297790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457ce098ecf1243138e5f3bbb625862a
+      internalID: 1558301798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcd5f35f22bc4ec0ab881022cfe213f
+      internalID: -406348231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8294f87da3184ad6b707ab8a3ab7f8f
+      internalID: -862700390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65d7219793fa4b499e1d9bb7f61e26a
+      internalID: 1819286207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b533a0640395484cb47e25ab10c8cbb
+      internalID: 1747894135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc3daf0676104d80921d91383f93ef6
-      internalID: -153385983
+      spriteID: 23aea8dbf0e014cd1851ddfa2f6ef767
+      internalID: -1912350414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_1
+      name: bossMeleeSpritesheet_8
       rect:
         serializedVersion: 2
-        x: 768
+        x: 512
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +298,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9316e1e6d3eb64a2d84a2aaf35238810
-      internalID: -894390110
+      spriteID: 751bce89ccd314fe08dbe8abe0a65701
+      internalID: 1059467825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_2
+      name: bossMeleeSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b9f99787d2046c69fc8dc311eef8e2
+      internalID: 1974734007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_10
       rect:
         serializedVersion: 2
         x: 1536
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +340,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: accb507a6fa2a4e80a3cbbf705e096bb
-      internalID: 212631524
+      spriteID: 47ff590b5a3294ece963c9dbd08c4bc2
+      internalID: 932790202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_3
+      name: bossMeleeSpritesheet_11
       rect:
         serializedVersion: 2
-        x: 2304
+        x: 2048
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +361,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ab08122d0db48ad8873e2be0d975e1
-      internalID: 1862065126
+      spriteID: 13cf34c7a076e4c0d8a91d3c996c0609
+      internalID: 712984151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_4
+      name: bossMeleeSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d486b183ef31042e09f10ccbbcf495e1
+      internalID: -831108812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bossMeleeSpritesheet_13
       rect:
         serializedVersion: 2
         x: 3072
         y: 0
-        width: 768
-        height: 768
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,50 +403,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 914a5d64f61914a56bfa0f9c015bd316
-      internalID: 851054868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 768
-        height: 768
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d31bd01b4e9144b3b8cd5a8d6880c0a1
-      internalID: 1872990892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bossAttackProjectile-Spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 4608
-        y: 0
-        width: 768
-        height: 768
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3be2b762de2b244eaad7a6ce15ea6f90
-      internalID: -909365015
+      spriteID: 9f2c6c4dfcb3945cd92c5758fb7cc451
+      internalID: -160614324
       vertices: []
       indices: 
       edges: []
@@ -273,13 +420,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bossAttackProjectile-Spritesheet_6: -909365015
-      bossAttackProjectile-Spritesheet_4: 851054868
-      bossAttackProjectile-Spritesheet_0: -153385983
-      bossAttackProjectile-Spritesheet_2: 212631524
-      bossAttackProjectile-Spritesheet_5: 1872990892
-      bossAttackProjectile-Spritesheet_1: -894390110
-      bossAttackProjectile-Spritesheet_3: 1862065126
+      bossMeleeSpritesheet_0: 1719542212
+      bossMeleeSpritesheet_13: -160614324
+      bossMeleeSpritesheet_5: 1819286207
+      bossMeleeSpritesheet_11: 712984151
+      bossMeleeSpritesheet_7: -1912350414
+      bossMeleeSpritesheet_9: 1974734007
+      bossMeleeSpritesheet_3: -406348231
+      bossMeleeSpritesheet_6: 1747894135
+      bossMeleeSpritesheet_8: 1059467825
+      bossMeleeSpritesheet_12: -831108812
+      bossMeleeSpritesheet_4: -862700390
+      bossMeleeSpritesheet_10: 932790202
+      bossMeleeSpritesheet_1: 833297790
+      bossMeleeSpritesheet_2: 1558301798
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
