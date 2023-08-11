@@ -17,6 +17,9 @@ public class FighterAction : MonoBehaviour
     [SerializeField]
     private GameObject healPrefab;
 
+    [SerializeField]
+    private GameObject shieldPrefab;
+
     //[SerializeField]
     //private GameObject defendPrefab;
 
@@ -28,6 +31,7 @@ public class FighterAction : MonoBehaviour
     public Transform LaunchOffset;
     public Transform LaunchOffsetMagic;
     public Transform LaunchOffsetHeal;
+    public Transform LaunchOffsetShield;
 
     private GameObject currentAttack;
     private GameObject meleeAttack;
@@ -40,6 +44,7 @@ public class FighterAction : MonoBehaviour
     public Animator animator;
     public Animator animatorMagic;
     public Animator animatorHeal;
+    public Animator animatorShield;
 
     private AttackScript attackScript;
     private GameController gameController;
@@ -105,7 +110,12 @@ public class FighterAction : MonoBehaviour
         }
         else
         {
-            // defend animation here
+            //animatorShield.SetBool("PlayerShield", true); // need conditional to render button off after one use
+
+            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before heal lands
+            shieldPrefab.GetComponent<AttackScript>().Shield(hero); // Shield and animation for hero in the FighterStats
+
+            //animatorShield.SetBool("Defend", true);
             // add 100 defense and return to base def after boss turn
             Debug.Log("Defend!");
 
@@ -120,6 +130,7 @@ public class FighterAction : MonoBehaviour
             animator.SetBool("Salt", false);
             animatorMagic.SetBool("Magic", false);
             animatorHeal.SetBool("Heal", false);
+            //animatorShield.SetBool("Shield", false);
             Debug.Log("RESET PLAYER ANIMATIONS!");
 
         }

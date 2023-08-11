@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
+using System.Threading;
 
 public class AttackScript : MonoBehaviour
 {
@@ -53,19 +55,20 @@ public class AttackScript : MonoBehaviour
             damage = multiplier * attackerStats.melee;
             if (magicAttack)
             {
-                // boss magic animation here maybe
                 damage = multiplier * attackerStats.magicRange;
             }
 
             float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
             damage = Mathf.Max(0, damage - (defenseMultiplier * targetStats.defense));
-            owner.GetComponent<Animator>().Play(animationName);
-            targetStats.ReceiveDamage(Mathf.CeilToInt(damage));
+
+            owner.GetComponent<Animator>().Play(animationName); // plays player or boss animations
+
+            targetStats.ReceiveDamage(Mathf.CeilToInt(damage)); // damage animation itself is delayed, 1s
             attackerStats.updateMagicFill(magicCost);
         }
         else
         {
-            Invoke("SkipTurnContinueGame", 3);
+            Invoke("SkipTurnContinueGame", 4);
         }
     }
 
@@ -75,7 +78,14 @@ public class AttackScript : MonoBehaviour
         targetStats.ReceiveHeal(20);
 
         Invoke("SkipTurnContinueGame", 3);
+    }
 
+    public void Shield(GameObject owner)
+    {
+        targetStats = owner.GetComponent<FighterStats>();
+        targetStats.ReceiveShield(100);
+
+        Invoke("SkipTurnContinueGame", 3);
     }
 
     void SkipTurnContinueGame()

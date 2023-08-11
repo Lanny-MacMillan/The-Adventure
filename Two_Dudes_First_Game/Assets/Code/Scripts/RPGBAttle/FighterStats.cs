@@ -16,7 +16,7 @@ public class FighterStats : MonoBehaviour, IComparable
     [SerializeField]
     private GameObject magicFill;
 
-
+    // player stats 
     [Header("Player Stats")]
     public float health;
     public float magic;
@@ -65,12 +65,18 @@ public class FighterStats : MonoBehaviour, IComparable
         health = health + heal;
     }
 
+    public void ReceiveShield(float defUp)
+    {
+        Debug.Log("Heal Received!!");
+        defense = defense + defUp;
+        animator.Play("Defend"); // animator for taking damage?
+    }
+
     public void ReceiveDamage(float damage)
     {
         Debug.Log("Damage Received!!");
         health = health - damage;
-        //animator.Play("Damage");
-
+        animator.Play("Damage"); // animator for taking damage?
         // Set damage text
 
         if ( health <= 0 )
