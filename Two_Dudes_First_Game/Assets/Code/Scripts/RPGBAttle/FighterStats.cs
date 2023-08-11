@@ -69,14 +69,14 @@ public class FighterStats : MonoBehaviour, IComparable
     {
         Debug.Log("Heal Received!!");
         defense = defense + defUp;
-        animator.Play("Defend"); // animator for taking damage?
+        animator.Play("Defend"); 
     }
 
     public void ReceiveDamage(float damage)
     {
         Debug.Log("Damage Received!!");
         health = health - damage;
-        animator.Play("Damage"); // animator for taking damage?
+        animator.Play("Damage");
         // Set damage text
 
         if ( health <= 0 )

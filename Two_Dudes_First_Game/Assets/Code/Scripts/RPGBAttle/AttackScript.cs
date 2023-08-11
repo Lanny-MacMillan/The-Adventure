@@ -9,8 +9,7 @@ public class AttackScript : MonoBehaviour
     public GameObject owner;
 
     [SerializeField]
-    private string animationName;
-
+    private string animationName; // passes in animationName from the SerializedField, allows for more dynamic calling of boss/hero animations 
     [SerializeField]
     private bool magicAttack; // bool to trigger magic attack and mp consumption
 
@@ -35,13 +34,6 @@ public class AttackScript : MonoBehaviour
     private FighterStats attackerStats;
     private FighterStats targetStats;
     private float damage = 0.0f;
-    //private float xMagicNewScale;
-    //private Vector2 magicScale;
-
-    //private void Start()
-    //{
-    //    magicScale = GameObject.Find("HeroMagicFill").GetComponent<RectTransform>().localScale;
-    //}
 
     public void Attack(GameObject victim)
     {
@@ -75,9 +67,9 @@ public class AttackScript : MonoBehaviour
     public void Heal(GameObject owner)
     {
         targetStats = owner.GetComponent<FighterStats>();
-        targetStats.ReceiveHeal(20);
+        targetStats.ReceiveHeal(30);
 
-        Invoke("SkipTurnContinueGame", 3);
+        Invoke("SkipTurnContinueGame", 4);
     }
 
     public void Shield(GameObject owner)
@@ -85,7 +77,7 @@ public class AttackScript : MonoBehaviour
         targetStats = owner.GetComponent<FighterStats>();
         targetStats.ReceiveShield(100);
 
-        Invoke("SkipTurnContinueGame", 3);
+        Invoke("SkipTurnContinueGame", 4);
     }
 
     void SkipTurnContinueGame()

@@ -71,14 +71,14 @@ public class FighterAction : MonoBehaviour
             currentAttack = magicAttack;
             if (tag == "Hero")
             {
-                animator.SetBool("Salt", true); // player animation
+                animator.SetBool("Salt", true); 
             }
             if (tag == "Enemy")
             {
-                animator.SetBool("Hook", true); // boss animation
+                animator.SetBool("Hook", true);
             }
 
-            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before hit lands or damage shows
+            Invoke("ResetAnimationConditionals", 2); // Invoke delay so animation finishes before hit lands or damage shows
             meleePrefab.GetComponent<AttackScript>().Attack(victim); // Attack
 
             this.battleMenu.SetActive(false); // Disables button action menu after click
@@ -91,10 +91,10 @@ public class FighterAction : MonoBehaviour
             }
             if (tag == "Enemy")
             {
-                animatorMagic.SetBool("BossMagic", true); // boss animation
+                animatorMagic.SetBool("BossMagic", true);
             }
 
-            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before hit lands or damage shows
+            Invoke("ResetAnimationConditionals", 2); // Invoke delay so animation finishes before hit lands or damage shows
             magicPrefab.GetComponent<AttackScript>().Attack(victim); // Magic Attack
 
             this.battleMenu.SetActive(false); // Disables button action menu after click
@@ -103,21 +103,15 @@ public class FighterAction : MonoBehaviour
         {
             animatorHeal.SetBool("Heal", true); // need conditional to render button off after one use
 
-            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before heal lands
+            Invoke("ResetAnimationConditionals", 2); // Invoke delay so animation finishes before heal lands
             healPrefab.GetComponent<AttackScript>().Heal(hero); // Heal
             
             this.battleMenu.SetActive(false); // Disables button action menu after click
         }
         else
         {
-            //animatorShield.SetBool("PlayerShield", true); // need conditional to render button off after one use
-
             Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before heal lands
-            shieldPrefab.GetComponent<AttackScript>().Shield(hero); // Shield and animation for hero in the FighterStats
-
-            //animatorShield.SetBool("Defend", true);
-            // add 100 defense and return to base def after boss turn
-            Debug.Log("Defend!");
+            shieldPrefab.GetComponent<AttackScript>().Shield(hero); // Shield and animation for hero in FighterStats.cs
 
             this.battleMenu.SetActive(false); // Disables button action menu after click
         }
@@ -130,16 +124,11 @@ public class FighterAction : MonoBehaviour
             animator.SetBool("Salt", false);
             animatorMagic.SetBool("Magic", false);
             animatorHeal.SetBool("Heal", false);
-            //animatorShield.SetBool("Shield", false);
-            Debug.Log("RESET PLAYER ANIMATIONS!");
-
         }
         else if (tag == "Enemy")
         {
             animator.SetBool("Hook", false); 
             animatorMagic.SetBool("BossMagic", false); 
-            Debug.Log("RESET BOSS ANIMATIONS!");
-
         }
     }
 
