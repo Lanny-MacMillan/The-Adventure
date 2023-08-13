@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Bathroom.unity
     guid: f1f19ec1531c34e159fa2cfaa12373ac
+  - enabled: 1
+    path: Assets/Level/Scenes/PostBathroom.unity
+    guid: 32bfc6f03090d43ad9236eef27a9b00a
+  - enabled: 1
+    path: Assets/Level/Scenes/RPGDeathtoBathroom.unity
+    guid: 21e531e0a5b004033bad382e90390d3f
   m_configObjects: {}

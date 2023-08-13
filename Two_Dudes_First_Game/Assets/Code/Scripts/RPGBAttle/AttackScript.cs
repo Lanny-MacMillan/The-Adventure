@@ -32,6 +32,7 @@ public class AttackScript : MonoBehaviour
     [SerializeField]
     private float healAmount; // maximum on random scale for defense
 
+
     private FighterStats attackerStats;
     private FighterStats targetStats;
     private float damage = 0.0f;

@@ -8,8 +8,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
-    private const string bathroomScene = "Bathroom";
-    private const string postBathroomScene = "PostBathroom";
+    private const string RPGDeathtoBathroom = "RPGDeathtoBathroom";
+    private const string postBathroomTransition = "Transition_PostBathroom";
 
     [SerializeField]
     private Animator animator;
@@ -68,10 +68,11 @@ public class FighterStats : MonoBehaviour, IComparable
     }
     void Update()
     {
-        if (magic < 20)
+        if (CompareTag("Hero") && magic < 20)
         {
-            this.battleMenuMagic.SetActive(false); // Disables heal button if not enough mana
+            this.battleMenuMagic.SetActive(false); // Disables heal button if Hero mana beolow casting cost
         }
+
     }
 
     public void ReceiveHeal(float heal)
@@ -101,8 +102,8 @@ public class FighterStats : MonoBehaviour, IComparable
                 gameObject.tag = "Dead";
                 Destroy(healthFill);
                 Destroy(gameObject); // destroy hero gameObject
-                // will need some kind of exit transition
-                SceneManager.LoadScene(bathroomScene);
+                // exit transition to bathroom - follow up on WaitandChangeScript
+                SceneManager.LoadScene(RPGDeathtoBathroom); 
             }
             if (CompareTag("Enemy"))
             {
@@ -111,8 +112,8 @@ public class FighterStats : MonoBehaviour, IComparable
                 gameObject.tag = "Dead";
                 Destroy(healthFill);
                 Destroy(gameObject); // destroy player gameObject
-                // will need some kind of exit transition
-                SceneManager.LoadScene(postBathroomScene);
+                // exit transition to postBathroom - follow up on WaitandChangeScript
+                SceneManager.LoadScene(postBathroomTransition);
             }
 
         } else if ( damage > 0 )
@@ -137,6 +138,7 @@ public class FighterStats : MonoBehaviour, IComparable
         }
         Invoke(nameof(ContinueGame), 4);
     }
+
 
     public void UpdateMagicFill(float cost)
     {
