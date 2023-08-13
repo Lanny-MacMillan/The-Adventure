@@ -3,9 +3,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
+    private const string bathroomScene = "Bathroom";
+    private const string postBathroomScene = "PostBathroom";
 
     [SerializeField]
     private Animator animator;
@@ -16,7 +20,6 @@ public class FighterStats : MonoBehaviour, IComparable
     [SerializeField]
     private GameObject magicFill;
 
-    // player stats 
     [Header("Player Stats")]
     public float health;
     public float magic;
@@ -45,6 +48,7 @@ public class FighterStats : MonoBehaviour, IComparable
     private float xNewMagicScale;
 
     private GameObject GameControllerObj;
+    private GameObject battleMenuMagic;
 
     void Awake()
     {
@@ -58,52 +62,87 @@ public class FighterStats : MonoBehaviour, IComparable
         startMagic = magic;
 
         GameControllerObj = GameObject.Find("GameControllerObject");
+        battleMenuMagic = GameObject.Find("MagicBtn");
+
+
     }
+    void Update()
+    {
+        if (magic < 20)
+        {
+            this.battleMenuMagic.SetActive(false); // Disables heal button if not enough mana
+        }
+    }
+
     public void ReceiveHeal(float heal)
     {
         Debug.Log("Heal Received!!");
-        health = health + heal;
+        health += heal;
     }
 
     public void ReceiveShield(float defUp)
     {
-        Debug.Log("Heal Received!!");
-        defense = defense + defUp;
+        Debug.Log("Shield Received!!");
+        defense += defUp;
         animator.Play("Defend"); 
     }
 
     public void ReceiveDamage(float damage)
     {
-        Debug.Log("Damage Received!!");
-        health = health - damage;
+        health -= damage;
         animator.Play("Damage");
-        // Set damage text
 
         if ( health <= 0 )
         {
-            dead = true;
-            gameObject.tag = "Dead";
-            Destroy(healthFill);
-            Destroy(gameObject); // destroy player gameObject
+            if (CompareTag("Hero"))
+            {
+                Debug.Log("PLAYER IS DEAD");
+                dead = true;
+                gameObject.tag = "Dead";
+                Destroy(healthFill);
+                Destroy(gameObject); // destroy hero gameObject
+                // will need some kind of exit transition
+                SceneManager.LoadScene(bathroomScene);
+            }
+            if (CompareTag("Enemy"))
+            {
+                Debug.Log("BOSS IS DEAD");
+                dead = true;
+                gameObject.tag = "Dead";
+                Destroy(healthFill);
+                Destroy(gameObject); // destroy player gameObject
+                // will need some kind of exit transition
+                SceneManager.LoadScene(postBathroomScene);
+            }
+
         } else if ( damage > 0 )
         {
             xNewHealthScale = healthScale.x * (health / startHealth);
-            healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y); 
-        }
-        if ( damage > 0 )
-        {
-            GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
-            GameControllerObj.GetComponent<GameController>().battleText.text = damage.ToString();
+            healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
 
+            if (CompareTag("Hero"))
+            {
+                // sets the hero damage in the UI to be displayed by the Battle messge GameObject
+                GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+                GameControllerObj.GetComponent<GameController>().battleText.text = ("Hero takes " + damage.ToString() + " damage");
+                Debug.Log("PLAYER DAMAGE");
+            }
+            if (CompareTag("Enemy"))
+            {
+                // sets the boss damage in the UI to be displayed by the Battle messge GameObject
+                GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+                GameControllerObj.GetComponent<GameController>().battleText.text = ("Boss takes " + damage.ToString() + " damage");
+                Debug.Log("BOSS DAMAGE");
+            }
         }
-        Invoke("ContinueGame", 4);
+        Invoke(nameof(ContinueGame), 4);
     }
 
-    public void updateMagicFill(float cost)
+    public void UpdateMagicFill(float cost)
     {
         if ( cost > 0 )
         {
-            magic = magic - cost;
+            magic -= cost;
             xNewMagicScale = magicScale.x * (magic / startMagic);
             magicFill.transform.localScale = new Vector2(xNewMagicScale, magicScale.y);
         }

@@ -20,12 +20,6 @@ public class FighterAction : MonoBehaviour
     [SerializeField]
     private GameObject shieldPrefab;
 
-    //[SerializeField]
-    //private GameObject defendPrefab;
-
-    //[SerializeField]
-    //private Sprite faceIcon;
-
     // Projectile
     public SaltBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
@@ -34,34 +28,40 @@ public class FighterAction : MonoBehaviour
     public Transform LaunchOffsetShield;
 
     private GameObject currentAttack;
-    private GameObject meleeAttack;
-    private GameObject magicAttack;
-    private GameObject healSelf;
-    private GameObject defend;
+    private readonly GameObject meleeAttack;
+    private readonly GameObject magicAttack;
+    private readonly GameObject healSelf;
+    private readonly GameObject defend;
 
-    private FighterStats fighterStats;
+    private readonly FighterStats fighterStats;
 
     public Animator animator;
     public Animator animatorMagic;
     public Animator animatorHeal;
     public Animator animatorShield;
+    public Animator animatorHero;
 
-    private AttackScript attackScript;
-    private GameController gameController;
+    private readonly AttackScript attackScript;
     private GameObject battleMenu;
+    private GameObject battleMenuHeal;
+    private GameObject battleMenuDefend;
+
 
     void Awake()
     {
         hero = GameObject.FindGameObjectWithTag("Hero");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
         battleMenu = GameObject.Find("ActionMenu");
+        battleMenuHeal = GameObject.Find("HealBtn");
+        battleMenuDefend = GameObject.Find("DefendBtn");
     }
 
     public void SelectAttack(string btn)
-    { 
+    {
+        //fighterStats.CheckMana();
         GameObject victim = hero;
 
-        if ( tag == "Hero" )
+        if (CompareTag("Hero"))
         {
             victim = enemy;
         }
@@ -69,32 +69,31 @@ public class FighterAction : MonoBehaviour
         if (btn.CompareTo("melee") == 0) // compares to zero to get a yes or no
         {
             currentAttack = magicAttack;
-            if (tag == "Hero")
+            if (CompareTag("Hero"))
             {
                 animator.SetBool("Salt", true); 
             }
-            if (tag == "Enemy")
+            if (CompareTag("Enemy"))
             {
                 animator.SetBool("Hook", true);
             }
 
-            Invoke("ResetAnimationConditionals", 2); // Invoke delay so animation finishes before hit lands or damage shows
+            Invoke(nameof(ResetAnimationConditionals), 2); // Invoke delay so animation finishes before hit lands 
             meleePrefab.GetComponent<AttackScript>().Attack(victim); // Attack
 
             this.battleMenu.SetActive(false); // Disables button action menu after click
         }
         else if (btn.CompareTo("magic") == 0)
         {
-            if (tag == "Hero")
+            if (CompareTag("Hero"))
             {
                 animatorMagic.SetBool("Magic", true); // need conditional to render button off if no mana
             }
-            if (tag == "Enemy")
+            if (CompareTag("Enemy"))
             {
                 animatorMagic.SetBool("BossMagic", true);
             }
-
-            Invoke("ResetAnimationConditionals", 2); // Invoke delay so animation finishes before hit lands or damage shows
+            Invoke(nameof(ResetAnimationConditionals), 2); // Invoke delay so animation finishes before hit lands
             magicPrefab.GetComponent<AttackScript>().Attack(victim); // Magic Attack
 
             this.battleMenu.SetActive(false); // Disables button action menu after click
@@ -103,29 +102,40 @@ public class FighterAction : MonoBehaviour
         {
             animatorHeal.SetBool("Heal", true); // need conditional to render button off after one use
 
-            Invoke("ResetAnimationConditionals", 2); // Invoke delay so animation finishes before heal lands
+            Invoke(nameof(ResetAnimationConditionals), 2); // Invoke delay so animation finishes before heal lands
             healPrefab.GetComponent<AttackScript>().Heal(hero); // Heal
-            
+
             this.battleMenu.SetActive(false); // Disables button action menu after click
+            this.battleMenuHeal.SetActive(false); // Disables heal button after click
+
+            Invoke(nameof(ResetPotion), 30);
+
         }
         else
         {
-            Invoke("ResetAnimationConditionals", 2); // Delay so animation finishes before heal lands
+            Invoke(nameof(ResetAnimationConditionals), 2); // Delay so animation finishes before heal lands
             shieldPrefab.GetComponent<AttackScript>().Shield(hero); // Shield and animation for hero in FighterStats.cs
 
+            animatorHero.SetBool("Defend", true);
             this.battleMenu.SetActive(false); // Disables button action menu after click
+            this.battleMenuDefend.SetActive(false); // Disables defend button after click
         }
+    }
+
+    private void ResetPotion()
+    {
+        this.battleMenuHeal.SetActive(true); // Enables heal button after 3 turns
     }
 
     private void ResetAnimationConditionals()
     {
-        if (tag == "Hero")
+        if (CompareTag("Hero"))
         {
             animator.SetBool("Salt", false);
             animatorMagic.SetBool("Magic", false);
             animatorHeal.SetBool("Heal", false);
         }
-        else if (tag == "Enemy")
+        else if (CompareTag("Enemy"))
         {
             animator.SetBool("Hook", false); 
             animatorMagic.SetBool("BossMagic", false); 

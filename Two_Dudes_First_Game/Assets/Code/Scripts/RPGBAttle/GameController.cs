@@ -18,9 +18,11 @@ public class GameController : MonoBehaviour
         battleMenu = GameObject.Find("ActionMenu");
     }
 
+
     void Start()
     {
-        Invoke("DelayedStartForAnimation", 4); // This delays the initial battle functions so the intro animation for the boss can play
+        Invoke(nameof(DelayedStartForAnimation), 4); // This delays the initial battle functions so the intro animation for the boss can play
+
     }
 
     void DelayedStartForAnimation()
@@ -38,15 +40,14 @@ public class GameController : MonoBehaviour
         fighterStats.Add(currentEnemyStats);
 
         fighterStats.Sort(); // Sort fights to decide whos first
-        //this.battleMenu.SetActive(false); // sets battle menu to false after attack has been made
 
         NextTurn();
     }
 
-    // Update is called once per frame
     public void NextTurn()
     {
         battleText.gameObject.SetActive(false);
+
         FighterStats currentFighterStats = fighterStats[0];
         fighterStats.Remove(currentFighterStats); // on NextTurn remove last fighter stats
 
@@ -57,7 +58,7 @@ public class GameController : MonoBehaviour
             fighterStats.Add(currentFighterStats); // adds new fighter stats as old tsats have been removed going into this turn
             fighterStats.Sort();
 
-            if(currentUnit.tag == "Hero")
+            if(currentUnit.CompareTag("Hero"))
             {
                 this.battleMenu.SetActive(true);
             }
