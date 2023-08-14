@@ -85,7 +85,29 @@ public class FighterStats : MonoBehaviour, IComparable
     {
         Debug.Log("Shield Received!!");
         defense += defUp;
-        animator.Play("Defend"); 
+        animator.Play("Defend");
+    }
+
+    void BathroomScene()
+    {
+        //Fade in if possible so it seems like we were knocked out
+        // exit transition to bathroom - follow up on WaitandChangeScript
+        SceneManager.LoadScene(RPGDeathtoBathroom);
+        dead = true;
+        gameObject.tag = "Dead";
+        Destroy(healthFill);
+        Destroy(gameObject); // destroy hero gameObject
+
+    }
+    
+    void PostBathroomScene()
+    {
+        // exit transition to bathroom - follow up on Transition_Bathroom
+        SceneManager.LoadScene(postBathroomTransition);
+        dead = true;
+        gameObject.tag = "Dead";
+        Destroy(healthFill);
+        Destroy(gameObject); // destroy hero gameObject
     }
 
     public void ReceiveDamage(float damage)
@@ -97,23 +119,14 @@ public class FighterStats : MonoBehaviour, IComparable
         {
             if (CompareTag("Hero"))
             {
-                Debug.Log("PLAYER IS DEAD");
-                dead = true;
-                gameObject.tag = "Dead";
-                Destroy(healthFill);
-                Destroy(gameObject); // destroy hero gameObject
-                // exit transition to bathroom - follow up on WaitandChangeScript
-                SceneManager.LoadScene(RPGDeathtoBathroom); 
+                animator.Play("Death");
+                Invoke(nameof(BathroomScene), 2);
             }
             if (CompareTag("Enemy"))
             {
-                Debug.Log("BOSS IS DEAD");
-                dead = true;
-                gameObject.tag = "Dead";
-                Destroy(healthFill);
-                Destroy(gameObject); // destroy player gameObject
-                // exit transition to postBathroom - follow up on WaitandChangeScript
-                SceneManager.LoadScene(postBathroomTransition);
+                //animator.Play("Death");
+                Invoke(nameof(PostBathroomScene), 2);
+
             }
 
         } else if ( damage > 0 )
@@ -126,15 +139,19 @@ public class FighterStats : MonoBehaviour, IComparable
                 // sets the hero damage in the UI to be displayed by the Battle messge GameObject
                 GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
                 GameControllerObj.GetComponent<GameController>().battleText.text = ("Hero takes " + damage.ToString() + " damage");
-                Debug.Log("PLAYER DAMAGE");
             }
             if (CompareTag("Enemy"))
             {
                 // sets the boss damage in the UI to be displayed by the Battle messge GameObject
                 GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
                 GameControllerObj.GetComponent<GameController>().battleText.text = ("Boss takes " + damage.ToString() + " damage");
-                Debug.Log("BOSS DAMAGE");
             }
+
+        } else if ( damage == 0  )
+        {
+                // sets the boss damage in the UI to be displayed by the Battle messge GameObject
+                GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+                GameControllerObj.GetComponent<GameController>().battleText.text = ("Missed");
         }
         Invoke(nameof(ContinueGame), 4);
     }

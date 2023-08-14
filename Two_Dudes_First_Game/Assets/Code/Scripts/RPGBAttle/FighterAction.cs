@@ -108,7 +108,7 @@ public class FighterAction : MonoBehaviour
             this.battleMenu.SetActive(false); // Disables button action menu after click
             this.battleMenuHeal.SetActive(false); // Disables heal button after click
 
-            Invoke(nameof(ResetPotion), 30);
+            Invoke(nameof(ResetPotion), 40);
 
         }
         else

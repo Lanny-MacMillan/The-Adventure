@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/RPGDeathtoBathroom.unity
     guid: 21e531e0a5b004033bad382e90390d3f
+  - enabled: 1
+    path: Assets/Level/Scenes/Transition_PostBathroom.unity
+    guid: 3c1194e5e4f044903be7a7ae97cb2ed5
+  - enabled: 1
+    path: Assets/Level/Scenes/TurnBasedBathroomBattle.unity
+    guid: e35065f0fc3d146f6ba4dfad3d6025fc
   m_configObjects: {}

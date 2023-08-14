@@ -77,7 +77,7 @@ public class AttackScript : MonoBehaviour
     public void Shield(GameObject owner)
     {
         targetStats = owner.GetComponent<FighterStats>();
-        targetStats.ReceiveShield(100);
+        targetStats.ReceiveShield(20);
 
         Invoke(nameof(SkipTurnContinueGame), 4);
     }
