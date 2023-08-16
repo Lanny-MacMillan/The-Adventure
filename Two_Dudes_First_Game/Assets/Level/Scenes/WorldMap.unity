@@ -161,6 +161,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior1stFloor
   requiredKey: None
+  inventory: {fileID: 830342188}
 --- !u!212 &32207119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2946,14 +2947,12 @@ MonoBehaviour:
   bedroomKey: {fileID: 21300000, guid: 8a58b5ee9515b45bd9a2daf65f0b474d, type: 3}
   woodshedKey: {fileID: 21300000, guid: a1f0a9c0bdbf6498c9d8a2f5d7c12cc0, type: 3}
   bathroomKey: {fileID: 21300000, guid: 271958b3482cb44cea2a0c5896e2b664, type: 3}
-  atticKey: {fileID: 0}
   treehouseKey: {fileID: 21300000, guid: 7f19d0978b4d44f2a851c6caacfa9211, type: 3}
   basementKey: {fileID: 21300000, guid: b28161dcced96454f8042b38811717a2, type: 3}
   cross: {fileID: 21300000, guid: 8c8c4134e1ec5462ba2f65108a7cc34d, type: 3}
   bedroomKeyObtained: 0
   woodshedKeyObtained: 0
   bathroomKeyObtained: 0
-  atticKeyObtained: 0
   treehouseKeyObtained: 0
   basementKeyObtained: 0
   crossObtained: 0
@@ -7811,6 +7810,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: Treehouse
   requiredKey: 
+  inventory: {fileID: 0}
 --- !u!212 &1901022344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9371,7 +9371,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   sceneName: WoodShed
-  requiredKey: WoodShedKey
+  requiredKey: woodshedKey
+  inventory: {fileID: 830342188}
 --- !u!1 &2097247815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9750,7 +9751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315583363480380191, guid: a58f7c7bd344b40c6a553f3a34dfd596, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4315583363480380256, guid: a58f7c7bd344b40c6a553f3a34dfd596, type: 3}
       propertyPath: m_RootOrder
@@ -9867,7 +9868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5887136480726101086, guid: 9034b306966b34cccadf16badb663138, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9034b306966b34cccadf16badb663138, type: 3}

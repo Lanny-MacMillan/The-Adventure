@@ -18,7 +18,17 @@ public class OpenDoor : MonoBehaviour
     private string requiredKey;
 
     SceneSwitch sceneSwitch;
-    //readonly Inventory inventory;
+
+    UI_Inventory ui_inventory;
+
+    [SerializeField]
+    GameObject inventory;
+
+    private void Awake()
+    {
+        // this is used to create a gameobject to reference script with inventory
+        ui_inventory = inventory.GetComponent<UI_Inventory>();
+    }
 
     private void Start()
     {
@@ -27,32 +37,47 @@ public class OpenDoor : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log("INVENTORY" + inventory.GetItemList());
-
         playerDetected = Physics2D.OverlapBox(doorPos.position, new Vector2(width, height), 0, whatIsPlayer);
 
         if (playerDetected == true)
         {
-            if (requiredKey == "None")
+            if (requiredKey == "None" && Input.GetKeyDown(KeyCode.Return))
             {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
                     sceneSwitch.SwitchScene(sceneName);
-                }
             }
-            //else if (playerHasKey)
-            //{
-            //    if (Input.GetKeyDown(KeyCode.Return))
-            //    {
-            //        sceneSwitch.SwitchScene(sceneName);
-            //    }
-            //}
-            else
+            else if
+                (requiredKey == "bedroomKey" && ui_inventory.bedroomKeyObtained && Input.GetKeyDown(KeyCode.Return))
             {
-                //insert Audio for door not opening here
+                Debug.Log("bedroomKeyObtained: " + ui_inventory.bedroomKeyObtained);
+                sceneSwitch.SwitchScene(sceneName);
             }
-
+            else if
+                (requiredKey == "woodshedKey" && ui_inventory.woodshedKeyObtained && Input.GetKeyDown(KeyCode.Return))
+            {
+                Debug.Log("woodshedKeyObtained: " + ui_inventory.woodshedKeyObtained);
+                sceneSwitch.SwitchScene(sceneName);
+            }
+            else if
+                (requiredKey == "bathroomKey" && ui_inventory.bathroomKeyObtained && Input.GetKeyDown(KeyCode.Return))
+            {
+                Debug.Log("bathroomKeyObtained: " + ui_inventory.bathroomKeyObtained);
+                sceneSwitch.SwitchScene(sceneName);
+            }
+            else if
+                (requiredKey == "treehouseKey" && ui_inventory.treehouseKeyObtained && Input.GetKeyDown(KeyCode.Return))
+            {
+                Debug.Log("treehouseKeyObtained: " + ui_inventory.treehouseKeyObtained);
+                sceneSwitch.SwitchScene(sceneName);
+            }
+            else if
+                (requiredKey == "basementKey" && ui_inventory.basementKeyObtained && Input.GetKeyDown(KeyCode.Return))
+            {
+                Debug.Log("basementKeyObtained: " + ui_inventory.basementKeyObtained);
+                sceneSwitch.SwitchScene(sceneName);
+            }
+            return;
         }
+        return;
     }
 
     private void OnDrawGizmosSelected()

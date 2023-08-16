@@ -76,7 +76,7 @@ public class UI_Inventory : MonoBehaviour
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, -y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
-            // ======================================= NEW =======================================
+
             if (image.sprite == bedroomKey)
             {
                 bedroomKeyObtained = true;
@@ -107,7 +107,6 @@ public class UI_Inventory : MonoBehaviour
                 crossObtained = true;
                 Debug.Log("JUST PICKED UP: " + image.sprite);
             }
-            // ======================================= NEW =======================================
 
             // adds one to x (which just logs how many items youve picked up
             x++; 
