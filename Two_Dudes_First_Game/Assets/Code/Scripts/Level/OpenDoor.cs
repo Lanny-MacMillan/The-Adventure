@@ -14,7 +14,11 @@ public class OpenDoor : MonoBehaviour
     [SerializeField]
     private string sceneName;
 
+    [SerializeField]
+    private string requiredKey;
+
     SceneSwitch sceneSwitch;
+    //readonly Inventory inventory;
 
     private void Start()
     {
@@ -23,14 +27,31 @@ public class OpenDoor : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log("INVENTORY" + inventory.GetItemList());
+
         playerDetected = Physics2D.OverlapBox(doorPos.position, new Vector2(width, height), 0, whatIsPlayer);
 
-        if(playerDetected == true)
+        if (playerDetected == true)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (requiredKey == "None")
             {
-                sceneSwitch.SwitchScene(sceneName);
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    sceneSwitch.SwitchScene(sceneName);
+                }
             }
+            //else if (playerHasKey)
+            //{
+            //    if (Input.GetKeyDown(KeyCode.Return))
+            //    {
+            //        sceneSwitch.SwitchScene(sceneName);
+            //    }
+            //}
+            else
+            {
+                //insert Audio for door not opening here
+            }
+
         }
     }
 

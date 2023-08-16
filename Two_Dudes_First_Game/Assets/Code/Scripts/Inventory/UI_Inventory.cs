@@ -5,17 +5,38 @@ using UnityEngine.UI;
 
 public class UI_Inventory : MonoBehaviour
 {
-
     private Inventory inventory;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
+
+    [Header("Keys")]
+    [SerializeField]
+    private Sprite bedroomKey; // 1st
+    [SerializeField]
+    private Sprite woodshedKey; // 2nd
+    [SerializeField]
+    private Sprite bathroomKey; // 3rd
+    [SerializeField]
+    private Sprite treehouseKey; // 4th
+    [SerializeField]
+    private Sprite basementKey; // 5th
+    [SerializeField]
+    private Sprite cross; // 6th
+
+    // bool states will open doors in OpenDoor.cs
+    [Header("Keys Obtained")]
+    public bool bedroomKeyObtained;
+    public bool woodshedKeyObtained;
+    public bool bathroomKeyObtained;
+    public bool treehouseKeyObtained;
+    public bool basementKeyObtained; 
+    public bool crossObtained;
 
     private void Awake()
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
     }
-
 
     public void SetInventory(Inventory inventory)
     {
@@ -55,6 +76,38 @@ public class UI_Inventory : MonoBehaviour
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, -y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
+            // ======================================= NEW =======================================
+            if (image.sprite == bedroomKey)
+            {
+                bedroomKeyObtained = true;
+                Debug.Log("JUST PICKED UP: " + image.sprite);
+            }
+            else if (image.sprite == woodshedKey)
+            {
+                woodshedKeyObtained = true;
+                Debug.Log("JUST PICKED UP: " + image.sprite);
+            }
+            else if (image.sprite == bathroomKey)
+            {
+                bathroomKeyObtained = true;
+                Debug.Log("JUST PICKED UP: " + image.sprite);
+            }
+            else if (image.sprite == treehouseKey)
+            {
+                treehouseKeyObtained = true;
+                Debug.Log("JUST PICKED UP: " + image.sprite);
+            }
+            else if (image.sprite == basementKey)
+            {
+                basementKeyObtained = true;
+                Debug.Log("JUST PICKED UP: " + image.sprite);
+            }
+            else if (image.sprite == cross)
+            {
+                crossObtained = true;
+                Debug.Log("JUST PICKED UP: " + image.sprite);
+            }
+            // ======================================= NEW =======================================
 
             // adds one to x (which just logs how many items youve picked up
             x++; 

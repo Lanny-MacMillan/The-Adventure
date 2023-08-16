@@ -16,6 +16,11 @@ public class GameManagerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(gameOverUI);
+    //}
+
     void Update()
     {
         if (gameOverUI.activeInHierarchy)
