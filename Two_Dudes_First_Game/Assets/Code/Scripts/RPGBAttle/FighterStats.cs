@@ -124,7 +124,7 @@ public class FighterStats : MonoBehaviour, IComparable
             }
             if (CompareTag("Enemy"))
             {
-                //animator.Play("Death");
+                animator.Play("Death");
                 Invoke(nameof(PostBathroomScene), 2);
 
             }

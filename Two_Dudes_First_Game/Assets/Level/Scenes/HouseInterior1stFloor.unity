@@ -237,6 +237,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: Basement
   requiredKey: BasementKey
+  inventory: {fileID: 351468973}
 --- !u!4 &229157148
 Transform:
   m_ObjectHideFlags: 0
@@ -245,13 +246,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229157146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.37, y: -2.6, z: 0.839511}
+  m_LocalPosition: {x: 7.74, y: -2.6, z: 0.839511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1617591408}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &258229811
 PrefabInstance:
@@ -262,7 +263,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5724327022774808339, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -5724327022774808339, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -359,7 +360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &326932736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +406,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350380159
 GameObject:
@@ -600,6 +601,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb21090b5f1542e2ad3567f0fc5a150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bedroomKey: {fileID: 21300000, guid: 8a58b5ee9515b45bd9a2daf65f0b474d, type: 3}
+  woodshedKey: {fileID: 21300000, guid: a1f0a9c0bdbf6498c9d8a2f5d7c12cc0, type: 3}
+  bathroomKey: {fileID: 21300000, guid: 271958b3482cb44cea2a0c5896e2b664, type: 3}
+  treehouseKey: {fileID: 21300000, guid: 7f19d0978b4d44f2a851c6caacfa9211, type: 3}
+  basementKey: {fileID: 21300000, guid: b28161dcced96454f8042b38811717a2, type: 3}
+  cross: {fileID: 21300000, guid: 8c8c4134e1ec5462ba2f65108a7cc34d, type: 3}
+  bedroomKeyObtained: 0
+  woodshedKeyObtained: 0
+  bathroomKeyObtained: 0
+  treehouseKeyObtained: 0
+  basementKeyObtained: 0
+  crossObtained: 0
 --- !u!1 &402101156
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +803,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior2ndFloor
   requiredKey: None
+  inventory: {fileID: 351468973}
 --- !u!4 &525532354
 Transform:
   m_ObjectHideFlags: 0
@@ -798,13 +812,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525532352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.46, y: -2.55, z: 0.839511}
+  m_LocalPosition: {x: -2.27, y: -2.55, z: 0.839511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1639701871}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608430838
 GameObject:
@@ -960,7 +974,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &670789975
 PrefabInstance:
@@ -1402,7 +1416,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1036436917
 PrefabInstance:
@@ -1429,11 +1443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2339588290598291959, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.8
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2339588290598291959, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.8
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2339588290598291959, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1488,6 +1502,10 @@ PrefabInstance:
       value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5852809587844995273, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 351468973}
+    - target: {fileID: 5852809587844995273, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
       propertyPath: sceneName
       value: WorldMap
       objectReference: {fileID: 0}
@@ -1508,7 +1526,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5724327022774808339, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -5724327022774808339, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2759,7 +2777,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5724327022774808339, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -5724327022774808339, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3131,6 +3149,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: Kitchen
   requiredKey: None
+  inventory: {fileID: 351468973}
 --- !u!4 &2085144760
 Transform:
   m_ObjectHideFlags: 0
@@ -3139,11 +3158,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085144758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.04, y: -2.55, z: 0.839511}
+  m_LocalPosition: {x: -7.41, y: -2.55, z: 0.839511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 718017104}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
