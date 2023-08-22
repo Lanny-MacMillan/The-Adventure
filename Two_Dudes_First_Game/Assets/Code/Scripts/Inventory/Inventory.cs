@@ -18,8 +18,6 @@ public class Inventory {
         //AddItem(new Item { itemType = Item.ItemType.BasementKey, amount = 1 });
         //AddItem(new Item { itemType = Item.ItemType.BedroomKey, amount = 1 });
         //AddItem(new Item { itemType = Item.ItemType.Cross, amount = 1 });
-
-        Debug.Log(itemList.Count);
     }
 
     public void AddItem(Item item)

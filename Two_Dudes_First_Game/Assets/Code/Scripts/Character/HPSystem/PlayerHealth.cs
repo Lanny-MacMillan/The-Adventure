@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
             //playerChar.enabled = false;
             playerMovement.enabled = false;
             animator.SetBool("isDead", true);
-            Invoke("gameOver", 2);
+            Invoke(nameof(gameOver), 2);
         }
     }
 

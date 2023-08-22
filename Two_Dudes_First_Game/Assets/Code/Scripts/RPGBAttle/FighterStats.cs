@@ -124,7 +124,6 @@ public class FighterStats : MonoBehaviour, IComparable
             }
             if (CompareTag("Enemy"))
             {
-                animator.Play("Death");
                 Invoke(nameof(PostBathroomScene), 2);
 
             }
@@ -136,20 +135,20 @@ public class FighterStats : MonoBehaviour, IComparable
 
             if (CompareTag("Hero"))
             {
-                // sets the hero damage in the UI to be displayed by the Battle messge GameObject
+                // sets the hero damage in the UI to be displayed by the Battle message GameObject
                 GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
                 GameControllerObj.GetComponent<GameController>().battleText.text = ("Hero takes " + damage.ToString() + " damage");
             }
             if (CompareTag("Enemy"))
             {
-                // sets the boss damage in the UI to be displayed by the Battle messge GameObject
+                // sets the boss damage in the UI to be displayed by the Battle message GameObject
                 GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
                 GameControllerObj.GetComponent<GameController>().battleText.text = ("Boss takes " + damage.ToString() + " damage");
             }
 
         } else if ( damage == 0  )
         {
-                // sets the boss damage in the UI to be displayed by the Battle messge GameObject
+                // sets the boss damage in the UI to be displayed by the Battle message GameObject
                 GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
                 GameControllerObj.GetComponent<GameController>().battleText.text = ("Missed");
         }

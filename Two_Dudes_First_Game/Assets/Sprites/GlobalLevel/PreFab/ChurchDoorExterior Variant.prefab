@@ -84,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5852809589500134419, guid: 49c7ac61f7951465b998b1a92a7ae7a6, type: 3}
       propertyPath: m_Name
-      value: ChurchDoorExterior
+      value: ChurchDoorExterior Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5852809589500134428, guid: 49c7ac61f7951465b998b1a92a7ae7a6, type: 3}
       propertyPath: m_Enabled
@@ -94,27 +94,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5852809589500134428, guid: 49c7ac61f7951465b998b1a92a7ae7a6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 49c7ac61f7951465b998b1a92a7ae7a6, type: 3}
 --- !u!1 &2339588290598291958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5852809589500134419, guid: 49c7ac61f7951465b998b1a92a7ae7a6, type: 3}
   m_PrefabInstance: {fileID: 8164665933397331429}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5852809587844995271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2339588290598291958}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6f6559145b14f75bd0e1e0ca92bb65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerChar: {fileID: 5065164512786737505, guid: d51f0c35a8d064e6c9e83769ea2ddc32, type: 3}
-  script: {fileID: 2339588290598291961}
 --- !u!114 &5852809587844995273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +109,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2339588290598291958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0125edd5d58904941be08a7b5113b99a, type: 3}
   m_Name: 
@@ -134,19 +121,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   sceneName: ChurchInterior
+  requiredKey: 
+  inventory: {fileID: 0}
 --- !u!4 &2339588290598291959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5852809589500134418, guid: 49c7ac61f7951465b998b1a92a7ae7a6, type: 3}
   m_PrefabInstance: {fileID: 8164665933397331429}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2339588290598291961 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5852809589500134428, guid: 49c7ac61f7951465b998b1a92a7ae7a6, type: 3}
-  m_PrefabInstance: {fileID: 8164665933397331429}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2339588290598291958}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c2903ffe30e94181b04c87c530b55be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

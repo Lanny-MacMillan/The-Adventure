@@ -15,12 +15,12 @@ public class HealthDisplay : MonoBehaviour
 
     public PlayerHealth playerHealth;
     // Start is called before the first frame update
-    private void Awake()
-    {
-        DontDestroyOnLoad(emptyHeart);
-        DontDestroyOnLoad(fullHeart);
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(emptyHeart);
+    //    DontDestroyOnLoad(fullHeart);
 
-    }
+    //}
 
 
     void Start()
