@@ -24,6 +24,14 @@ public class OpenDoor : MonoBehaviour
     [SerializeField]
     GameObject inventory;
 
+    //// bool states will open doors in OpenDoor.cs
+    [Header("Keys Obtained")]
+    public bool bedroomKeyObtained;
+    public bool woodshedKeyObtained;
+    public bool bathroomKeyObtained;
+    public bool treehouseKeyObtained;
+    public bool basementKeyObtained;
+
     private void Awake()
     {
         // this is used to create a gameobject to reference script with inventory
@@ -41,38 +49,43 @@ public class OpenDoor : MonoBehaviour
 
         if (playerDetected == true)
         {
+            Debug.Log("INVENTORY_BEDROOMKEY " + bedroomKeyObtained);
+            Debug.Log("INVENTORY_WOODSHEDKEY " + woodshedKeyObtained);
+            //Debug.Log("INVENTORY_BATHROOMKEY " + bathroomKeyObtained);
+            //Debug.Log("INVENTORY_TREEHOUSEKEY " + treehouseKeyObtained);
+            //Debug.Log("INVENTORY_BASEMENTKEY " + basementKeyObtained);
             if (requiredKey == "None" && Input.GetKeyDown(KeyCode.Return))
             {
                     sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "bedroomKey" && ui_inventory.bedroomKeyObtained && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "bedroomKey" && bedroomKeyObtained && Input.GetKeyDown(KeyCode.Return))
             {
-                Debug.Log("bedroomKeyObtained: " + ui_inventory.bedroomKeyObtained);
+                Debug.Log("bedroomKeyObtained: " + bedroomKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "woodshedKey" && ui_inventory.woodshedKeyObtained && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "woodshedKey" && woodshedKeyObtained && Input.GetKeyDown(KeyCode.Return))
             {
-                Debug.Log("woodshedKeyObtained: " + ui_inventory.woodshedKeyObtained);
+                Debug.Log("woodshedKeyObtained: " + woodshedKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "bathroomKey" && ui_inventory.bathroomKeyObtained && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "bathroomKey" && bathroomKeyObtained && Input.GetKeyDown(KeyCode.Return))
             {
-                Debug.Log("bathroomKeyObtained: " + ui_inventory.bathroomKeyObtained);
+                Debug.Log("bathroomKeyObtained: " + bathroomKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "treehouseKey" && ui_inventory.treehouseKeyObtained && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "treehouseKey" && treehouseKeyObtained && Input.GetKeyDown(KeyCode.Return))
             {
-                Debug.Log("treehouseKeyObtained: " + ui_inventory.treehouseKeyObtained);
+                Debug.Log("treehouseKeyObtained: " + treehouseKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "basementKey" && ui_inventory.basementKeyObtained && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "basementKey" && basementKeyObtained && Input.GetKeyDown(KeyCode.Return))
             {
-                Debug.Log("basementKeyObtained: " + ui_inventory.basementKeyObtained);
+                Debug.Log("basementKeyObtained: " + basementKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             return;

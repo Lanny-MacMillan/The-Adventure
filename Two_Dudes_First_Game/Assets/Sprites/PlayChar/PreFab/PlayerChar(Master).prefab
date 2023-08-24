@@ -79,6 +79,8 @@ GameObject:
   - component: {fileID: 3231611845266561430}
   - component: {fileID: 3793587971235041046}
   - component: {fileID: 3746962464725610307}
+  - component: {fileID: 2186714952007846944}
+  - component: {fileID: 2186714952007846951}
   m_Layer: 7
   m_Name: PlayerChar(Master)
   m_TagString: Player
@@ -94,7 +96,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2186714951440630116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.156, y: -7.715, z: 0.039019264}
+  m_LocalPosition: {x: 6.9, y: 6.554027, z: 0}
   m_LocalScale: {x: 1, y: 1.025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -219,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFacingRight: 1
   attack: 0
+  lastX: 0
   Falling: 0
   FreeFall: 0
   jump: 0
@@ -292,8 +295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 3
-  emptyHeart: {fileID: 21300000, guid: c1e0f18f349324a97b33929b299b7e26, type: 3}
-  fullHeart: {fileID: 21300000, guid: 537715b43107443d7bfdd749353e2bb4, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 9f0d2b4ced7944cbf9892d2556ca3406, type: 3}
+  fullHeart: {fileID: 21300000, guid: 6b8d77d3f11d440ed9b1023509068ab8, type: 3}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -311,10 +314,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f2bc41f1aba4a58a04e1876e9455cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 3
   maxHealth: 3
   playerChar: {fileID: 2186714951440630117}
   playerMovement: {fileID: 2186714951440630170}
+  gameManager: {fileID: 0}
+  isDead: 0
+  animator: {fileID: 2186714951440630171}
+--- !u!114 &2186714952007846944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186714951440630116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9290e15444ba24450892a5c400c9fdea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2186714952007846951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186714951440630116}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1009d1340ba42f3ad8017c810ea922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2186714951582902433
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,14 +438,14 @@ MonoBehaviour:
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
-  m_YDamping: 1
+  m_YDamping: 5
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenY: 0.75
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneHeight: 0.793
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
@@ -459,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2186714952678617264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 2.4390244, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

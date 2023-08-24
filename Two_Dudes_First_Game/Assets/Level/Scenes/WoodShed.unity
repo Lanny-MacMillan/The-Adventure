@@ -516,7 +516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &370809993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,7 +1299,7 @@ PrefabInstance:
     - target: {fileID: 1130336173087035936, guid: 57667bd46c13d40a7af7a345f45a394d, type: 3}
       propertyPath: inventory
       value: 
-      objectReference: {fileID: 42927208}
+      objectReference: {fileID: 7986649870452688258, guid: 241a61e74960a4badb01d03127497dcd, type: 3}
     - target: {fileID: 1130336173087035936, guid: 57667bd46c13d40a7af7a345f45a394d, type: 3}
       propertyPath: sceneName
       value: WorldMap
@@ -2743,7 +2743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1359934065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2979,7 +2979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1563972023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3498,7 +3498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1904699982
 MonoBehaviour:
   m_ObjectHideFlags: 0

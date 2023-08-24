@@ -24,18 +24,32 @@ public class UI_Inventory : MonoBehaviour
     private Sprite cross; // 6th
 
     // bool states will open doors in OpenDoor.cs
-    [Header("Keys Obtained")]
-    public bool bedroomKeyObtained;
-    public bool woodshedKeyObtained;
-    public bool bathroomKeyObtained;
-    public bool treehouseKeyObtained;
-    public bool basementKeyObtained; 
+    [Header("Power-up Obtained")]
     public bool crossObtained;
+
+
+    [Header("Doors")]
+    public GameObject bedroomDoor; // 1st
+    public GameObject woodshedDoor; // 2nd
+    public GameObject bathroomDoor; // 3rd
+    public GameObject treehouseDoor; // 4th
+    public GameObject basementDoor; // 5th
+
+    OpenDoor openBedroomDoor;
+    OpenDoor openWoodshedDoor;
+    OpenDoor openBathroomDoor;
+    OpenDoor openTreehouseDoor;
+    OpenDoor openBasementDoor;
 
     private void Awake()
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+        openBedroomDoor = bedroomDoor.GetComponent<OpenDoor>();
+        openWoodshedDoor = woodshedDoor.GetComponent<OpenDoor>();
+        openBathroomDoor = bathroomDoor.GetComponent<OpenDoor>();
+        openTreehouseDoor = treehouseDoor.GetComponent<OpenDoor>();
+        openBasementDoor = basementDoor.GetComponent<OpenDoor>();
     }
 
     public void SetInventory(Inventory inventory)
@@ -79,33 +93,38 @@ public class UI_Inventory : MonoBehaviour
 
             if (image.sprite == bedroomKey)
             {
-                bedroomKeyObtained = true;
-                Debug.Log("JUST PICKED UP: " + image.sprite);
+                //bedroomKeyObtained = true;
+                openBedroomDoor.bedroomKeyObtained = true;
+                //Debug.Log("bedroomKeyObtained: " + bedroomKeyObtained);
             }
             else if (image.sprite == woodshedKey)
             {
-                woodshedKeyObtained = true;
-                Debug.Log("JUST PICKED UP: " + image.sprite);
+                //woodshedKeyObtained = true;
+                openWoodshedDoor.woodshedKeyObtained = true;
+                //Debug.Log("JUST PICKED UP: " + image.sprite);
             }
             else if (image.sprite == bathroomKey)
             {
-                bathroomKeyObtained = true;
-                Debug.Log("JUST PICKED UP: " + image.sprite);
+                //bathroomKeyObtained = true;
+                openBathroomDoor.bathroomKeyObtained = true;
+                //Debug.Log("JUST PICKED UP: " + image.sprite);
             }
             else if (image.sprite == treehouseKey)
             {
-                treehouseKeyObtained = true;
-                Debug.Log("JUST PICKED UP: " + image.sprite);
+                //treehouseKeyObtained = true;
+                openTreehouseDoor.treehouseKeyObtained = true;
+                //Debug.Log("JUST PICKED UP: " + image.sprite);
             }
             else if (image.sprite == basementKey)
             {
-                basementKeyObtained = true;
-                Debug.Log("JUST PICKED UP: " + image.sprite);
+                //basementKeyObtained = true;
+                openBasementDoor.basementKeyObtained = true;
+                //Debug.Log("JUST PICKED UP: " + image.sprite);
             }
             else if (image.sprite == cross)
             {
                 crossObtained = true;
-                Debug.Log("JUST PICKED UP: " + image.sprite);
+                //Debug.Log("JUST PICKED UP: " + image.sprite);
             }
 
             // adds one to x (which just logs how many items youve picked up

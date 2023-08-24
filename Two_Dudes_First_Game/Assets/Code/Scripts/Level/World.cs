@@ -14,8 +14,8 @@ public class World : SceneSwitch
     {
         base.Start(); // this calls whats inside the start method from its base script (SceneSwitch) while running its own start method
 
-        if(prevScene == previous)
-        {
+        if (prevScene == previous)
+        { 
             player.position = new Vector2(posX, posY);
         }
     }
