@@ -495,12 +495,6 @@ MonoBehaviour:
   treehouseKey: {fileID: 21300000, guid: 7f19d0978b4d44f2a851c6caacfa9211, type: 3}
   basementKey: {fileID: 21300000, guid: b28161dcced96454f8042b38811717a2, type: 3}
   cross: {fileID: 21300000, guid: 8c8c4134e1ec5462ba2f65108a7cc34d, type: 3}
-  crossObtained: 0
-  bedroomDoor: {fileID: 0}
-  woodshedDoor: {fileID: 0}
-  bathroomDoor: {fileID: 0}
-  treehouseDoor: {fileID: 0}
-  basementDoor: {fileID: 0}
 --- !u!1001 &399077496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -780,13 +774,12 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior2ndFloor
   requiredKey: None
-  inventory: {fileID: 351468973}
+  playerPrefScript: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
   bedroomKeyObtained: 0
   woodshedKeyObtained: 0
   bathroomKeyObtained: 0
   treehouseKeyObtained: 0
   basementKeyObtained: 0
-  crossObtained: 0
 --- !u!4 &525532354
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,6 +1506,10 @@ PrefabInstance:
       propertyPath: requiredKey
       value: None
       objectReference: {fileID: 0}
+    - target: {fileID: 5852809587844995273, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
+      propertyPath: playerPrefScript
+      value: 
+      objectReference: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
     m_RemovedComponents:
     - {fileID: 2339588290598291961, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
     - {fileID: 5852809587844995271, guid: cb84aa0a9a6b040d697dfd23607f0176, type: 3}
@@ -3368,6 +3365,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1033491394322496928, guid: 972a66eced53e49c0a0aebb25fa8a760, type: 3}
+      propertyPath: playerPrefScript
+      value: 
+      objectReference: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
     - target: {fileID: 1033491394322496929, guid: 972a66eced53e49c0a0aebb25fa8a760, type: 3}
       propertyPath: m_Name
       value: KitchenDoor
@@ -3429,6 +3430,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 351468973}
+    - target: {fileID: 7196460646263687010, guid: 4f0a2d63f413145acb673cccf516c1fd, type: 3}
+      propertyPath: playerPrefScript
+      value: 
+      objectReference: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
     - target: {fileID: 7196460646263687011, guid: 4f0a2d63f413145acb673cccf516c1fd, type: 3}
       propertyPath: m_Name
       value: BasementDoor

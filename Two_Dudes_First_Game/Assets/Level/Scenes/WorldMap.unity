@@ -161,7 +161,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior1stFloor
   requiredKey: None
-  inventory: {fileID: 7986649870452688258, guid: 241a61e74960a4badb01d03127497dcd, type: 3}
+  playerPrefScript: {fileID: 1409051550040452872}
   bedroomKeyObtained: 0
   woodshedKeyObtained: 0
   bathroomKeyObtained: 0
@@ -7943,6 +7943,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d4ab341c85342fa9392f3a1b3b4191, type: 3}
+--- !u!1001 &1409051550040452871
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.892673
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.8054485
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.7975352
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799361, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+      propertyPath: m_Name
+      value: playerPrefs
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+--- !u!1 &1409051550040452872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
+  m_PrefabInstance: {fileID: 1409051550040452871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2186714952007846936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8204,6 +8266,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3046106467195477541, guid: b9262af6974594df6be356c212703e42, type: 3}
+      propertyPath: playerPrefScript
+      value: 
+      objectReference: {fileID: 1409051550040452872}
     - target: {fileID: 3046106467195477543, guid: b9262af6974594df6be356c212703e42, type: 3}
       propertyPath: m_Name
       value: Treehouse - Final Boss Lair1
@@ -8221,6 +8287,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 682062622}
+    - target: {fileID: 3120704685486444128, guid: 66252aa6c00a54e1d803eb30cfd82fe3, type: 3}
+      propertyPath: playerPrefScript
+      value: 
+      objectReference: {fileID: 1409051550040452872}
     - target: {fileID: 3120704685486444130, guid: 66252aa6c00a54e1d803eb30cfd82fe3, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -8288,7 +8358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315583363480380191, guid: a58f7c7bd344b40c6a553f3a34dfd596, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4315583363480380256, guid: a58f7c7bd344b40c6a553f3a34dfd596, type: 3}
       propertyPath: m_RootOrder
