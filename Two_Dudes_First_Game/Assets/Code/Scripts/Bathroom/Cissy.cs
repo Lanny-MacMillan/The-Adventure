@@ -11,7 +11,6 @@ public class Cissy : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("CISSYS_SCRIPT");
         // Cissys Eyes based on player location
         if (playerMovement.lastX >= 52.55)
         {
