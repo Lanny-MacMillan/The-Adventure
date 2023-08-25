@@ -36,4 +36,6 @@ Before you even start editing or making changes.
 4. If you want to add these edits to the game. Open github Desktop and "current Branch" should be set to your new feature branch from step 2 and not develop or main. Fill out the summary of what the change entails and click "Commit to Main". This message is just a note that can be viewed on GitHub and tell the team on the PR whats been done in the commit history.
 5. Next CLick "Push to Origin". This will push staged and commited changes to the selected feature branch.
 6. Open GitHub -> Unity_Game_Two_Dudes -> Pull Requests Tab -> New Pull Request
-7. Set 
+7. Set Compare Feature Branch to Base Develop, Image below:
+   <img width="1166" alt="Screen Shot 2023-08-24 at 11 55 12 PM" src="https://github.com/Lanny-MacMillan/Unity_Game_Two_Dudes/assets/102826450/9c4eefe4-78e0-48dc-a826-d17bead83a16">
+8. Set a reviewer to approve the change and click submit PR
