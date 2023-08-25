@@ -1,10 +1,10 @@
 # Two Dudes - Evil Frank/Franks Revenge
 Two Dudes Unity Game - Evil Frank/Franks Revenge
 
-# Two Dudes Rules
+## Two Dudes Rules
 1. We do not push to Main
 2. WE DO NOT PUSH TO MAIN
-3. Everyone should only ever be in develop, main is the functional version of the game. All changes will be pushed to develop, a test branch, and then you would PR to main
+  - Everyone should only ever be in develop, main is the functional version of the game. All changes will be pushed to develop, a test branch, and then you would PR to main
    
 ## Pull Repo and Run Github Desktop
 1. Install Unity/UnityHub -> https://unity.com/download
