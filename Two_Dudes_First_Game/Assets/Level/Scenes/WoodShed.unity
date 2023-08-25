@@ -202,7 +202,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8289872652488846772, guid: 4c0cf347dd712445fab26ae730cd35d5, type: 3}
       propertyPath: m_Name
-      value: ItemWorldSpawner_BathroomKey (1)
+      value: ItemWorldSpawner_BathroomKey_TEST
       objectReference: {fileID: 0}
     - target: {fileID: 8289872652488846772, guid: 4c0cf347dd712445fab26ae730cd35d5, type: 3}
       propertyPath: m_Layer
