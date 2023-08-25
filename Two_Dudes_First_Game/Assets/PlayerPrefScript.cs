@@ -14,35 +14,35 @@ public class PlayerPrefScript : MonoBehaviour
 
     void Start()
     {
-        if(bedroomDoorUnlocked != 1)
-        {
-            PlayerPrefs.SetInt("bedroomDoor", 0);
-        }
+        //if(bedroomDoorUnlocked != 1)
+        //{
+        //    PlayerPrefs.SetInt("bedroomDoor", 0);
+        //}
 
-        if (woodshedDoorUnlocked != 1)
-        {
-            PlayerPrefs.SetInt("woodshedDoor", 0);
-        }
+        //if (woodshedDoorUnlocked != 1)
+        //{
+        //    PlayerPrefs.SetInt("woodshedDoor", 0);
+        //}
 
-        if (bathroomDoorUnlocked != 1)
-        {
-            PlayerPrefs.SetInt("bathroomDoor", 0);
-        }
+        //if (bathroomDoorUnlocked != 1)
+        //{
+        //    PlayerPrefs.SetInt("bathroomDoor", 0);
+        //}
 
-        if (treehouseDoorUnlocked != 1)
-        {
-            PlayerPrefs.SetInt("treehouseDoor", 0);
-        }
+        //if (treehouseDoorUnlocked != 1)
+        //{
+        //    PlayerPrefs.SetInt("treehouseDoor", 0);
+        //}
 
-        if (basementDoorUnlocked != 1)
-        {
-            PlayerPrefs.SetInt("basementDoor", 0);
-        }
+        //if (basementDoorUnlocked != 1)
+        //{
+        //    PlayerPrefs.SetInt("basementDoor", 0);
+        //}
 
-        if (crossAquired != 1)
-        {
-            PlayerPrefs.SetInt("cross", 0);
-        }
+        //if (crossAquired != 1)
+        //{
+        //    PlayerPrefs.SetInt("cross", 0);
+        //}
 
         bedroomDoorUnlocked = PlayerPrefs.GetInt("bedroomDoor");
         woodshedDoorUnlocked = PlayerPrefs.GetInt("woodshedDoor");

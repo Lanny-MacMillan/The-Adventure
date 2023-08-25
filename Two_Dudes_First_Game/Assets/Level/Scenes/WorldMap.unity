@@ -7366,7 +7366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975986194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.2, y: -5.22, z: -9.96098}
+  m_LocalPosition: {x: 98.2, y: -5.22, z: -9.96098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7998,13 +7998,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerPrefs
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1409051548733799375, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
 --- !u!1 &1409051550040452872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
   m_PrefabInstance: {fileID: 1409051550040452871}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1409051550040452876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409051550040452872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9290e15444ba24450892a5c400c9fdea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2186714952007846936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8022,7 +8035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2186714951440630118, guid: e80af569b81a24c21a3474e6ae3eee93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.2
+      value: 98.2
       objectReference: {fileID: 0}
     - target: {fileID: 2186714951440630118, guid: e80af569b81a24c21a3474e6ae3eee93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8287,6 +8300,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 682062622}
+    - target: {fileID: 3120704685486444128, guid: 66252aa6c00a54e1d803eb30cfd82fe3, type: 3}
+      propertyPath: requiredKey
+      value: None
+      objectReference: {fileID: 0}
     - target: {fileID: 3120704685486444128, guid: 66252aa6c00a54e1d803eb30cfd82fe3, type: 3}
       propertyPath: playerPrefScript
       value: 

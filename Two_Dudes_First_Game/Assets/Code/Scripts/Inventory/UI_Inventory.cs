@@ -73,32 +73,32 @@ public class UI_Inventory : MonoBehaviour
             if (image.sprite == bedroomKey)
             {
                 PlayerPrefs.SetInt("bedroomDoor", 1);
-                Debug.Log("SET PLAYER PREFS TO 1 FOR: " + image.sprite);
+                Debug.Log("SET PLAYER PREFS TO 1 FOR : " + image.sprite);
             }
             else if (image.sprite == woodshedKey)
             {
                 PlayerPrefs.SetInt("woodshedDoor", 1);
-                //Debug.Log("JUST PICKED UP : " + image.sprite);
+                Debug.Log("SET PLAYER PREFS TO 1 FOR : " + image.sprite);
             }
             else if (image.sprite == bathroomKey)
             {
                 PlayerPrefs.SetInt("bathroomDoor", 1);
-                //Debug.Log("JUST PICKED UP : " + image.sprite);
+                Debug.Log("SET PLAYER PREFS TO 1 FOR : " + image.sprite);
             }
             else if (image.sprite == treehouseKey)
             {
                 PlayerPrefs.SetInt("treehouseDoor", 1);
-                //Debug.Log("JUST PICKED UP : " + image.sprite);
+                Debug.Log("SET PLAYER PREFS TO 1 FOR : " + image.sprite);
             }
             else if (image.sprite == basementKey)
             {
                 PlayerPrefs.SetInt("basementDoor", 1);
-                //Debug.Log("JUST PICKED UP : " + image.sprite);
+                Debug.Log("SET PLAYER PREFS TO 1 FOR : " + image.sprite);
             }
             else if (image.sprite == cross)
             {
                 PlayerPrefs.SetInt("cross", 1);
-                //Debug.Log("JUST PICKED UP : " + image.sprite);
+                Debug.Log("SET PLAYER PREFS TO 1 FOR POWERUP: " + image.sprite);
             }
 
             // adds one to x (which just logs how many items youve picked up
