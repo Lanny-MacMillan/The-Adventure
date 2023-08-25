@@ -9,25 +9,23 @@ public class Cissy : MonoBehaviour
     public bool LeftSide = true;
     public PlayerMovement playerMovement;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        // Cissys Eyes based n player location
-        if (playerMovement.lastX >= 1.80)
+        Debug.Log("CISSYS_SCRIPT");
+        // Cissys Eyes based on player location
+        if (playerMovement.lastX >= 52.55)
         {
+            Debug.Log("CISSYS_EYE_LOOK_RIGHT");
+
             RightSide = true;
             LeftSide = false;
             animator.SetBool("RightSide", true);
             animator.SetBool("LeftSide", false);
         }
-        if (playerMovement.lastX < 1.80)
+        if (playerMovement.lastX < 52.55)
         {
+            Debug.Log("CISSYS_EYE_LOOK_LEFT");
+
             LeftSide = true;
             RightSide = false;
             animator.SetBool("LeftSide", true);
