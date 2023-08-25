@@ -31,15 +31,6 @@ public class OpenDoor : MonoBehaviour
     public int treehouseKeyObtained;
     public int basementKeyObtained;
 
-    private void Awake()
-    {
-        //bedroomKeyObtained = PlayerPrefs.GetInt("bedroomDoor");
-        //woodshedKeyObtained = PlayerPrefs.GetInt("woodshedDoor");
-        //bathroomKeyObtained = PlayerPrefs.GetInt("bathroomDoor");
-        //treehouseKeyObtained = PlayerPrefs.GetInt("treehouseDoor");
-        //basementKeyObtained = PlayerPrefs.GetInt("basementDoor");
-    }
-
     private void Start()
     {
         sceneSwitch = FindObjectOfType<SceneSwitch>();
