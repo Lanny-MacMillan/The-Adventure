@@ -575,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &170594790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -654,7 +654,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2379,8 +2379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018abfc5ac447461f930e7b963fd3ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 7707579429365657527, guid: 2a029dece4e184655945e225d8ab2dc4, type: 3}
-  animator: {fileID: 0}
+  gameOverUI: {fileID: 170594789}
+  animator: {fileID: 2186714952007846938}
 --- !u!4 &866691850
 Transform:
   m_ObjectHideFlags: 0
@@ -8106,6 +8106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f2bc41f1aba4a58a04e1876e9455cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2186714952007846938 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2186714951440630171, guid: e80af569b81a24c21a3474e6ae3eee93, type: 3}
+  m_PrefabInstance: {fileID: 2186714952007846936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2367666155895616847
 PrefabInstance:
   m_ObjectHideFlags: 0
