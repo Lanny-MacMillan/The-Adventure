@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Hero
   - Dead
+  - Global
   layers:
   - Default
   - TransparentFX

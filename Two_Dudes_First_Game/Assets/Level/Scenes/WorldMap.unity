@@ -7366,7 +7366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975986194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3, y: -5.22, z: -9.96098}
+  m_LocalPosition: {x: 38.32, y: -5.22, z: -9.96098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7509,7 +7509,7 @@ GameObject:
   - component: {fileID: 2028236625}
   m_Layer: 5
   m_Name: CanvasHealth
-  m_TagString: Untagged
+  m_TagString: Global
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8035,7 +8035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2186714951440630118, guid: e80af569b81a24c21a3474e6ae3eee93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3
+      value: 38.32
       objectReference: {fileID: 0}
     - target: {fileID: 2186714951440630118, guid: e80af569b81a24c21a3474e6ae3eee93, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8867,6 +8867,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7022210722187555403, guid: d88caaec0ee294c94b7b7f394fb01517, type: 3}
+      propertyPath: m_TagString
+      value: Global
+      objectReference: {fileID: 0}
     - target: {fileID: 7022210722461820850, guid: d88caaec0ee294c94b7b7f394fb01517, type: 3}
       propertyPath: bedroomDoor
       value: 
@@ -9007,7 +9011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8289872652488846772, guid: 4c0cf347dd712445fab26ae730cd35d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8289872652488846777, guid: 4c0cf347dd712445fab26ae730cd35d5, type: 3}
       propertyPath: m_RootOrder
