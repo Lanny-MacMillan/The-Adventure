@@ -5,9 +5,9 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Direction : MonoBehaviour
 {
-    public Transform leftWayPoint; //
-    public Transform rightWayPoint; //
-    //Transform leftWayPoint, rightWayPoint;
+    public Transform leftWayPoint;
+    public Transform rightWayPoint;
+    
     Vector3 localScale;
     bool movingRight = false;
     Rigidbody2D rb;
@@ -15,8 +15,6 @@ public class Direction : MonoBehaviour
     {
         localScale = transform.localScale;
         rb = GetComponent<Rigidbody2D>();
-        //leftWayPoint = GameObject.Find("LeftWayPoint").GetComponent<Transform>();
-        //rightWayPoint = GameObject.Find("RightWayPoint").GetComponent<Transform>();
     }
 
     void Update()
