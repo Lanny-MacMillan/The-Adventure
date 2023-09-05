@@ -11044,7 +11044,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.09}
+  m_Size: {x: 0.24, y: 0.21}
   m_EdgeRadius: 0
 --- !u!114 &672784620
 MonoBehaviour:
@@ -11108,7 +11108,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.04, y: 0.026608614}
-  m_Size: {x: 0.46, y: 0.55252075}
+  m_Size: {x: 0.5, y: 0.6}
   m_Direction: 0
 --- !u!114 &672784624
 MonoBehaviour:
@@ -18469,7 +18469,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.04, y: 0.026608614}
-  m_Size: {x: 0.46, y: 0.55252075}
+  m_Size: {x: 0.5, y: 0.6}
   m_Direction: 0
 --- !u!61 &1121416189
 BoxCollider2D:
@@ -18495,7 +18495,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.09}
+  m_Size: {x: 0.24, y: 0.21}
   m_EdgeRadius: 0
 --- !u!95 &1121416190
 Animator:
@@ -34875,7 +34875,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.04, y: 0.026608614}
-  m_Size: {x: 0.46, y: 0.55252075}
+  m_Size: {x: 0.5, y: 0.6}
   m_Direction: 0
 --- !u!61 &1956510523
 BoxCollider2D:
@@ -34901,7 +34901,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.09}
+  m_Size: {x: 0.24, y: 0.21}
   m_EdgeRadius: 0
 --- !u!95 &1956510524
 Animator:

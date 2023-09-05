@@ -69,6 +69,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // this will pause player movement if bathroom dialogue window is open
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+
         lastY = transform.position.y;
         lastX = transform.position.x;
         horizontal = Input.GetAxisRaw("Horizontal");
