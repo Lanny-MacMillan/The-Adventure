@@ -1,3 +1,14 @@
+<div align="center">
+
+# Two Dudes - Evil Frank/Franks Revenge
+created by: Two Dudes Games
+
+![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white)
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
+
+</div>
+
+
 # Two Dudes - Evil Frank/Franks Revenge
 Two Dudes Unity Game - Evil Frank/Franks Revenge
 
