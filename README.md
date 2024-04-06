@@ -1,6 +1,6 @@
 <div align="center">
 
-# Two Dudes - Evil Frank/Franks Revenge
+# Two Dudes Nightmare
 created by: Two Dudes Games
 
 ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white)
@@ -9,8 +9,8 @@ created by: Two Dudes Games
 </div>
 
 
-# Two Dudes - Evil Frank/Franks Revenge
-Two Dudes Unity Game - Evil Frank/Franks Revenge
+# Two Dudes Nightmare
+Two Dudes Unity Game - Two Dudes Nightmare
 
 ## Two Dudes Rules
 1. We do not push to Main
