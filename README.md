@@ -1,6 +1,6 @@
 <div align="center">
 
-# Two Dudes Nightmare
+# The Adventure
 created by: Two Dudes Games
 
 ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white)
@@ -9,8 +9,8 @@ created by: Two Dudes Games
 </div>
 
 
-# Two Dudes Nightmare
-Two Dudes Unity Game - Two Dudes Nightmare
+# The Adventure
+Two Dudes Unity Game - The Adventure
 
 ## Two Dudes Rules
 1. We do not push to Main
