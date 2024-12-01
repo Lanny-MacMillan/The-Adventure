@@ -8,7 +8,6 @@ created by: Two Dudes Games
 
 </div>
 
-
 # The Adventure
 Two Dudes Unity Game - The Adventure
 
