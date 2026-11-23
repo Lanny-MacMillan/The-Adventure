@@ -17,12 +17,26 @@ public class OpenDoor : MonoBehaviour
     [SerializeField]
     private string requiredKey;
 
+    [Header("Room changed (e.g. bathroom after the fight)")]
+    [SerializeField] private string changedFlag;
+    [SerializeField] private string changedSceneName;
+
     SceneSwitch sceneSwitch;
 
     [SerializeField]
     GameObject playerPrefScript;
 
-    public string SceneName { get { return sceneName; } }
+    public string SceneName
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(changedFlag) && PlayerPrefs.GetInt(changedFlag) == 1)
+            {
+                return changedSceneName;
+            }
+            return sceneName;
+        }
+    }
     public string RequiredKey { get { return requiredKey; } }
     public Vector2 SpawnPoint { get { return doorPos != null ? (Vector2)doorPos.position : (Vector2)transform.position; } }
 
@@ -52,7 +66,7 @@ public class OpenDoor : MonoBehaviour
 
         if (playerDetected && UsePressed() && HasKey())
         {
-            sceneSwitch.SwitchScene(sceneName);
+            sceneSwitch.SwitchScene(SceneName);
         }
     }
 
