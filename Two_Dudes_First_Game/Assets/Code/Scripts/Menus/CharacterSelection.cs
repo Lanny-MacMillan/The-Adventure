@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// Remembers which playable character was picked on the character select screen.
 public static class CharacterSelection
 {
     public const int DevGuy = 0;

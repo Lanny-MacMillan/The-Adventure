@@ -19,7 +19,6 @@ public class TitleScreenMenu : MonoBehaviour
         }
     }
 
-    // hooked up to the Start Game button
     public void StartGame()
     {
         SceneManager.LoadScene(characterSelectScene);

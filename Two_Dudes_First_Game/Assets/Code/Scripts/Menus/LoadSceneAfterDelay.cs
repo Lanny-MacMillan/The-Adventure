@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Used on the CreatedBy splash: moves on to the title screen after a few seconds,
-// or right away if a key or mouse button is pressed.
 public class LoadSceneAfterDelay : MonoBehaviour
 {
     [SerializeField] private string sceneName = "TitleScreen";
