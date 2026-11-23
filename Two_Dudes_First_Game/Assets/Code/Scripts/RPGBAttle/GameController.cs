@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        battleMenu.SetActive(false); // hidden until the intro finishes and it's the hero's turn
         Invoke(nameof(DelayedStartForAnimation), 4); // This delays the initial battle functions so the intro animation for the boss can play
 
     }
