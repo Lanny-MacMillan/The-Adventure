@@ -13,6 +13,7 @@ public class Item {
         BasementKey,
         BedroomKey,
         Cross,
+        KitchenKey,
     }
 
     public ItemType itemType;
@@ -30,6 +31,22 @@ public class Item {
             case ItemType.BasementKey:      return ItemAssets.Instance.BasementKey;
             case ItemType.BedroomKey:       return ItemAssets.Instance.BedroomKey;
             case ItemType.Cross:            return ItemAssets.Instance.Cross;
+            case ItemType.KitchenKey:       return ItemAssets.Instance.KitchenKey;
+        }
+    }
+
+    // PlayerPrefs flag set when this item is picked up
+    public string PrefKey()
+    {
+        switch (itemType)
+        {
+            case ItemType.WoodShedKey:      return "woodshedDoor";
+            case ItemType.BathroomKey:      return "bathroomDoor";
+            case ItemType.TreeHouseKey:     return "treehouseDoor";
+            case ItemType.BasementKey:      return "basementDoor";
+            case ItemType.BedroomKey:       return "bedroomDoor";
+            case ItemType.KitchenKey:       return "kitchenDoor";
+            default:                        return "cross";
         }
     }
 
@@ -46,6 +63,7 @@ public class Item {
             case ItemType.BasementKey:
             case ItemType.BedroomKey:
             case ItemType.Cross:
+            case ItemType.KitchenKey:
                 return false;
         }
     }

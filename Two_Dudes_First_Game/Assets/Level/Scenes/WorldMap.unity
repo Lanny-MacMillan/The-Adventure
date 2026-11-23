@@ -5628,6 +5628,7 @@ MonoBehaviour:
   BasementKey: {fileID: 21300000, guid: b28161dcced96454f8042b38811717a2, type: 3}
   BedroomKey: {fileID: 21300000, guid: 8a58b5ee9515b45bd9a2daf65f0b474d, type: 3}
   Cross: {fileID: 21300000, guid: 8c8c4134e1ec5462ba2f65108a7cc34d, type: 3}
+  KitchenKey: {fileID: 21300000, guid: 3aac315277a294de6ac829131d5d07e5, type: 3}
 --- !u!4 &320079487
 Transform:
   m_ObjectHideFlags: 0

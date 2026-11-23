@@ -8,8 +8,12 @@ public class ItemWorldSpawner : MonoBehaviour
 
     private void Awake()
     {
+        // don't respawn keys the player already has when coming back to a room
+        if (PlayerPrefs.GetInt(item.PrefKey(), 0) == 0)
+        {
             ItemWorld.SpawnItemWorld(transform.position, item);
-            Destroy(gameObject);
+        }
+        Destroy(gameObject);
     }
 
 

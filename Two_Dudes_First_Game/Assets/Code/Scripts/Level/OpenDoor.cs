@@ -22,6 +22,10 @@ public class OpenDoor : MonoBehaviour
     [SerializeField]
     GameObject playerPrefScript;
 
+    public string SceneName { get { return sceneName; } }
+    public string RequiredKey { get { return requiredKey; } }
+    public Vector2 SpawnPoint { get { return doorPos != null ? (Vector2)doorPos.position : (Vector2)transform.position; } }
+
 
     //// bool states will open doors in OpenDoor.cs
     [Header("Keys Obtained")]
@@ -46,44 +50,28 @@ public class OpenDoor : MonoBehaviour
         treehouseKeyObtained = PlayerPrefs.GetInt("treehouseDoor");
         basementKeyObtained = PlayerPrefs.GetInt("basementDoor");
 
-        if (playerDetected == true)
+        if (playerDetected && UsePressed() && HasKey())
         {
-            if (requiredKey == "None" && UsePressed())
-            {
-                    sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "bedroomKey" && bedroomKeyObtained == 1 && UsePressed())
-            {
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "woodshedKey" && woodshedKeyObtained == 1 && UsePressed())
-            {
-                Debug.Log("woodshedKeyObtained: " + woodshedKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "bathroomKey" && bathroomKeyObtained == 1 && UsePressed())
-            {
-                Debug.Log("bathroomKeyObtained: " + bathroomKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "treehouseKey" && treehouseKeyObtained == 1 && UsePressed())
-            {
-                Debug.Log("treehouseKeyObtained: " + treehouseKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "basementKey" && basementKeyObtained == 1 && UsePressed())
-            {
-                Debug.Log("basementKeyObtained: " + basementKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            return;
+            sceneSwitch.SwitchScene(sceneName);
         }
-        return;
+    }
+
+    // blank or "None" means the door isn't locked
+    public bool HasKey()
+    {
+        switch (requiredKey)
+        {
+            case null:
+            case "":
+            case "None":         return true;
+            case "kitchenKey":   return PlayerPrefs.GetInt("kitchenDoor") == 1;
+            case "bedroomKey":   return PlayerPrefs.GetInt("bedroomDoor") == 1;
+            case "woodshedKey":  return PlayerPrefs.GetInt("woodshedDoor") == 1;
+            case "bathroomKey":  return PlayerPrefs.GetInt("bathroomDoor") == 1;
+            case "treehouseKey": return PlayerPrefs.GetInt("treehouseDoor") == 1;
+            case "basementKey":  return PlayerPrefs.GetInt("basementDoor") == 1;
+            default:             return false;
+        }
     }
 
     private bool UsePressed()

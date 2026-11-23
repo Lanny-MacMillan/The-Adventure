@@ -22,6 +22,8 @@ public class UI_Inventory : MonoBehaviour
     private Sprite basementKey; // 5th
     [SerializeField]
     private Sprite cross; // 6th
+    [SerializeField]
+    private Sprite kitchenKey;
 
 
 
@@ -47,6 +49,12 @@ public class UI_Inventory : MonoBehaviour
 
     private void RefreshInventoryItems ()
     {
+        // a scene's placeholder copy can call this before its Awake ran
+        if (itemSlotContainer == null)
+        {
+            return;
+        }
+
         foreach (Transform child in itemSlotContainer)
         {
             if (child == itemSlotTemplate) continue;
@@ -94,6 +102,10 @@ public class UI_Inventory : MonoBehaviour
             {
                 PlayerPrefs.SetInt("basementDoor", 1);
                 Debug.Log("SET PLAYER PREFS TO 1 FOR : " + image.sprite);
+            }
+            else if (image.sprite == kitchenKey)
+            {
+                PlayerPrefs.SetInt("kitchenDoor", 1);
             }
             else if (image.sprite == cross)
             {

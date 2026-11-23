@@ -9,26 +9,40 @@ public class Cissy : MonoBehaviour
     public bool LeftSide = true;
     public PlayerMovement playerMovement;
 
+    [SerializeField] private float lookThresholdX = 52.55f;
+
     void Update()
     {
+        // the scene's own player copy deletes itself, so follow the player carried in from earlier scenes
+        if (playerMovement == null || playerMovement.gameObject.scene.name != "DontDestroyOnLoad")
+        {
+            playerMovement = FindCarriedPlayer();
+            if (playerMovement == null)
+            {
+                return;
+            }
+        }
+
         // Cissys Eyes based on player location
-        if (playerMovement.lastX >= 52.55)
+        bool right = playerMovement.transform.position.x >= lookThresholdX;
+        if (right != RightSide)
         {
-            Debug.Log("CISSYS_EYE_LOOK_RIGHT");
-
-            RightSide = true;
-            LeftSide = false;
-            animator.SetBool("RightSide", true);
-            animator.SetBool("LeftSide", false);
+            RightSide = right;
+            LeftSide = !right;
+            animator.SetBool("RightSide", right);
+            animator.SetBool("LeftSide", !right);
         }
-        if (playerMovement.lastX < 52.55)
+    }
+
+    private static PlayerMovement FindCarriedPlayer()
+    {
+        foreach (PlayerMovement p in FindObjectsByType<PlayerMovement>(FindObjectsInactive.Exclude))
         {
-            Debug.Log("CISSYS_EYE_LOOK_LEFT");
-
-            LeftSide = true;
-            RightSide = false;
-            animator.SetBool("LeftSide", true);
-            animator.SetBool("RightSide", false);
+            if (p.gameObject.scene.name == "DontDestroyOnLoad")
+            {
+                return p;
+            }
         }
+        return null;
     }
 }
