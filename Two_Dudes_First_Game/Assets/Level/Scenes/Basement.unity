@@ -156,6 +156,8 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior1stFloor
   requiredKey: 
+  changedFlag: 
+  changedSceneName: 
   playerPrefScript: {fileID: 0}
   bedroomKeyObtained: 0
   woodshedKeyObtained: 0
@@ -193,6 +195,14 @@ PrefabInstance:
     - target: {fileID: 1434502660, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_Size.y
       value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582321984575382, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323087200551, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1762582323556915989, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_Name
@@ -242,6 +252,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 1762582323691041927, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323857746842, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -262,6 +280,14 @@ PrefabInstance:
     - target: {fileID: 1434502660, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_Size.y
       value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582321984575382, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323087200551, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1762582323556915989, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_Name
@@ -310,6 +336,14 @@ PrefabInstance:
     - target: {fileID: 1762582323556915990, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323691041927, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323857746842, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -664,6 +698,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.73
       objectReference: {fileID: 0}
+    - target: {fileID: 1762582321984575382, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323087200551, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1762582323556915989, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_Name
       value: Floor
@@ -710,6 +752,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1762582323556915990, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323691041927, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762582323857746842, guid: 52bfe7f29e3154d328491801523feb38, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
