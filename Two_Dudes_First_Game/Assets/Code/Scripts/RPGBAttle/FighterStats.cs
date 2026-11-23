@@ -77,8 +77,9 @@ public class FighterStats : MonoBehaviour, IComparable
 
     public void ReceiveHeal(float heal)
     {
-        Debug.Log("Heal Received!!");
-        health += heal;
+        health = Mathf.Min(startHealth, health + heal);
+        xNewHealthScale = healthScale.x * (health / startHealth);
+        healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
     }
 
     public void ReceiveShield(float defUp)
@@ -127,6 +128,8 @@ public class FighterStats : MonoBehaviour, IComparable
                 Invoke(nameof(PostBathroomScene), 2);
 
             }
+            healthFill.transform.localScale = new Vector2(0, healthScale.y);
+            return; // fight is over, no next turn
 
         } else if ( damage > 0 )
         {

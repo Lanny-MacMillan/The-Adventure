@@ -7,8 +7,12 @@ public class DisableGlobals : MonoBehaviour
     // HUD, inventory and the player are hidden during the turn based fight and brought back by World.cs in the next room
     private static readonly List<GameObject> hidden = new List<GameObject>();
 
+    public static bool InBattle { get; private set; }
+
     private void Awake()
     {
+        InBattle = true;
+
         GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag("Global");
         foreach (GameObject go in gameObjectArray)
         {
@@ -39,6 +43,7 @@ public class DisableGlobals : MonoBehaviour
 
     public static void RestoreGlobals()
     {
+        InBattle = false;
         foreach (GameObject go in hidden)
         {
             if (go != null)

@@ -33,6 +33,11 @@ public class AttackScript : MonoBehaviour
     private float healAmount; // maximum on random scale for defense
 
 
+    [SerializeField]
+    private float shieldAmount = 10; // defense added by Defend, lasts the rest of the fight
+
+    public float MagicCost { get { return magicCost; } }
+
     private FighterStats attackerStats;
     private FighterStats targetStats;
     private float damage = 0.0f;
@@ -77,7 +82,7 @@ public class AttackScript : MonoBehaviour
     public void Shield(GameObject owner)
     {
         targetStats = owner.GetComponent<FighterStats>();
-        targetStats.ReceiveShield(20);
+        targetStats.ReceiveShield(shieldAmount);
 
         Invoke(nameof(SkipTurnContinueGame), 4);
     }
