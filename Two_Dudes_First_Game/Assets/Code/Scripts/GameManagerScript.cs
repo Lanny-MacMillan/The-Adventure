@@ -13,7 +13,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private string firstLevelScene = "WorldMap";
 
     private static GameManagerScript instance;
-    private static readonly string[] doorKeys = { "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor" };
+    private static readonly string[] doorKeys = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross" };
 
     private void Awake()
     {

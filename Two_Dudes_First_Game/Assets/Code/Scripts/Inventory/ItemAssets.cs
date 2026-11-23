@@ -22,5 +22,6 @@ public class ItemAssets : MonoBehaviour
     public Sprite BasementKey;
     public Sprite BedroomKey;
     public Sprite Cross;
+    public Sprite KitchenKey;
 
 }
