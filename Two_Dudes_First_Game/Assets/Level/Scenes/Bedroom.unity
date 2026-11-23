@@ -3123,7 +3123,7 @@ MonoBehaviour:
   transitionTime: 1
   player: {fileID: 0}
   posX: 41
-  posY: -5
+  posY: -7.5
   previous: Attic
 --- !u!1 &1333309521
 GameObject:
