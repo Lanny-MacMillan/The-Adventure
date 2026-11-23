@@ -13,6 +13,8 @@ public class World : SceneSwitch
     {
         base.Start(); // this calls whats inside the start method from its base script (SceneSwitch) while running its own start method
 
+        DisableGlobals.RestoreGlobals();
+
         Transform target = CarriedPlayer();
         if (target == null)
         {
