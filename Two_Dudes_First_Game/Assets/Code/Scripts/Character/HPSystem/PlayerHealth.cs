@@ -31,6 +31,15 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;
             //playerChar.enabled = false;
             playerMovement.enabled = false;
+
+            // freeze the body so enemies can't push the corpse around
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+
             animator.SetBool("isDead", true);
             Invoke(nameof(GameOver), 2);
         }
