@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // this will pause player movement if bathroom dialogue window is open
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (DialogueManager.GetInstance() != null && DialogueManager.GetInstance().dialogueIsPlaying)
         {
             return;
         }
@@ -94,15 +94,15 @@ public class PlayerMovement : MonoBehaviour
         // Jump if player is on the ground, set by IsGrounded()
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             jump = true;
             animator.SetBool("Jump", true);
         }
 
         // Allows the release of jump for shorter or longer jumps
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
         // Salt Attack / Set Animation
@@ -187,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
     }
 
     public void onLanding()
