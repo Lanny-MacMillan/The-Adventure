@@ -1759,6 +1759,8 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior2ndFloor
   requiredKey: None
+  changedFlag: 
+  changedSceneName: 
   playerPrefScript: {fileID: 0}
   bedroomKeyObtained: 0
   woodshedKeyObtained: 0
@@ -3271,8 +3273,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6773850262552165728, guid: 80d4e8434749e4818bd9701f66676564, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2008206649}
   m_SourcePrefab: {fileID: 100100000, guid: 80d4e8434749e4818bd9701f66676564, type: 3}
+--- !u!1 &2008206648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6773850262552165728, guid: 80d4e8434749e4818bd9701f66676564, type: 3}
+  m_PrefabInstance: {fileID: 2008206647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2008206649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008206648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0128776453e64ca087aff524ce994a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetProgressFlag
+  flag: bathroomCleared
 --- !u!1 &2057604286
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,6 +3333,8 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: Attic
   requiredKey: None
+  changedFlag: 
+  changedSceneName: 
   playerPrefScript: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}
   bedroomKeyObtained: 0
   woodshedKeyObtained: 0
