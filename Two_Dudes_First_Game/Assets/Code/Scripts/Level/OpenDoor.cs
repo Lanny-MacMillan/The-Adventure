@@ -33,7 +33,7 @@ public class OpenDoor : MonoBehaviour
 
     private void Start()
     {
-        sceneSwitch = FindObjectOfType<SceneSwitch>();
+        sceneSwitch = FindAnyObjectByType<SceneSwitch>();
     }
 
     private void Update()
@@ -48,35 +48,35 @@ public class OpenDoor : MonoBehaviour
 
         if (playerDetected == true)
         {
-            if (requiredKey == "None" && Input.GetKeyDown(KeyCode.Return))
+            if (requiredKey == "None" && UsePressed())
             {
                     sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "bedroomKey" && bedroomKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "bedroomKey" && bedroomKeyObtained == 1 && UsePressed())
             {
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "woodshedKey" && woodshedKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "woodshedKey" && woodshedKeyObtained == 1 && UsePressed())
             {
                 Debug.Log("woodshedKeyObtained: " + woodshedKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "bathroomKey" && bathroomKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "bathroomKey" && bathroomKeyObtained == 1 && UsePressed())
             {
                 Debug.Log("bathroomKeyObtained: " + bathroomKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "treehouseKey" && treehouseKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "treehouseKey" && treehouseKeyObtained == 1 && UsePressed())
             {
                 Debug.Log("treehouseKeyObtained: " + treehouseKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
             }
             else if
-                (requiredKey == "basementKey" && basementKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
+                (requiredKey == "basementKey" && basementKeyObtained == 1 && UsePressed())
             {
                 Debug.Log("basementKeyObtained: " + basementKeyObtained);
                 sceneSwitch.SwitchScene(sceneName);
@@ -84,6 +84,14 @@ public class OpenDoor : MonoBehaviour
             return;
         }
         return;
+    }
+
+    private bool UsePressed()
+    {
+        return Input.GetKeyDown(KeyCode.Return)
+            || Input.GetKeyDown(KeyCode.KeypadEnter)
+            || Input.GetKeyDown(KeyCode.UpArrow)
+            || Input.GetKeyDown(KeyCode.W);
     }
 
     private void OnDrawGizmosSelected()

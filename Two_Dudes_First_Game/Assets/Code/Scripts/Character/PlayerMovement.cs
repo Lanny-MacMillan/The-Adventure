@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public bool jump = false;
     public float FallingThreshold = -0.01f;  //Adjust in inspector to appropriate value for the speed you want to trigger detecting a fall, probably by just testing (use negative numbers probably)
     float horizontalMove = 0f;
+    private float knockbackTimer = 0f;
 
     //public CharacterController controller;
     public Animator animator;
@@ -187,7 +188,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (knockbackTimer > 0f)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            return;
+        }
+
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+    }
+
+    public void Knockback(Vector2 velocity, float duration)
+    {
+        rb.linearVelocity = velocity;
+        knockbackTimer = duration;
     }
 
     public void onLanding()
