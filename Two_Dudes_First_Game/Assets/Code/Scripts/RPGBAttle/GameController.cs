@@ -13,9 +13,21 @@ public class GameController : MonoBehaviour
 
     public Text battleText;
 
+    // keys 1-4 press the matching button (only while it's showing)
+    private static readonly string[] buttonNames = { "AttackBtn", "MagicBtn", "HealBtn", "DefendBtn" };
+    private readonly Button[] buttons = new Button[4];
+
     private void Awake()
     {
         battleMenu = GameObject.Find("ActionMenu");
+        for (int i = 0; i < buttonNames.Length; i++)
+        {
+            GameObject b = GameObject.Find(buttonNames[i]);
+            if (b != null)
+            {
+                buttons[i] = b.GetComponent<Button>();
+            }
+        }
     }
 
 
@@ -23,6 +35,24 @@ public class GameController : MonoBehaviour
     {
         Invoke(nameof(DelayedStartForAnimation), 4); // This delays the initial battle functions so the intro animation for the boss can play
 
+    }
+
+    void Update()
+    {
+        if (battleMenu == null || !battleMenu.activeInHierarchy)
+        {
+            return;
+        }
+
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if ((Input.GetKeyDown(KeyCode.Alpha1 + i) || Input.GetKeyDown(KeyCode.Keypad1 + i))
+                && buttons[i] != null && buttons[i].gameObject.activeInHierarchy && buttons[i].interactable)
+            {
+                buttons[i].onClick.Invoke();
+                return;
+            }
+        }
     }
 
     void DelayedStartForAnimation()
@@ -60,6 +90,7 @@ public class GameController : MonoBehaviour
 
             if(currentUnit.CompareTag("Hero"))
             {
+                currentUnit.GetComponent<FighterAction>().HeroTurnStarted();
                 this.battleMenu.SetActive(true);
             }
             else
@@ -67,6 +98,10 @@ public class GameController : MonoBehaviour
                 this.battleMenu.SetActive(false);
                 // if randomRange is equal to 1 enemy will melee attack, 0 will magic
                 string attackType = Random.Range(0, 2) == 1 ? "melee" : "magic";
+                if (attackType == "magic" && !currentUnit.GetComponent<FighterAction>().CanCastMagic())
+                {
+                    attackType = "melee"; // out of mana
+                }
                 currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
             }
         }

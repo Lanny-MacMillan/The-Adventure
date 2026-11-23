@@ -3122,7 +3122,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   transitionTime: 1
   player: {fileID: 0}
-  posX: 41
+  posX: 30
   posY: -7.5
   previous: Attic
 --- !u!1 &1333309521

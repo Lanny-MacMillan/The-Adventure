@@ -47,6 +47,14 @@ public class GameManagerScript : MonoBehaviour
 
     void Update()
     {
+        // the turn based fight needs the mouse
+        if (DisableGlobals.InBattle)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            return;
+        }
+
         if (gameOverUI != null && gameOverUI.activeInHierarchy)
         {
             Cursor.visible = true;
