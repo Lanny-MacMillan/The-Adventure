@@ -711,6 +711,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior1stFloor
   requiredKey: None
+  prompt: {fileID: 0}
   changedFlag: 
   changedSceneName: 
   playerPrefScript: {fileID: 1409051550040452872}
@@ -10277,6 +10278,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &549598189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549598191}
+  - component: {fileID: 549598190}
+  m_Layer: 0
+  m_Name: TreehouseSmoke_Roof
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &549598190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549598189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e107ab29d0fa04e45801d120ba99e39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindowSmoke
+  puff: {fileID: 21300000, guid: 008d912eac0d84d9ba3d2874ca8e3fbf, type: 3}
+  openingSize: {x: 0.15, y: 0.08}
+  push: {x: 0.1, y: 0.45}
+  puffsPerSecond: 2.5
+  life: 3.2
+  startSize: 0.2
+  endSize: 0.8
+  color: {r: 0.78, g: 0.8, b: 0.76, a: 0.75}
+  matchSorting: {fileID: 3046106465841156771}
+  stopFlag: frankDefeated
+--- !u!4 &549598191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549598189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.34, y: -1.04, z: -1.6292262}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550639423
 GameObject:
   m_ObjectHideFlags: 0
@@ -22752,6 +22807,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &1209077102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209077104}
+  - component: {fileID: 1209077103}
+  m_Layer: 0
+  m_Name: TreehouseSmoke_Window
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1209077103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209077102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e107ab29d0fa04e45801d120ba99e39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindowSmoke
+  puff: {fileID: 21300000, guid: 008d912eac0d84d9ba3d2874ca8e3fbf, type: 3}
+  openingSize: {x: 0.35, y: 0.45}
+  push: {x: 0.5, y: 0.55}
+  puffsPerSecond: 11
+  life: 3.2
+  startSize: 0.45
+  endSize: 1.8
+  color: {r: 0.78, g: 0.8, b: 0.76, a: 0.75}
+  matchSorting: {fileID: 3046106465841156771}
+  stopFlag: frankDefeated
+--- !u!4 &1209077104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209077102}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.2, y: -1.85, z: -1.6292262}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1216908288
 GameObject:
   m_ObjectHideFlags: 0
@@ -43004,6 +43113,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9262af6974594df6be356c212703e42, type: 3}
+--- !u!212 &3046106465841156771 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3046106467195477546, guid: b9262af6974594df6be356c212703e42, type: 3}
+  m_PrefabInstance: {fileID: 3046106465841156770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3120704687024769543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44056,3 +44170,5 @@ SceneRoots:
   - {fileID: 1025807473}
   - {fileID: 1409051550040452871}
   - {fileID: 609753618}
+  - {fileID: 1209077104}
+  - {fileID: 549598191}

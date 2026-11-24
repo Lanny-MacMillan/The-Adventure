@@ -377,6 +377,7 @@ MonoBehaviour:
   gameOverUI: {fileID: 7707579429365657527, guid: 2a029dece4e184655945e225d8ab2dc4, type: 3}
   animator: {fileID: 0}
   firstLevelScene: WorldMap
+  titleScene: TitleScreen
 --- !u!4 &147958078
 Transform:
   m_ObjectHideFlags: 0
@@ -801,7 +802,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RESTART
+  m_text: TRY AGAIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5eab52933893b4e158a2f184c09d7056, type: 2}
   m_sharedMaterial: {fileID: -747859557545494545, guid: 5eab52933893b4e158a2f184c09d7056, type: 2}
@@ -2419,7 +2420,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManagerScript, Assembly-CSharp
-        m_MethodName: restart
+        m_MethodName: TryAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3013,6 +3014,7 @@ MonoBehaviour:
     m_Bits: 128
   sceneName: HouseInterior1stFloor
   requiredKey: None
+  prompt: {fileID: 0}
   changedFlag: 
   changedSceneName: 
   playerPrefScript: {fileID: 1409051548733799363, guid: e3f41eb6777a640158e44b2980e87e9d, type: 3}

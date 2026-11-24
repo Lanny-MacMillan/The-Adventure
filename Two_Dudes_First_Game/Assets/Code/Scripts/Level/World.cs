@@ -9,6 +9,11 @@ public class World : SceneSwitch
     public float posY;
     public string previous;
 
+    // Try Again puts you back where you entered the room
+    public static bool Retrying;
+    private static string arrivalScene;
+    private static Vector2 arrivalPoint;
+
     public override void Start()
     {
         base.Start(); // this calls whats inside the start method from its base script (SceneSwitch) while running its own start method
@@ -44,6 +49,15 @@ public class World : SceneSwitch
         {
             Place(target, new Vector2(posX, posY));
         }
+
+        string scene = gameObject.scene.name;
+        if (Retrying && arrivalScene == scene)
+        {
+            Place(target, arrivalPoint);
+        }
+        Retrying = false;
+        arrivalScene = scene;
+        arrivalPoint = target.position;
     }
 
     private static void Place(Transform target, Vector2 position)

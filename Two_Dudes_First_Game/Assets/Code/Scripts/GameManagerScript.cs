@@ -73,6 +73,25 @@ public class GameManagerScript : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
+    // Game Over: keep your keys, start the room again from where you came in
+    public void TryAgain()
+    {
+        Time.timeScale = 1f;
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(false);
+        }
+        foreach (PlayerHealth p in FindObjectsByType<PlayerHealth>(FindObjectsInactive.Include))
+        {
+            if (p.gameObject.scene.name == "DontDestroyOnLoad")
+            {
+                p.Revive();
+            }
+        }
+        World.Retrying = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     // fresh start: reset keys, clear everything carried between scenes, reload the World Map
     public void restart()
     {
