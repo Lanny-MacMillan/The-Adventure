@@ -35,7 +35,7 @@ Each door knob is colored to match its key.
 | # | Key | Where you find it | What it opens |
 |---|---|---|---|
 | 1 | Kitchen key | House, 1st floor, on the floor just outside the kitchen door | Kitchen (1st floor) |
-| 2 | Bedroom key | Kitchen, on the floor | Bedroom (2nd floor) |
+| 2 | Bedroom key | Kitchen, on the floor in the far left corner (get past **Skinny Dude**) | Bedroom (2nd floor) |
 | 3 | Woodshed key | Bedroom: beat the **closet demon's riddles** | Woodshed (far right of the WorldMap) |
 | 4 | Bathroom key | Woodshed: solve the **lever puzzle** and the key drops down the shelves | Bathroom (2nd floor) |
 | 5 | Ladder to the Attic | Bathroom: beat **Candy Dude** | The bathroom becomes the wrecked bathroom with a rope ladder up to the Attic |
@@ -52,6 +52,13 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - Three ghosts drift around outside.
 - Each takes **2 salt hits** to kill.
 - Touching one costs you a heart.
+
+### Skinny Dude (Kitchen)
+- The kitchen looks empty when you walk in. Once you pass the fridge with your back to it, he's standing in the fridge light behind you.
+- **He only moves while your back is turned.** Face him and he freezes instantly. He twitches while he moves.
+- Touching him costs a heart, even while he's frozen. He then snaps back about 2 units, so he can't pin you in the corner.
+- **How to get out:** grab the Bedroom key, turn to face him, **jump over him** and head for the door. He follows, but slower than you walk.
+- After you have the Bedroom key, he just stands in the fridge light and stares. He's harmless.
 
 ### Closet demon (Bedroom)
 - Walk up to the closet and talk to him. He asks **3 riddles**, each with 3 answers:
@@ -170,7 +177,7 @@ Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap*
 | Reset Progress | Clears all keys and flags |
 
 ## Still to come
-- Kitchen: Skinny Dude
+- Kitchen: gore "after" kitchen art (the other dude's head)
 - Attic gameplay
 - Basement Doom maze
 - Tree platforming rebuild
