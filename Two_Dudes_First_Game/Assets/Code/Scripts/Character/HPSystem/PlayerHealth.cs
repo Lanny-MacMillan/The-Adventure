@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     public Color hurtColor = new Color(1f, 0.35f, 0.35f, 1f);
 
     private bool invincible;
+    private RigidbodyConstraints2D aliveConstraints = RigidbodyConstraints2D.FreezeRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +85,7 @@ public class PlayerHealth : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
+            aliveConstraints = rb.constraints;
             rb.linearVelocity = Vector2.zero;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
@@ -123,7 +125,39 @@ public class PlayerHealth : MonoBehaviour
         {
             gameManager.gameOver();
         }
-        Destroy(playerChar);
+        if (playerChar != null)
+        {
+            playerChar.enabled = false;
+        }
+    }
 
+    // Try Again from Game Over: back on your feet with full hearts
+    public void Revive()
+    {
+        CancelInvoke(nameof(GameOver));
+        StopAllCoroutines();
+        isDead = false;
+        invincible = false;
+        health = maxHealth;
+        if (playerChar != null)
+        {
+            playerChar.enabled = true;
+            playerChar.color = Color.white;
+        }
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.constraints = aliveConstraints;
+            rb.linearVelocity = Vector2.zero;
+        }
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = true;
+        }
+        if (animator != null)
+        {
+            animator.Rebind();
+            animator.Update(0f);
+        }
     }
 }
