@@ -11,6 +11,10 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
+    [Header("After it's done")]
+    [SerializeField] private string doneFlag;
+    [SerializeField] private string doneKnot = "after_key";
+
     private bool playerInRange;
 
     private void Awake()
@@ -21,12 +25,14 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        DialogueManager manager = DialogueManager.GetInstance();
+        if (playerInRange && manager != null && !manager.dialogueIsPlaying && !PauseMenu.IsPaused)
         {
             visualCue.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                bool done = !string.IsNullOrEmpty(doneFlag) && PlayerPrefs.GetInt(doneFlag) == 1;
+                manager.EnterDialogueMode(inkJSON, done ? doneKnot : null);
             }
         }
         else

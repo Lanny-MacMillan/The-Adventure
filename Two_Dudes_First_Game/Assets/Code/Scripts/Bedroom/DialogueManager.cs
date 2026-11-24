@@ -36,6 +36,9 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
+    // story tags other than speaker, e.g. "give: WoodShedKey"
+    public static event System.Action<string, string> TagReceived;
+
     private bool canContinueToNextLine = false;
 
     private Coroutine displayLineCoroutine;
@@ -126,15 +129,31 @@ public class DialogueManager : MonoBehaviour
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (canContinueToNextLine
             && currentStory.currentChoices.Count == 0
-            && Input.GetKeyDown(KeyCode.Return))
+            && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space)))
         {
             ContinueStory();
         }
+
+        if (canContinueToNextLine)
+        {
+            for (int i = 0; i < currentStory.currentChoices.Count && i < 9; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i) || Input.GetKeyDown(KeyCode.Keypad1 + i))
+                {
+                    MakeChoice(i);
+                    break;
+                }
+            }
+        }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, string startKnot = null)
     {
         currentStory = new Story(inkJSON.text);
+        if (!string.IsNullOrEmpty(startKnot))
+        {
+            currentStory.ChoosePathString(startKnot);
+        }
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -334,7 +353,10 @@ public class DialogueManager : MonoBehaviour
                 //    SetCurrentAudioInfo(tagValue);
                     //break;
                 default:
-                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                    if (TagReceived != null)
+                    {
+                        TagReceived(tagKey, tagValue);
+                    }
                     break;
             }
         }
