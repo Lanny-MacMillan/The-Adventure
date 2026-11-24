@@ -47,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public Inventory GetInventory()
+    {
+        return inventory;
+    }
+
     void Start()
     {
         lastY = transform.position.y;
