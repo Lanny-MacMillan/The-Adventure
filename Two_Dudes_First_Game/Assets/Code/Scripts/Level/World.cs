@@ -48,6 +48,7 @@ public class World : SceneSwitch
 
     private static void Place(Transform target, Vector2 position)
     {
+        position = OnGround(target, position);
         target.position = new Vector3(position.x, position.y, target.position.z);
         Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -55,6 +56,36 @@ public class World : SceneSwitch
             rb.position = position;
             rb.linearVelocity = Vector2.zero;
         }
+    }
+
+    // stand on whatever floor is below the spawn point instead of dropping onto it
+    private static Vector2 OnGround(Transform target, Vector2 position)
+    {
+        Collider2D body = null;
+        foreach (Collider2D c in target.GetComponents<Collider2D>())
+        {
+            if (!c.isTrigger)
+            {
+                body = c;
+                break;
+            }
+        }
+        if (body == null)
+        {
+            return position;
+        }
+
+        float feet = body.bounds.min.y - target.position.y;
+        Physics2D.SyncTransforms();
+        foreach (RaycastHit2D hit in Physics2D.RaycastAll(position + Vector2.up * 0.5f, Vector2.down, 6f))
+        {
+            if (hit.collider.isTrigger || hit.collider.transform.IsChildOf(target))
+            {
+                continue;
+            }
+            return new Vector2(position.x, hit.point.y - feet + 0.01f);
+        }
+        return position;
     }
 
     // the player carried over from earlier scenes, not this scene's placeholder copy (which deletes itself)

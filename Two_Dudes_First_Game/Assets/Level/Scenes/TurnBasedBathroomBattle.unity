@@ -285,6 +285,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4156690309046716665, guid: ccf993c925e174cd89129bd9f21245e4, type: 3}
+      propertyPath: impactDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156690309046716665, guid: ccf993c925e174cd89129bd9f21245e4, type: 3}
       propertyPath: maxAttackMultiplier
       value: 1
       objectReference: {fileID: 0}
@@ -518,6 +522,10 @@ PrefabInstance:
     - target: {fileID: 4156690309046716665, guid: ccf993c925e174cd89129bd9f21245e4, type: 3}
       propertyPath: magicCost
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156690309046716665, guid: ccf993c925e174cd89129bd9f21245e4, type: 3}
+      propertyPath: impactDelay
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4156690309046716665, guid: ccf993c925e174cd89129bd9f21245e4, type: 3}
       propertyPath: animationName
@@ -822,6 +830,10 @@ PrefabInstance:
     - target: {fileID: 1510216990221639136, guid: 20651e71543fb40c7a04b61038355eab, type: 3}
       propertyPath: healAmount
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510216990221639136, guid: 20651e71543fb40c7a04b61038355eab, type: 3}
+      propertyPath: impactDelay
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1510216990221639136, guid: 20651e71543fb40c7a04b61038355eab, type: 3}
       propertyPath: maxAttackMultiplier
@@ -1198,7 +1210,7 @@ MonoBehaviour:
   tooltipText: {fileID: 619862652}
   description: '<b>[2] Magic</b>
 
-    About 50 damage. Costs 20 mana - two casts per fight.'
+    About 50 damage. Costs 20 mana. Mana slowly comes back, 5 per turn.'
 --- !u!4 &508724826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5124434650408374243, guid: 20e3cdba9592141bf8a27bb47c8f6557, type: 3}
@@ -3322,6 +3334,7 @@ MonoBehaviour:
   animatorShield: {fileID: 0}
   animatorHero: {fileID: 0}
   healCooldownTurns: 3
+  magicRegenPerTurn: 5
 --- !u!114 &1410469696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3344,6 +3357,8 @@ MonoBehaviour:
   defense: 5
   speed: 6
   experience: 0
+  knockback: 0.4
+  hitColor: {r: 1, g: 0.25, b: 0.25, a: 1}
   nextActTurn: 0
 --- !u!95 &1410469697
 Animator:
@@ -3706,6 +3721,7 @@ MonoBehaviour:
   animatorShield: {fileID: 1321696199}
   animatorHero: {fileID: 1474264304}
   healCooldownTurns: 3
+  magicRegenPerTurn: 5
 --- !u!114 &1474264302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3728,6 +3744,8 @@ MonoBehaviour:
   defense: 4
   speed: 5
   experience: 0
+  knockback: 0.4
+  hitColor: {r: 1, g: 0.25, b: 0.25, a: 1}
   nextActTurn: 0
 --- !u!95 &1474264304
 Animator:

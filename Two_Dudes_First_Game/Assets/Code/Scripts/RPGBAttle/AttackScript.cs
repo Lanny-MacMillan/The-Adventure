@@ -34,7 +34,10 @@ public class AttackScript : MonoBehaviour
 
 
     [SerializeField]
-    private float shieldAmount = 10; // defense added by Defend, lasts the rest of the fight
+    private float shieldAmount = 10;
+
+    [SerializeField]
+    private float impactDelay = 0.6f; // seconds until the hit visibly lands // defense added by Defend, lasts the rest of the fight
 
     public float MagicCost { get { return magicCost; } }
 
@@ -62,7 +65,7 @@ public class AttackScript : MonoBehaviour
 
             owner.GetComponent<Animator>().Play(animationName); // plays player or boss animations
 
-            targetStats.ReceiveDamage(Mathf.CeilToInt(damage)); // damage animation itself is delayed, 1s
+            targetStats.ReceiveDamage(Mathf.CeilToInt(damage), impactDelay); // damage animation itself is delayed, 1s
             attackerStats.UpdateMagicFill(magicCost);
         }
         else

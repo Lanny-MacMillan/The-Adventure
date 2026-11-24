@@ -128,11 +128,14 @@ public class FighterAction : MonoBehaviour
     }
 
     [SerializeField] private int healCooldownTurns = 3;
+    [SerializeField] private float magicRegenPerTurn = 5f;
     private int healCooldown;
 
     // heal button comes back after a few of the hero's turns
     public void HeroTurnStarted()
     {
+        GetComponent<FighterStats>().RegenMagic(magicRegenPerTurn);
+
         if (healCooldown > 0)
         {
             healCooldown--;
