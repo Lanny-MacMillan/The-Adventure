@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Frank / Possessed Matt, the Treehouse boss. Spits, belly-flops so goo rains from the ceiling, and gets meaner as he's hurt.
 public class FrankBoss : MonoBehaviour
@@ -8,6 +9,12 @@ public class FrankBoss : MonoBehaviour
     [Header("Health")]
     [SerializeField] private int maxHealth = 45;
     [SerializeField] private string defeatedFlag = "frankDefeated";
+
+    [Header("Cure (holy water from the fountain secret)")]
+    [SerializeField] private string holyWaterFlag = "holyWater";
+    [SerializeField] private string curedFlag = "frankCured";
+    [SerializeField] private Color cureColor = new Color(0.55f, 0.85f, 1f, 1f);
+    [SerializeField] private TextAsset curedInk;
 
     [Header("Look")]
     [SerializeField] private SpriteRenderer body;
@@ -55,6 +62,7 @@ public class FrankBoss : MonoBehaviour
     private bool posed;
     private int idleFrame;
     private float idleTimer;
+    private bool curing;
 
     private int Phase { get { return health > maxHealth * 2 / 3 ? 1 : health > maxHealth / 3 ? 2 : 3; } }
     private float Speed { get { return Phase == 3 ? 1.35f : Phase == 2 ? 1.15f : 1f; } }
@@ -71,11 +79,17 @@ public class FrankBoss : MonoBehaviour
             {
                 reward.SetActive(true);
             }
+            if (PlayerPrefs.GetInt(curedFlag) == 1)
+            {
+                body.sprite = calmSprite; // just Frank again, chilling
+                return;
+            }
             gameObject.SetActive(false);
             return;
         }
 
         health = maxHealth;
+        curing = PlayerPrefs.GetInt(holyWaterFlag) == 1;
         player = CarriedPlayer();
         baseScale = transform.localScale;
         body.sprite = calmSprite;
@@ -148,7 +162,7 @@ public class FrankBoss : MonoBehaviour
         if (health == 0)
         {
             StopAllCoroutines();
-            StartCoroutine(Die());
+            StartCoroutine(curing ? Cured() : Die());
         }
         return true;
     }
@@ -201,6 +215,22 @@ public class FrankBoss : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetActive(true);
+            if (curing)
+            {
+                // the bar fills up as the holy water works instead of draining
+                TMPro.TMP_Text label = healthBar.GetComponentInChildren<TMPro.TMP_Text>(true);
+                if (label != null)
+                {
+                    label.text = "CURE";
+                    label.color = cureColor;
+                }
+                Image fill = healthFill != null ? healthFill.GetComponent<Image>() : null;
+                if (fill != null)
+                {
+                    fill.color = cureColor;
+                }
+                UpdateBar();
+            }
         }
         UpdateBar();
         yield return new WaitForSeconds(0.8f);
@@ -513,9 +543,74 @@ public class FrankBoss : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
     }
 
+    // holy water burns the thing out of him and Frank's left sitting there, soaked
+    private IEnumerator Cured()
+    {
+        dead = true;
+        fighting = false;
+        foreach (GameObject g in hazards)
+        {
+            if (g != null)
+            {
+                Destroy(g);
+            }
+        }
+        if (cam != null)
+        {
+            cam.position = camHome;
+        }
+        posed = true;
+        transform.localScale = new Vector3(baseScale.x * Mathf.Sign(transform.localScale.x), baseScale.y, baseScale.z);
+        transform.position = new Vector3(transform.position.x, Ground(), transform.position.z);
+        StartCoroutine(Shake(1.2f, 0.1f));
+
+        float homeX = transform.position.x;
+        for (float t = 0f; t < 1.4f; t += Time.deltaTime)
+        {
+            body.color = (Mathf.FloorToInt(t / 0.06f) % 2 == 0) ? cureColor : Color.white;
+            body.sprite = (Mathf.FloorToInt(t / 0.12f) % 3 == 0) ? calmSprite : possessedSprite;
+            transform.position = new Vector3(homeX + Random.Range(-0.05f, 0.05f), Ground(), transform.position.z);
+            yield return null;
+        }
+        transform.position = new Vector3(homeX, Ground(), transform.position.z);
+        body.color = Color.white;
+        body.sprite = calmSprite;
+        possessed = false;
+        yield return Squash(1.2f, 0.75f, 0.3f);
+
+        PlayerPrefs.SetInt(defeatedFlag, 1);
+        PlayerPrefs.SetInt(curedFlag, 1);
+        PlayerPrefs.Save();
+        if (healthBar != null)
+        {
+            healthBar.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(0.6f);
+        DialogueManager manager = DialogueManager.GetInstance();
+        if (manager != null && curedInk != null)
+        {
+            manager.EnterDialogueMode(curedInk);
+            while (manager.dialogueIsPlaying)
+            {
+                yield return null;
+            }
+        }
+
+        if (exitDoor != null)
+        {
+            exitDoor.enabled = true;
+        }
+        if (reward != null)
+        {
+            reward.transform.position = new Vector3(Clamp(homeX + (homeX > 0f ? -0.9f : 0.9f)), reward.transform.position.y, reward.transform.position.z);
+            reward.SetActive(true);
+        }
+    }
+
     private IEnumerator HitFlash()
     {
-        body.color = hitColor;
+        body.color = curing ? Color.white : hitColor;
         yield return new WaitForSeconds(0.08f);
         if (!dead)
         {
@@ -560,7 +655,8 @@ public class FrankBoss : MonoBehaviour
     {
         if (healthFill != null)
         {
-            healthFill.localScale = new Vector3((float)health / maxHealth, 1f, 1f);
+            float k = (float)health / maxHealth;
+            healthFill.localScale = new Vector3(curing ? 1f - k : k, 1f, 1f);
         }
     }
 
