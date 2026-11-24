@@ -115,7 +115,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             // Instantiate salt prefab at the launch offset position, facing charaters direction
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            SaltBehaviour salt = Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            salt.facingRight = isFacingRight;
             animator.SetBool("Attack", true);
             //animator.SetBool("Attack", false);
         }
