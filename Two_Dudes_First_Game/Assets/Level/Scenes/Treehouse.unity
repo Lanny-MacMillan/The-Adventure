@@ -1847,6 +1847,31 @@ MonoBehaviour:
   gooColor: {r: 0.55, g: 1, b: 0.35, a: 1}
   hitColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   enragedColor: {r: 0.7, g: 1, b: 0.6, a: 1}
+  idleFrames:
+  - {fileID: 21300000, guid: c6537a2c1121a4a44bb0e2e0babdeab3, type: 3}
+  - {fileID: 21300000, guid: 0c3d0af8b0eb74699b784c0b531ba845, type: 3}
+  - {fileID: 21300000, guid: 0c9e8bae6dcdc42f8a2459ad5993035a, type: 3}
+  - {fileID: 21300000, guid: df93a05b987df436da74447c0470de0d, type: 3}
+  spitWindupFrames:
+  - {fileID: 21300000, guid: 1106925e1369642c3ad73fe6a7272c4c, type: 3}
+  spitFrames:
+  - {fileID: 21300000, guid: 581bf6acabbf9482ba9deb19776f91a1, type: 3}
+  crouchFrames:
+  - {fileID: 21300000, guid: fc2c49854301b48a1bfb6d829c9c31fb, type: 3}
+  airFrames:
+  - {fileID: 21300000, guid: 4cdb2728d4c1248d0a4b814eba1a9646, type: 3}
+  landFrames:
+  - {fileID: 21300000, guid: 07678c62e7bea4429a33e19ba585baa6, type: 3}
+  meltFrames:
+  - {fileID: 21300000, guid: 2e721a688692a45039aab331af3f631e, type: 3}
+  - {fileID: 21300000, guid: fe49a45b62fc1454bb38bb45365fde99, type: 3}
+  - {fileID: 21300000, guid: a8036b97ff38b48fc952c67f389d315f, type: 3}
+  - {fileID: 21300000, guid: ef1c2e4fad1294eb4b29c49e8a666143, type: 3}
+  - {fileID: 21300000, guid: 00c2ba2ba44e64ae2b49b11c2603d313, type: 3}
+  - {fileID: 21300000, guid: a5cbceb6c0c4a422c83a28137bbe22d8, type: 3}
+  - {fileID: 21300000, guid: f2daad6427e26436e99f620efeb3464c, type: 3}
+  - {fileID: 21300000, guid: 96703db848afc43828725a2501f3a004, type: 3}
+  meltTime: 1.6
   roomLeft: -3.3
   roomRight: 3.5
   ceilingY: 3.1

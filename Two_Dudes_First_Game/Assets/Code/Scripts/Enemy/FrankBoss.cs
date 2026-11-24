@@ -19,6 +19,16 @@ public class FrankBoss : MonoBehaviour
     [SerializeField] private Color hitColor = new Color(1f, 0.3f, 0.3f, 1f);
     [SerializeField] private Color enragedColor = new Color(0.7f, 1f, 0.6f, 1f);
 
+    [Header("Animation (placeholders until Mike's frames; empty = squash/stretch only)")]
+    [SerializeField] private Sprite[] idleFrames;
+    [SerializeField] private Sprite[] spitWindupFrames;
+    [SerializeField] private Sprite[] spitFrames;
+    [SerializeField] private Sprite[] crouchFrames;
+    [SerializeField] private Sprite[] airFrames;
+    [SerializeField] private Sprite[] landFrames;
+    [SerializeField] private Sprite[] meltFrames;
+    [SerializeField] private float meltTime = 1.6f;
+
     [Header("Room")]
     [SerializeField] private float roomLeft = -3.3f;
     [SerializeField] private float roomRight = 3.5f;
@@ -41,6 +51,10 @@ public class FrankBoss : MonoBehaviour
     private Vector3 baseScale;
     private readonly List<GameObject> hazards = new List<GameObject>();
     private PlayerHealth player;
+    private bool possessed;
+    private bool posed;
+    private int idleFrame;
+    private float idleTimer;
 
     private int Phase { get { return health > maxHealth * 2 / 3 ? 1 : health > maxHealth / 3 ? 2 : 3; } }
     private float Speed { get { return Phase == 3 ? 1.35f : Phase == 2 ? 1.15f : 1f; } }
@@ -88,6 +102,37 @@ public class FrankBoss : MonoBehaviour
                 cam.position = camHome;
             }
         }
+    }
+
+    // twitchy idle between attacks
+    private void LateUpdate()
+    {
+        if (dead || !possessed || posed || idleFrames == null || idleFrames.Length == 0)
+        {
+            return;
+        }
+        idleTimer -= Time.deltaTime;
+        if (idleTimer <= 0f)
+        {
+            idleFrame = (idleFrame + 1) % idleFrames.Length;
+            body.sprite = idleFrames[idleFrame];
+            idleTimer = idleFrame == 0 ? Random.Range(0.25f, 0.7f) : Random.Range(0.06f, 0.16f) / Speed;
+        }
+    }
+
+    private void Pose(Sprite[] frames, int index = 0)
+    {
+        if (frames != null && frames.Length > 0)
+        {
+            posed = true;
+            body.sprite = frames[Mathf.Min(index, frames.Length - 1)];
+        }
+    }
+
+    private void EndPose()
+    {
+        posed = false;
+        idleTimer = 0f;
     }
 
     // salt calls this; false if he can't be hurt right now
@@ -146,6 +191,7 @@ public class FrankBoss : MonoBehaviour
         }
         transform.position = new Vector3(homeX, Ground(), transform.position.z);
         body.sprite = possessedSprite;
+        possessed = true;
         StartCoroutine(Shake(0.35f, 0.15f));
         StartCoroutine(Squash(1.25f, 0.8f, 0.25f));
         if (exitDoor != null)
@@ -226,6 +272,7 @@ public class FrankBoss : MonoBehaviour
 
         // windup: puff up and go green
         body.color = gooColor;
+        Pose(spitWindupFrames);
         yield return Squash(0.85f, 1.2f, 0.45f / Speed);
         body.color = tint;
 
@@ -234,6 +281,7 @@ public class FrankBoss : MonoBehaviour
         {
             yield break;
         }
+        Pose(spitFrames);
         Vector2 mouth = MouthPosition();
         if (Phase == 1 || Phase == 3)
         {
@@ -254,6 +302,7 @@ public class FrankBoss : MonoBehaviour
         }
         yield return Squash(1.1f, 0.9f, 0.15f);
         yield return new WaitForSeconds(0.3f / Speed);
+        EndPose();
     }
 
     private IEnumerator Slam()
@@ -266,14 +315,17 @@ public class FrankBoss : MonoBehaviour
         Face(player.position.x);
 
         // crouch
+        Pose(crouchFrames);
         yield return Squash(1.25f, 0.7f, 0.4f / Speed);
+        Pose(airFrames);
 
         player = Player();
         float startX = transform.position.x;
         float targetX = Clamp(player != null ? player.position.x : startX);
         float air = 0.8f / Speed;
         float height = 2.2f;
-        transform.localScale = new Vector3(baseScale.x * 0.85f * Mathf.Sign(transform.localScale.x), baseScale.y * 1.2f, baseScale.z);
+        float stretch = Animated ? 0.35f : 1f;
+        transform.localScale = new Vector3(baseScale.x * (1f - 0.15f * stretch) * Mathf.Sign(transform.localScale.x), baseScale.y * (1f + 0.2f * stretch), baseScale.z);
         for (float t = 0f; t < air; t += Time.deltaTime)
         {
             float k = t / air;
@@ -286,6 +338,7 @@ public class FrankBoss : MonoBehaviour
 
         // land: shake, goo off the ceiling, shockwave later on
         StartCoroutine(Shake(0.25f, 0.18f));
+        Pose(landFrames);
         StartCoroutine(Squash(1.35f, 0.65f, 0.2f));
         if (Phase >= 2)
         {
@@ -295,6 +348,7 @@ public class FrankBoss : MonoBehaviour
         int drips = Phase == 1 ? 3 : Phase == 2 ? 5 : 6;
         DropGoo(drips);
         yield return new WaitForSeconds(0.5f / Speed);
+        EndPose();
     }
 
     private void DropGoo(int count)
@@ -416,14 +470,29 @@ public class FrankBoss : MonoBehaviour
             transform.position = new Vector3(transform.position.x + Random.Range(-0.03f, 0.03f), Ground(), transform.position.z);
             yield return null;
         }
-        body.color = gooColor;
-        Vector3 s = transform.localScale;
-        for (float t = 0f; t < 1.4f; t += Time.deltaTime)
+        if (meltFrames != null && meltFrames.Length > 0)
         {
-            float k = t / 1.4f;
-            transform.localScale = new Vector3(s.x * (1f + 0.8f * k), s.y * (1f - 0.92f * k), s.z);
+            posed = true;
+            body.color = Color.white;
+            transform.localScale = new Vector3(baseScale.x * Mathf.Sign(transform.localScale.x), baseScale.y, baseScale.z);
             transform.position = new Vector3(transform.position.x, Ground(), transform.position.z);
-            yield return null;
+            for (int i = 0; i < meltFrames.Length; i++)
+            {
+                body.sprite = meltFrames[i];
+                yield return new WaitForSeconds(meltTime / meltFrames.Length);
+            }
+        }
+        else
+        {
+            body.color = gooColor;
+            Vector3 s = transform.localScale;
+            for (float t = 0f; t < 1.4f; t += Time.deltaTime)
+            {
+                float k = t / 1.4f;
+                transform.localScale = new Vector3(s.x * (1f + 0.8f * k), s.y * (1f - 0.92f * k), s.z);
+                transform.position = new Vector3(transform.position.x, Ground(), transform.position.z);
+                yield return null;
+            }
         }
 
         PlayerPrefs.SetInt(defeatedFlag, 1);
@@ -454,8 +523,16 @@ public class FrankBoss : MonoBehaviour
         }
     }
 
+    private bool Animated { get { return idleFrames != null && idleFrames.Length > 0; } }
+
     private IEnumerator Squash(float x, float y, float time)
     {
+        if (Animated)
+        {
+            // the frames do most of the work, keep a little bounce
+            x = 1f + (x - 1f) * 0.35f;
+            y = 1f + (y - 1f) * 0.35f;
+        }
         float sign = Mathf.Sign(transform.localScale.x);
         transform.localScale = new Vector3(baseScale.x * x * sign, baseScale.y * y, baseScale.z);
         transform.position = new Vector3(transform.position.x, Ground(), transform.position.z);
