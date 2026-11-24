@@ -23,4 +23,13 @@ public class TitleScreenMenu : MonoBehaviour
     {
         SceneManager.LoadScene(characterSelectScene);
     }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

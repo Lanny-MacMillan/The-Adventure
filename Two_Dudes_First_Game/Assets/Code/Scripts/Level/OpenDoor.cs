@@ -64,7 +64,7 @@ public class OpenDoor : MonoBehaviour
         treehouseKeyObtained = PlayerPrefs.GetInt("treehouseDoor");
         basementKeyObtained = PlayerPrefs.GetInt("basementDoor");
 
-        if (playerDetected && UsePressed() && HasKey())
+        if (playerDetected && !PauseMenu.IsPaused && UsePressed() && HasKey())
         {
             sceneSwitch.SwitchScene(SceneName);
         }
