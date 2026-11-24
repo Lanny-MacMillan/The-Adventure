@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private bool inlineSpeakerName = true; // Mike's box: "CLOSET DEMON: line..." in one block
+    [SerializeField] private Color speakerColor = new Color(0.88f, 0.1f, 0.1f);
     //[SerializeField] private Animator portraitAnimator;
     //private Animator layoutAnimator;
 
@@ -35,6 +37,9 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
+
+    // story tags other than speaker, e.g. "give: WoodShedKey"
+    public static event System.Action<string, string> TagReceived;
 
     private bool canContinueToNextLine = false;
 
@@ -126,15 +131,31 @@ public class DialogueManager : MonoBehaviour
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (canContinueToNextLine
             && currentStory.currentChoices.Count == 0
-            && Input.GetKeyDown(KeyCode.Return))
+            && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space)))
         {
             ContinueStory();
         }
+
+        if (canContinueToNextLine)
+        {
+            for (int i = 0; i < currentStory.currentChoices.Count && i < 9; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i) || Input.GetKeyDown(KeyCode.Keypad1 + i))
+                {
+                    MakeChoice(i);
+                    break;
+                }
+            }
+        }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, string startKnot = null)
     {
         currentStory = new Story(inkJSON.text);
+        if (!string.IsNullOrEmpty(startKnot))
+        {
+            currentStory.ChoosePathString(startKnot);
+        }
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -196,8 +217,15 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator DisplayLine(string line)
     {
         // set the text to the full line, but set the visible characters to 0
-        dialogueText.text = line;
-        dialogueText.maxVisibleCharacters = 0;
+        string prefix = "";
+        int prefixLength = 0;
+        if (inlineSpeakerName && displayNameText != null && !string.IsNullOrEmpty(displayNameText.text))
+        {
+            prefix = "<color=#" + ColorUtility.ToHtmlStringRGB(speakerColor) + ">" + displayNameText.text + ":</color> ";
+            prefixLength = displayNameText.text.Length + 2;
+        }
+        dialogueText.text = prefix + line;
+        dialogueText.maxVisibleCharacters = prefixLength;
         // hide items while text is typing
         continueIcon.SetActive(false);
         HideChoices();
@@ -212,7 +240,7 @@ public class DialogueManager : MonoBehaviour
             // if the submit button is pressed, finish up displaying the line right away
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                dialogueText.maxVisibleCharacters = line.Length;
+                dialogueText.maxVisibleCharacters = prefixLength + line.Length;
                 break;
             }
 
@@ -334,7 +362,10 @@ public class DialogueManager : MonoBehaviour
                 //    SetCurrentAudioInfo(tagValue);
                     //break;
                 default:
-                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                    if (TagReceived != null)
+                    {
+                        TagReceived(tagKey, tagValue);
+                    }
                     break;
             }
         }
@@ -356,7 +387,7 @@ public class DialogueManager : MonoBehaviour
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
+            choicesText[index].text = (index + 1) + ". " + choice.text;
             index++;
         }
         // go through the remaining choices the UI supports and make sure they're hidden

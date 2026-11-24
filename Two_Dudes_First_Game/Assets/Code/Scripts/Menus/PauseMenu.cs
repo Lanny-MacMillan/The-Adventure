@@ -34,6 +34,11 @@ public class PauseMenu : MonoBehaviour
         {
             return false;
         }
+        DialogueManager dialogue = DialogueManager.GetInstance();
+        if (dialogue != null && dialogue.dialogueIsPlaying)
+        {
+            return false;
+        }
         PlayerHealth player = FindAnyObjectByType<PlayerHealth>();
         return player == null || !player.isDead;
     }
