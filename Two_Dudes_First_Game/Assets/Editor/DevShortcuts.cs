@@ -4,7 +4,7 @@ using UnityEngine;
 // Editor-only test shortcuts (Franks Revenge > Dev menu). Not included in builds.
 public static class DevShortcuts
 {
-    private static readonly string[] allProgress = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks", "woodshedSolved" };
+    private static readonly string[] allProgress = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks", "woodshedSolved", "frankDefeated" };
 
     [MenuItem("Franks Revenge/Dev/Start At Bathroom Fight (keys up to bathroom)")]
     private static void UpToBathroomFight()
@@ -20,6 +20,14 @@ public static class DevShortcuts
         Reset();
         Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared");
         Done("Keys up to the bathroom set and the monster counted as beaten. Press Play in WorldMap; the upstairs bathroom door goes to the wrecked bathroom with the ladder.");
+    }
+
+    [MenuItem("Franks Revenge/Dev/Start At Frank Fight (keys up to treehouse)")]
+    private static void UpToFrankFight()
+    {
+        Reset();
+        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor");
+        Done("Keys up to the Treehouse set. Press Play in WorldMap and climb the tree to the Treehouse.");
     }
 
     [MenuItem("Franks Revenge/Dev/Reset Progress")]

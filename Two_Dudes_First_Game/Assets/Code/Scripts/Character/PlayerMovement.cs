@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float speed = 5f;
     private float FallTime = 0;
-    private float jumpingPower = 16f;
+    [SerializeField] private float jumpingPower = 14f; // ~2.5 units high; the WorldMap tree steps need 2.2
     private Inventory inventory;
     public bool isFacingRight = true;
 
@@ -115,7 +115,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             // Instantiate salt prefab at the launch offset position, facing charaters direction
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            SaltBehaviour salt = Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            salt.facingRight = isFacingRight;
             animator.SetBool("Attack", true);
             //animator.SetBool("Attack", false);
         }
