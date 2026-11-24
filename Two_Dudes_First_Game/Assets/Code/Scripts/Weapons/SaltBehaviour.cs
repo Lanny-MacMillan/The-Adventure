@@ -10,6 +10,16 @@ public class SaltBehaviour : MonoBehaviour
     // set when thrown so turning around doesn't steer salt already in the air
     public bool facingRight = true;
 
+    private void Start()
+    {
+        // carrying holy water blesses the salt, which cures Frank instead of hurting him
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null && PlayerPrefs.GetInt("holyWater") == 1)
+        {
+            sr.color = new Color(0.55f, 0.85f, 1f, 1f);
+        }
+    }
+
     private void Update()
     {
         if (facingRight)

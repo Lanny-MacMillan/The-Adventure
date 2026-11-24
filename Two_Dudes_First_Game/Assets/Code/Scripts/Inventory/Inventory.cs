@@ -45,6 +45,18 @@ public class Inventory {
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
+    public bool RemoveItem(Item.ItemType type)
+    {
+        int index = itemList.FindIndex(i => i.itemType == type);
+        if (index < 0)
+        {
+            return false;
+        }
+        itemList.RemoveAt(index);
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        return true;
+    }
+
     public List<Item> GetItemList()
     {
         return itemList;

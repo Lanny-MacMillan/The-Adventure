@@ -112,6 +112,10 @@ public class UI_Inventory : MonoBehaviour
                 PlayerPrefs.SetInt("cross", 1);
                 Debug.Log("SET PLAYER PREFS TO 1 FOR POWERUP: " + image.sprite);
             }
+            else
+            {
+                PlayerPrefs.SetInt(item.PrefKey(), 1);
+            }
 
             // adds one to x (which just logs how many items youve picked up
             x++; 

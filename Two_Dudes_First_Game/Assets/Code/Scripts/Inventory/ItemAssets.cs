@@ -23,5 +23,9 @@ public class ItemAssets : MonoBehaviour
     public Sprite BedroomKey;
     public Sprite Cross;
     public Sprite KitchenKey;
+    public Sprite MotorGear;
+    public Sprite MotorPlug;
+    public Sprite MotorBelt;
+    public Sprite HolyWater;
 
 }
