@@ -149,9 +149,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON, string startKnot = null)
+    public void EnterDialogueMode(TextAsset inkJSON, string startKnot = null, int visit = 0)
     {
         currentStory = new Story(inkJSON.text);
+        // stories that declare VAR visit can change their lines on repeat talks
+        if (visit > 0 && currentStory.variablesState.GlobalVariableExistsWithName("visit"))
+        {
+            currentStory.variablesState["visit"] = visit;
+        }
         if (!string.IsNullOrEmpty(startKnot))
         {
             currentStory.ChoosePathString(startKnot);
