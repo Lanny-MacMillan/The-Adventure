@@ -1,30 +1,44 @@
 INCLUDE globals.ink
 
--> riddle_1
+// Closet demon (Mike's design): three riddles, three answers each.
+// Clever-but-not-what-he-wanted passes, the dumb answer he wants passes, the really wrong one fails you back to the start.
+// Intro, riddle 3 and the ending are placeholders until Mike's script is in.
+
+-> intro
+
+=== intro ===
+Psst... hey. Over here. No, in the closet. #speaker: ???
+Yeah, I'm a demon. Yeah, I live in your closet. Don't make it weird. #speaker: Closet Demon
+You want the key to the woodshed? Answer my three riddles. Get one wrong and we start over.
+    * [Fine.]
+        -> riddle_1
+    * [Do I have a choice?]
+        Not really, no.
+        -> riddle_1
 
 // begin riddle 1
 === riddle_1 ===
 The person who built it sold it. The person who bought it never used it. The person who never used it saw it. What is it?
-    * [A Coffin?]
+    * [A coffin?]
         -> coffin
-    * [An Invisible Guitar?]
+    * [An invisible guitar?]
         -> invisible_guitar
-    * [My Soul...]
-        -> my_soul       
-        
+    * [My soul...]
+        -> my_soul
+
 === coffin ===
-What? No...that's actually pretty clever. The answer I was looking for was an invisible guitar. I'll let you have that one?
-    *[Continue]
+What? No... that's actually pretty clever. The answer I was looking for was an invisible guitar. I'll let you have that one.
+    * [Continue]
         -> riddle_2
 
 === invisible_guitar ===
 That's correct! You're pretty sharp! I bought that thing on eBay and just never got around to learning to play...
-    *[Continue]
+    * [Continue]
         -> riddle_2
 
 === my_soul ===
-Wow...man... that's dark. And I'm a demon in a closet. Unfortunately thhat's not the answer I was looking for. TOugh lick kid. Maybe talk to a therapist, though...
-    *[Continue]
+Wow... man... that's dark. And I'm a demon in a closet. Unfortunately that's not the answer I was looking for. Tough luck, kid. Maybe talk to a therapist, though...
+    * [Start over]
         -> END
 
 // begin riddle 2
@@ -34,27 +48,56 @@ What jumps higher than a five-story building?
         -> kangaroo
     * [Me?]
         -> me
-    * [Anything that can jump — buildings don’t jump!]
-        -> anything       
+    * [Anything that can jump. Buildings don't jump!]
+        -> anything
 
 === kangaroo ===
-I mean I dont really know, I guess its possible. We will call that a win.
-    *[Continue]
-        -> riddle_3
-        
-=== me ===
-Theres no way a tubby bitch like you could jump higher than 10 stacked oreos, nevermind a five-story building...dream on.
-    *[Continue]
-        -> END
-        
-=== anything ===
-Yup. Next
-    *[Continue]
+I mean, I don't really know, I guess it's possible. We'll call that a win.
+    * [Continue]
         -> riddle_3
 
-// begin riddle 3
-=== riddle_3 ===
-~ inky_woodshed_key = true
-We have entered riddle 3...but I have nothing for you, just take the god damn key
-    *[continue]
+=== me ===
+There's no way a tubby bitch like you could jump higher than 10 stacked Oreos, never mind a five-story building... dream on.
+    * [Start over]
         -> END
+
+=== anything ===
+Yup. Next.
+    * [Continue]
+        -> riddle_3
+
+// begin riddle 3 (placeholder until Mike's version)
+=== riddle_3 ===
+Last one. What has a neck but no head, and two arms but no hands?
+    * [A shirt.]
+        -> shirt
+    * [My uncle Gary after the lawnmower thing.]
+        -> uncle_gary
+    * [You, probably.]
+        -> you_probably
+
+=== shirt ===
+Ugh. Yes. Technically. Nobody likes a smartass, but fine.
+    * [Continue]
+        -> win
+
+=== uncle_gary ===
+HA! I knew Gary! Great guy. Terrible with lawnmowers. That's the one.
+    * [Continue]
+        -> win
+
+=== you_probably ===
+I have a head. You're looking at it. Get out of my closet and try again.
+    * [Start over]
+        -> END
+
+=== win ===
+~ inky_woodshed_key = true
+Fine. Take the stupid key. And close the door on your way out, I'm trying to sleep in here. #give: WoodShedKey
+    * [Leave]
+        -> END
+
+// talking to him again after he's given up the key
+=== after_key ===
+I already gave you the key. Go away. #speaker: Closet Demon
+-> END
