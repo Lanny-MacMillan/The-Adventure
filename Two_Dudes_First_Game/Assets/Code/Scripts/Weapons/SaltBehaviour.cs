@@ -57,7 +57,11 @@ public class SaltBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        AtticBat bat = other.GetComponentInParent<AtticBat>();
+        if (bat != null && bat.TakeSalt())
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
