@@ -39,7 +39,7 @@ Each door knob is colored to match its key.
 | 3 | Woodshed key | Bedroom: beat the **closet demon's riddles** | Woodshed (far right of the WorldMap) |
 | 4 | Bathroom key | Woodshed: solve the **lever puzzle** and the key drops down the shelves | Bathroom (2nd floor) |
 | 5 | Ladder to the Attic | Bathroom: beat **Candy Dude** | The bathroom becomes the wrecked bathroom with a rope ladder up to the Attic |
-| 6 | Treehouse key | Attic, at the far end. Grab it and the floor drops you into the Bedroom | Treehouse (climb the trees on the left of the WorldMap) |
+| 6 | Treehouse key | Attic, at the far end past the **bats**. Grab it and the floor drops you into the Bedroom | Treehouse (climb the trees on the left of the WorldMap) |
 | 7 | Basement key | Treehouse: beat **or cure** Frank | Basement (1st floor, far right) |
 
 Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`, `bathroomDoor`, `treehouseDoor`, `basementDoor`, `closetDemonDone`, `woodshedSolved`, `bathroomCleared`, `frankDefeated`, plus the secret's flags listed below.
@@ -136,9 +136,21 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
   - Standing next to him kills you in about 6 seconds.
 - **Dying:** Try Again puts you back at the Treehouse door with your keys.
 
-### Attic and Basement
-- **Attic:** for now, just a room to cross. Grab the Treehouse key at the end and the floor drops out into the Bedroom.
-- **Basement:** a placeholder room. It's planned as a Doom-style first-person maze and the end of the game.
+### Bats (Attic)
+- The attic is pitch dark. You carry a small glow, and the only other light comes up through the ladder hole and off the Treehouse key.
+- **5 bats** hang from the rafters. In the dark you can only see their red eyes.
+- **How they attack:**
+  - Walk within about 3 units of one and it shivers for a split second.
+  - Then it swoops down in a U-shaped dive and climbs back up to the rafters on the other side of you.
+  - **They aim where you're heading, not where you are**, so walking straight on gets you hit.
+  - Getting hit costs a heart. After a swoop the bat rests for a couple of seconds before it can go again.
+- **How to beat them:**
+  - Stop, or step back, when one shivers, and let it miss.
+  - Or throw salt as it comes down. One hit kills it.
+- **Key:** grab the Treehouse key at the far end and the floor drops you into the Bedroom.
+
+### Basement
+- A placeholder room for now. It's planned as a Doom-style first-person maze and the end of the game.
 
 ---
 
@@ -178,9 +190,8 @@ Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap*
 
 ## Still to come
 - Kitchen: gore "after" kitchen art (the other dude's head)
-- Attic gameplay
 - Basement Doom maze
 - Tree platforming rebuild
 - Intro and outro
-- Mike's final art for Frank, the roof cross, the motor pieces and the flask
+- Mike's final art for the bats, Frank, the roof cross, the motor pieces and the flask
 - Music and SFX
