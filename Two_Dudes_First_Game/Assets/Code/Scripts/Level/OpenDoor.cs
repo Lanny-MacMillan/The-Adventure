@@ -17,6 +17,8 @@ public class OpenDoor : MonoBehaviour
     [SerializeField]
     private string requiredKey;
 
+    [SerializeField] private GameObject prompt; // optional bubble shown when you can use this door
+
     [Header("Room changed (e.g. bathroom after the fight)")]
     [SerializeField] private string changedFlag;
     [SerializeField] private string changedSceneName;
@@ -63,6 +65,15 @@ public class OpenDoor : MonoBehaviour
         bathroomKeyObtained = PlayerPrefs.GetInt("bathroomDoor");
         treehouseKeyObtained = PlayerPrefs.GetInt("treehouseDoor");
         basementKeyObtained = PlayerPrefs.GetInt("basementDoor");
+
+        if (prompt != null)
+        {
+            bool show = playerDetected && !PauseMenu.IsPaused && HasKey();
+            if (prompt.activeSelf != show)
+            {
+                prompt.SetActive(show);
+            }
+        }
 
         if (playerDetected && !PauseMenu.IsPaused && UsePressed() && HasKey())
         {
