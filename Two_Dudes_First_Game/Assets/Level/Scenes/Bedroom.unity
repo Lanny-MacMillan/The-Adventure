@@ -3693,6 +3693,7 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: 0c2856ed4af22477e99fb21b9ce92e47, type: 3}
   doneFlag: closetDemonDone
   doneKnot: after_key
+  visitsKey: closetDemonTalks
 --- !u!1 &1465200942
 GameObject:
   m_ObjectHideFlags: 0

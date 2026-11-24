@@ -14,7 +14,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private string titleScene = "TitleScreen";
 
     private static GameManagerScript instance;
-    private static readonly string[] doorKeys = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone" };
+    private static readonly string[] doorKeys = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks" };
 
     private void Awake()
     {

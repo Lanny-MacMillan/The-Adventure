@@ -1,5 +1,7 @@
 INCLUDE globals.ink
 
+VAR visit = 1
+
 // Closet demon (Mike's design): three riddles, three answers each.
 // Clever-but-not-what-he-wanted passes, the dumb answer he wants passes, the really wrong one fails you back to the start.
 // Intro, riddle 3 and the ending are placeholders until Mike's script is in.
@@ -7,9 +9,24 @@ INCLUDE globals.ink
 -> intro
 
 === intro ===
-Psst... hey. Over here. No, in the closet. #speaker: ???
-Yeah, I'm a demon. Yeah, I live in your closet. Don't make it weird. #speaker: Closet Demon
-You want the key to the woodshed? Answer my three riddles. Get one wrong and we start over.
+{
+- visit <= 1:
+    Psst... hey. Over here. No, in the closet. #speaker: ???
+    Yeah, I'm a demon. Yeah, I live in your closet. Don't make it weird. #speaker: Closet Demon
+    You want the key to the woodshed? Answer my three riddles. Get one wrong and we start over.
+- visit == 2:
+    You again? #speaker: Closet Demon
+    Fine. Same deal. Three riddles. Try not to embarrass yourself this time.
+- visit == 3:
+    Again... really? #speaker: Closet Demon
+    ...Okay. Riddle one. Again.
+- visit == 4:
+    You are seriously still wasting time on this? #speaker: Closet Demon
+    I have socks in here with more brain cells. Go.
+- else:
+    Attempt number {visit}. Yes, I'm keeping count. #speaker: Closet Demon
+    I've got all night. Literally. I'm a demon. Three riddles, you know the drill.
+}
     * [Fine.]
         -> riddle_1
     * [Do I have a choice?]
