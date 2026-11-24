@@ -30,6 +30,22 @@ public static class DevShortcuts
         Done("Keys up to the Treehouse set. Press Play in WorldMap and climb the tree to the Treehouse.");
     }
 
+    [MenuItem("Franks Revenge/Dev/Start At Fountain (all motor pieces found)")]
+    private static void AtFountain()
+    {
+        Reset();
+        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt");
+        Done("Treehouse key and all 3 motor pieces set. Press Play in WorldMap and use the fountain next to the house.");
+    }
+
+    [MenuItem("Franks Revenge/Dev/Start At Frank Cure Fight (holy water)")]
+    private static void FrankCureFight()
+    {
+        Reset();
+        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt", "fountainFixed", "holyWater");
+        Done("Fountain fixed and holy water in hand. Press Play in WorldMap and climb to the Treehouse; your salt cures Frank.");
+    }
+
     [MenuItem("Franks Revenge/Dev/Reset Progress")]
     private static void ResetProgress()
     {
