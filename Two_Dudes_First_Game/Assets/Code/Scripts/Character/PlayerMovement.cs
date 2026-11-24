@@ -70,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.IsPaused)
+        {
+            return;
+        }
+
         // this will pause player movement if bathroom dialogue window is open
         if (DialogueManager.GetInstance() != null && DialogueManager.GetInstance().dialogueIsPlaying)
         {

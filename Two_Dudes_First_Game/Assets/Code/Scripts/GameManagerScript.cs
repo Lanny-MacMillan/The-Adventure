@@ -11,6 +11,7 @@ public class GameManagerScript : MonoBehaviour
     //public PlayerHealth playerHealth;
 
     [SerializeField] private string firstLevelScene = "WorldMap";
+    [SerializeField] private string titleScene = "TitleScreen";
 
     private static GameManagerScript instance;
     private static readonly string[] doorKeys = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared" };
@@ -47,8 +48,8 @@ public class GameManagerScript : MonoBehaviour
 
     void Update()
     {
-        // the turn based fight needs the mouse
-        if (DisableGlobals.InBattle)
+        // the turn based fight and the pause menu need the mouse
+        if (DisableGlobals.InBattle || PauseMenu.IsPaused)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -75,6 +76,18 @@ public class GameManagerScript : MonoBehaviour
     // fresh start: reset keys, clear everything carried between scenes, reload the World Map
     public void restart()
     {
+        EndRun(firstLevelScene);
+    }
+
+    public void QuitToTitle()
+    {
+        EndRun(titleScene);
+    }
+
+    private void EndRun(string nextScene)
+    {
+        Time.timeScale = 1f;
+
         foreach (string key in doorKeys)
         {
             PlayerPrefs.SetInt(key, 0);
@@ -102,7 +115,7 @@ public class GameManagerScript : MonoBehaviour
         gameObject.SetActive(false);
         Destroy(gameObject);
 
-        SceneManager.LoadScene(firstLevelScene);
+        SceneManager.LoadScene(nextScene);
     }
 
     public void quitGame()
