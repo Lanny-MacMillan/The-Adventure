@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private bool inlineSpeakerName = true; // Mike's box: "CLOSET DEMON: line..." in one block
+    [SerializeField] private Color speakerColor = new Color(0.88f, 0.1f, 0.1f);
     //[SerializeField] private Animator portraitAnimator;
     //private Animator layoutAnimator;
 
@@ -215,8 +217,15 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator DisplayLine(string line)
     {
         // set the text to the full line, but set the visible characters to 0
-        dialogueText.text = line;
-        dialogueText.maxVisibleCharacters = 0;
+        string prefix = "";
+        int prefixLength = 0;
+        if (inlineSpeakerName && displayNameText != null && !string.IsNullOrEmpty(displayNameText.text))
+        {
+            prefix = "<color=#" + ColorUtility.ToHtmlStringRGB(speakerColor) + ">" + displayNameText.text + ":</color> ";
+            prefixLength = displayNameText.text.Length + 2;
+        }
+        dialogueText.text = prefix + line;
+        dialogueText.maxVisibleCharacters = prefixLength;
         // hide items while text is typing
         continueIcon.SetActive(false);
         HideChoices();
@@ -231,7 +240,7 @@ public class DialogueManager : MonoBehaviour
             // if the submit button is pressed, finish up displaying the line right away
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                dialogueText.maxVisibleCharacters = line.Length;
+                dialogueText.maxVisibleCharacters = prefixLength + line.Length;
                 break;
             }
 
@@ -378,7 +387,7 @@ public class DialogueManager : MonoBehaviour
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
+            choicesText[index].text = (index + 1) + ". " + choice.text;
             index++;
         }
         // go through the remaining choices the UI supports and make sure they're hidden
