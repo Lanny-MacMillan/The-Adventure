@@ -22,6 +22,7 @@ public class FirstPersonPlayer : MonoBehaviour
     private float yaw;
     private float bob;
     private bool leaving;
+    private Vector3 push;
 
     private void Awake()
     {
@@ -70,7 +71,8 @@ public class FirstPersonPlayer : MonoBehaviour
         {
             dir.Normalize();
         }
-        Walk(dir * moveSpeed * Time.deltaTime);
+        Walk(dir * moveSpeed * Time.deltaTime + push * Time.deltaTime);
+        push = Vector3.MoveTowards(push, Vector3.zero, 24f * Time.deltaTime);
 
         Moving = dir.sqrMagnitude > 0.01f;
         bob = Moving ? bob + Time.deltaTime * 9f : Mathf.MoveTowards(bob, Mathf.Round(bob / Mathf.PI) * Mathf.PI, Time.deltaTime * 6f);
@@ -86,6 +88,23 @@ public class FirstPersonPlayer : MonoBehaviour
         if (atDoor && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             GoUpstairs();
+        }
+    }
+
+    // lose a heart and get shoved away from whatever hit you
+    public void Hurt(Vector3 from)
+    {
+        if (Health == null || Health.isDead)
+        {
+            return;
+        }
+        int before = Health.health;
+        Health.TakeDamage(1, Vector2.zero);
+        if (Health.health < before)
+        {
+            Vector3 away = transform.position - from;
+            away.y = 0f;
+            push = (away.sqrMagnitude < 0.01f ? -transform.forward : away.normalized) * 6f;
         }
     }
 

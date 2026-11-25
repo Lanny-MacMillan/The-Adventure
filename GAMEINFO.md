@@ -186,6 +186,9 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | Press Start 2P font | Menus, dialogue, HUD text | Free font (Google Fonts) |
 | TextMesh Pro default resources | Text rendering | Unity |
 | `texBasementStone`, `texBasementBars`, `texBasementFloor`, `texBasementCeiling`, `texBasementDoor` | Basement maze walls, barred walls, floor, ceiling and the door upstairs | Cut from SideScroll Worlds Castle Pack (Szadi art) |
+| `sprSpikes_*` | Basement spike traps | Pixel Side-Scroller Animated Puzzle Elements (Thomas Feichtmeir "Cyangmou") |
+| `sprCrusher_*` | Basement crusher on a chain | Pixel Side-Scroller Animated Puzzle Elements (Thomas Feichtmeir "Cyangmou") |
+| `sprGreenFlame_*` | Basement green flame vents | fire assets, green flame (Retrope studios), shrunk down |
 
 ### Placeholders we drew to fill gaps (replace with Mike's art)
 
