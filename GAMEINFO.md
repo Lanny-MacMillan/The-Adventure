@@ -175,6 +175,32 @@ Secret flags: `motorGear`, `motorPlug`, `motorBelt`, `fountainFixed`, `holyWater
 
 ---
 
+## Art and assets to replace
+
+We want everything in the game to be our own. Until it is, these stand-ins keep development moving. Add to this list whenever something goes in that we didn't make, and cross it off when it's replaced.
+
+### From asset packs and other people
+
+| Asset | Where it's used | Source |
+|---|---|---|
+| Press Start 2P font | Menus, dialogue, HUD text | Free font (Google Fonts) |
+| TextMesh Pro default resources | Text rendering | Unity |
+
+### Placeholders we drew to fill gaps (replace with Mike's art)
+
+| Asset | Where it's used |
+|---|---|
+| `sprBat*` (hang, fly frames, eyes) | Attic bats |
+| `sprFrank_*` in `Greenbaum/Placeholder` | Frank's idle, spit, jump, land and melt frames |
+| `sprMotorGear`, `sprMotorPlug`, `sprMotorBelt` | Fountain secret motor pieces |
+| `sprHolyWater` | Holy water flask |
+| `sprWaterDrop`, `sprHolyGlow` | Fountain spray and roof cross glow |
+| `sprSmokePuff` | Treehouse window smoke |
+| `sprAttic_placeholder` | Attic room background |
+| `sprMirror_*`, `sprMirrorBreak_*` | Bathroom mirror cracking |
+| `sprWallScratches` | Woodshed wall |
+| `sprTalkBubble`, `sprContinueArrow`, `sprDialogueBox9Slice` | Talk prompt and dialogue box (the box is cut from Mike's sheet) |
+
 ## Testing shortcuts (Editor only)
 
 Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap**.
