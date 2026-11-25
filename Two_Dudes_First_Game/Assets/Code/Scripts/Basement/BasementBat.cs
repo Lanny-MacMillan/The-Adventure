@@ -19,6 +19,8 @@ public class BasementBat : BasementEnemy
     private float rest;
     private float t;
     private float fallSpeed;
+    private float recoil;
+    private Vector3 recoilDir;
 
     private void Start()
     {
@@ -67,6 +69,20 @@ public class BasementBat : BasementEnemy
         }
 
         body.sprite = flyFrames[(int)(t / 0.08f) % flyFrames.Length];
+        // bounces off you after a bite so it doesn't hang in your face
+        if (recoil > 0f)
+        {
+            recoil -= Time.deltaTime;
+            Vector3 r = transform.position + recoilDir * 9f * Time.deltaTime;
+            r.y = Mathf.Min(r.y, 1.8f);
+            BasementMaze maze = BasementMaze.Instance;
+            if (maze == null || !maze.Blocked(r, 0.3f))
+            {
+                transform.position = r;
+            }
+            BasementSight.Shade(body, transform.position, 0f, Color.white);
+            return;
+        }
         Vector3 target = diving ? p.transform.position - Vector3.up * 0.15f : roost;
         Vector3 pos = Vector3.MoveTowards(transform.position, target, diveSpeed * Time.deltaTime);
         // zig-zag so it's harder to hit
@@ -78,6 +94,10 @@ public class BasementBat : BasementEnemy
         {
             p.Hurt(transform.position);
             diving = false;
+            recoil = 0.35f;
+            recoilDir = transform.position - p.transform.position;
+            recoilDir.y = 0f;
+            recoilDir = (recoilDir.sqrMagnitude < 0.01f ? -p.transform.forward : recoilDir.normalized) + Vector3.up * 0.4f;
         }
         else if (!diving && Vector3.Distance(pos, roost) < 0.1f)
         {
