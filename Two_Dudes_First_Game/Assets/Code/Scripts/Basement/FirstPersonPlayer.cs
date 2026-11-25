@@ -54,7 +54,7 @@ public class FirstPersonPlayer : MonoBehaviour
         // Try Again turns the 2D player back on, so keep it hidden down here
         Hide2D(true);
 
-        bool frozen = PauseMenu.IsPaused || Health == null || Health.isDead || leaving || Dialogue();
+        bool frozen = PauseMenu.IsPaused || Health == null || Health.isDead || leaving || Dialogue() || BasementEnding.Active;
         Moving = false;
         if (frozen)
         {
@@ -94,7 +94,7 @@ public class FirstPersonPlayer : MonoBehaviour
     // lose a heart and get shoved away from whatever hit you
     public void Hurt(Vector3 from)
     {
-        if (Health == null || Health.isDead)
+        if (Health == null || Health.isDead || BasementEnding.Active)
         {
             return;
         }

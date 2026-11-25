@@ -149,8 +149,38 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
   - Or throw salt as it comes down. One hit kills it.
 - **Key:** grab the Treehouse key at the far end and the floor drops you into the Bedroom.
 
-### Basement
-- A placeholder room for now. It's planned as a Doom-style first-person maze and the end of the game.
+### Basement (first person, final boss)
+- **Getting in:** the Basement door on the 1st floor (far right) needs the Basement key from Frank. Going down switches the game to first person.
+- **Controls down here:**
+
+| Action | Key |
+|---|---|
+| Walk forward / back | W / S or Up / Down |
+| Turn | A / D, Left / Right, or the mouse |
+| Strafe (step sideways) | Q / E |
+| Throw salt | Left Ctrl, left mouse or Space |
+| Go back upstairs | Enter, facing the wooden door behind where you start |
+
+- **The maze:** stone corridors, black past a few metres. Your hearts carry over, and getting hit flashes the screen red and shoves you back.
+- **Enemies:**
+  - **Ghosts:** drift toward you **through walls** once they've seen you. 2 salt hits.
+  - **Bats:** hang in the dark until they see you, then zig-zag in to bite and fly back up. You can only hit them while they're diving at you. 1 salt hit.
+- **Traps (all on timers):**
+  - **Spikes:** a few pins poke up first as a warning, then the whole row comes out.
+  - **Crusher:** a weight on a chain that slams to the floor and slowly winds back up. Go under it right after it lifts.
+  - **Green flame vents:** off for a couple of seconds, then a column of green fire.
+- **The boss, "The Stash":**
+  - Whatever was in Frank's baggie: a giant green flame with a face, rising out of a torn baggie, in a room at the far end of the maze.
+  - **30 salt hits.** It sways side to side so you have to keep aiming.
+  - **Attacks:** spits globs of green goo (1, then 3 in a fan), and every 4th attack calls in 2 ghosts.
+  - **Below half health** it gets angry: faster swaying, faster goo, 5-glob fans.
+  - **Tip:** strafe (Q / E) sideways through the gaps in the fan, and clear the ghosts when they show up.
+- **Kill or cure:**
+  - **Normal salt** kills it. It burns itself out and leaves a scorched, empty baggie.
+  - **With holy water** (from the fountain secret) your salt is blue. The bar becomes a **CURE** bar, and the green drains out of it until it's a harmless puff of smoke.
+- **Ending:** the screen fades out, the ending text plays (it changes depending on kill or cure, and whether Frank was cured), then **THE END**, then back to the title for a fresh run. Enter or Space skips each line.
+
+Flags: `basementCleared` (boss beaten), `stashCured` (cured instead of killed).
 
 ---
 
@@ -197,6 +227,7 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprBat*` (hang, fly frames, eyes) | Attic bats |
 | `sprHandSalt_idle`, `sprHandSalt_wind`, `sprHandSalt_throw` | Your hand and salt shaker in the Basement |
 | `sprSaltBurst` | Thrown salt in the Basement |
+| `sprStashFace`, `sprStashBaggie` | The Stash boss's face and the torn baggie (its body is the green flame from the fire pack) |
 | `sprFrank_*` in `Greenbaum/Placeholder` | Frank's idle, spit, jump, land and melt frames |
 | `sprMotorGear`, `sprMotorPlug`, `sprMotorBelt` | Fountain secret motor pieces |
 | `sprHolyWater` | Holy water flask |
@@ -218,11 +249,12 @@ Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap*
 | Start At Frank Fight | Keys up to the Treehouse |
 | Start At Fountain | Treehouse key plus all 3 motor pieces |
 | Start At Frank Cure Fight | Fountain fixed, holy water in hand |
+| Start At Basement (kill the boss) | Every key, Frank beaten, no holy water |
+| Start At Basement (cure the boss) | Every key, Frank cured, holy water in hand |
 | Reset Progress | Clears all keys and flags |
 
 ## Still to come
 - Kitchen: gore "after" kitchen art (the other dude's head)
-- Basement Doom maze
 - Tree platforming rebuild
 - Intro and outro
 - Mike's final art for the bats, Frank, the roof cross, the motor pieces and the flask

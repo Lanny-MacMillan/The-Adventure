@@ -2,26 +2,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Builds the first-person basement from a text map.
-// # stone wall, B barred wall, D door upstairs, S start (facing up), . floor, G ghost, b bat, ^ spikes, T crusher, F green flame.
+// # stone wall, B barred wall, D door upstairs, S start (facing up), . floor, G ghost, b bat, ^ spikes, T crusher, F green flame, X the boss.
 public class BasementMaze : MonoBehaviour
 {
     [TextArea(12, 30)]
     [SerializeField] private string map =
-        "###############\n" +
-        "#..G..#...T...#\n" +
-        "#.###.#.#####.#\n" +
-        "#.#...#.#.b.#.#\n" +
-        "#.#.###.#.#.#F#\n" +
-        "#.#..b.T#.#...#\n" +
-        "#.#####.#.###B#\n" +
-        "#..^..#.#...#.#\n" +
-        "#####.#.###.#.#\n" +
-        "#.F...#.G.#.#.#\n" +
-        "#.#######.#.#.#\n" +
-        "#.#..b.^..#...#\n" +
-        "#.#.#########.#\n" +
-        "#S#..F..G..^..#\n" +
-        "#D#############";
+        "#####################\n" +
+        "#..G..#...T...#######\n" +
+        "#.###.#.#####.#######\n" +
+        "#.#...#.#.b.#.#######\n" +
+        "#.#.###.#.#.#F#######\n" +
+        "#.#..b.T#.#...#.....#\n" +
+        "#.#####.#.###B#.....#\n" +
+        "#..^..#.#...#.....X.#\n" +
+        "#####.#.###.#.#.....#\n" +
+        "#.F...#.G.#.#.#.....#\n" +
+        "#.#######.#.#.#######\n" +
+        "#.#..b.^..#...#######\n" +
+        "#.#.#########.#######\n" +
+        "#S#..F..G..^..#######\n" +
+        "#D###################";
     [SerializeField] private float cellSize = 2f;
     [SerializeField] private float wallHeight = 2f;
     [SerializeField] private Material stone;
@@ -34,6 +34,7 @@ public class BasementMaze : MonoBehaviour
     [SerializeField] private GameObject spikes;
     [SerializeField] private GameObject crusher;
     [SerializeField] private GameObject flame;
+    [SerializeField] private GameObject boss;
 
     public static BasementMaze Instance { get; private set; }
     public float CellSize => cellSize;
@@ -128,7 +129,7 @@ public class BasementMaze : MonoBehaviour
                     StartPosition = o;
                     StartYaw = 0f;
                 }
-                Spawn(c == 'G' ? ghost : c == 'b' ? bat : c == '^' ? spikes : c == 'T' ? crusher : c == 'F' ? flame : null, o);
+                Spawn(c == 'G' ? ghost : c == 'b' ? bat : c == '^' ? spikes : c == 'T' ? crusher : c == 'F' ? flame : c == 'X' ? boss : null, o);
 
                 For(floor).Quad(o + new Vector3(-h, 0, -h), o + new Vector3(-h, 0, h), o + new Vector3(h, 0, h), o + new Vector3(h, 0, -h));
                 For(ceiling).Quad(o + new Vector3(-h, wallHeight, h), o + new Vector3(-h, wallHeight, -h), o + new Vector3(h, wallHeight, -h), o + new Vector3(h, wallHeight, h));
