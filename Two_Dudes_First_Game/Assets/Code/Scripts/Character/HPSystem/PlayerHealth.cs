@@ -125,6 +125,12 @@ public class PlayerHealth : MonoBehaviour
         {
             gameManager.gameOver();
         }
+        else
+        {
+            // no Game Over screen when Play is started straight in a room, so just get back up
+            Revive();
+            return;
+        }
         if (playerChar != null)
         {
             playerChar.enabled = false;

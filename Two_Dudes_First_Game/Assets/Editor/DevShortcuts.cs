@@ -4,7 +4,7 @@ using UnityEngine;
 // Editor-only test shortcuts (Franks Revenge > Dev menu). Not included in builds.
 public static class DevShortcuts
 {
-    private static readonly string[] allProgress = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks", "woodshedSolved", "frankDefeated", "motorGear", "motorPlug", "motorBelt", "fountainFixed", "holyWater", "frankCured" };
+    private static readonly string[] allProgress = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks", "woodshedSolved", "frankDefeated", "motorGear", "motorPlug", "motorBelt", "fountainFixed", "holyWater", "frankCured", "basementCleared", "stashCured" };
 
     [MenuItem("Franks Revenge/Dev/Start At Bathroom Fight (keys up to bathroom)")]
     private static void UpToBathroomFight()
@@ -44,6 +44,22 @@ public static class DevShortcuts
         Reset();
         Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt", "fountainFixed", "holyWater");
         Done("Fountain fixed and holy water in hand. Press Play in WorldMap and climb to the Treehouse; your salt cures Frank.");
+    }
+
+    [MenuItem("Franks Revenge/Dev/Start At Basement (kill the boss)")]
+    private static void AtBasement()
+    {
+        Reset();
+        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "frankDefeated", "basementDoor");
+        Done("Every key up to the Basement set, Frank beaten. Press Play in WorldMap and take the Basement door on the 1st floor.");
+    }
+
+    [MenuItem("Franks Revenge/Dev/Start At Basement (cure the boss)")]
+    private static void AtBasementCure()
+    {
+        Reset();
+        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt", "fountainFixed", "holyWater", "frankDefeated", "frankCured", "basementDoor");
+        Done("Frank cured and holy water in hand. Press Play in WorldMap and take the Basement door; your salt cures the boss.");
     }
 
     [MenuItem("Franks Revenge/Dev/Reset Progress")]
