@@ -192,6 +192,8 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | Asset | Where it's used |
 |---|---|
 | `sprBat*` (hang, fly frames, eyes) | Attic bats |
+| `sprHandSalt_idle`, `sprHandSalt_wind`, `sprHandSalt_throw` | Your hand and salt shaker in the Basement |
+| `sprSaltBurst` | Thrown salt in the Basement |
 | `sprFrank_*` in `Greenbaum/Placeholder` | Frank's idle, spit, jump, land and melt frames |
 | `sprMotorGear`, `sprMotorPlug`, `sprMotorBelt` | Fountain secret motor pieces |
 | `sprHolyWater` | Holy water flask |
