@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         lastX = transform.position.x;
 
         inventory = new Inventory();
+        inventory.LoadOwned();
         if (uiInventory != null) uiInventory.SetInventory(inventory);
 
     }
