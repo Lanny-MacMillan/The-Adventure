@@ -141,6 +141,7 @@ public class FirstPersonPlayer : MonoBehaviour
     private void GoUpstairs()
     {
         leaving = true;
+        Sound.Play("doorOpen");
         Hide2D(false);
         SceneSwitch sceneSwitch = FindAnyObjectByType<SceneSwitch>();
         if (sceneSwitch != null)

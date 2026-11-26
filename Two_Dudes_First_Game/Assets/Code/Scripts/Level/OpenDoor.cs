@@ -18,6 +18,7 @@ public class OpenDoor : MonoBehaviour
     private string requiredKey;
 
     [SerializeField] private GameObject prompt; // optional bubble shown when you can use this door
+    [SerializeField] private string useSound = "doorOpen";
 
     [Header("Room changed (e.g. bathroom after the fight)")]
     [SerializeField] private string changedFlag;
@@ -75,9 +76,17 @@ public class OpenDoor : MonoBehaviour
             }
         }
 
-        if (playerDetected && !PauseMenu.IsPaused && UsePressed() && HasKey())
+        if (playerDetected && !PauseMenu.IsPaused && UsePressed())
         {
-            sceneSwitch.SwitchScene(SceneName);
+            if (HasKey())
+            {
+                Sound.Play(useSound);
+                sceneSwitch.SwitchScene(SceneName);
+            }
+            else
+            {
+                Sound.Play("doorLocked");
+            }
         }
     }
 

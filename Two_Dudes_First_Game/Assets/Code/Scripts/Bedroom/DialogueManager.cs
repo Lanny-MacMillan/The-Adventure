@@ -261,7 +261,10 @@ public class DialogueManager : MonoBehaviour
             // if not rich text, add the next letter and wait a small time
             else
             {
-                //PlayDialogueSound(dialogueText.maxVisibleCharacters, dialogueText.text[dialogueText.maxVisibleCharacters]);
+                if (letter != ' ' && dialogueText.maxVisibleCharacters % 2 == 0)
+                {
+                    Sound.Play("dialogueBlip");
+                }
                 dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             }

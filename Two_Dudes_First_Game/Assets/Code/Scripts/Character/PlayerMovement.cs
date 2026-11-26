@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //Touching item
             inventory.AddItem(itemWorld.GetItem());
+            Sound.Play("keyPickup");
             itemWorld.DestroySelf();
         }
     }

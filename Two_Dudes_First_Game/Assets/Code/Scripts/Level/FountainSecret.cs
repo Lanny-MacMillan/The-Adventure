@@ -94,6 +94,7 @@ public class FountainSecret : MonoBehaviour
         {
             PlayerPrefs.SetInt(fixedFlag, 1);
             PlayerPrefs.Save();
+            Sound.Play("fountainPump");
             if (spray != null)
             {
                 spray.Begin();
@@ -105,6 +106,7 @@ public class FountainSecret : MonoBehaviour
             if (inventory != null)
             {
                 inventory.AddItem(new Item { itemType = Item.ItemType.HolyWater, amount = 1 });
+                Sound.Play("keyPickup");
             }
             PlayerPrefs.SetInt("holyWater", 1);
             PlayerPrefs.Save();

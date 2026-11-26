@@ -21,6 +21,7 @@ public class TitleScreenMenu : MonoBehaviour
 
     public void StartGame()
     {
+        Sound.Play("menuSelect");
         SceneManager.LoadScene(characterSelectScene);
     }
 
