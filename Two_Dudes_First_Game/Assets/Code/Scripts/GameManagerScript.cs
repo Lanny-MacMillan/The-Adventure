@@ -48,8 +48,9 @@ public class GameManagerScript : MonoBehaviour
 
     void Update()
     {
-        // the turn based fight and the pause menu need the mouse
-        if (DisableGlobals.InBattle || PauseMenu.IsPaused)
+        // the turn based fight, the pause menu and dialogue choices need the mouse
+        DialogueManager dialogue = DialogueManager.GetInstance();
+        if (DisableGlobals.InBattle || PauseMenu.IsPaused || (dialogue != null && dialogue.dialogueIsPlaying))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;

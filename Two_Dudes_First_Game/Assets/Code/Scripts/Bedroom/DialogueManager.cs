@@ -89,10 +89,26 @@ public class DialogueManager : MonoBehaviour
         foreach (GameObject choice in choices)
         {
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            WireChoice(choice, index);
             index++;
         }
 
         //InitializeAudioInfoDictionary();
+    }
+
+    // some scenes' choice buttons lost their click hookup, so set it here instead of trusting the scene
+    private void WireChoice(GameObject choice, int index)
+    {
+        UnityEngine.UI.Button button = choice.GetComponent<UnityEngine.UI.Button>();
+        if (button == null)
+        {
+            return;
+        }
+        for (int i = 0; i < button.onClick.GetPersistentEventCount(); i++)
+        {
+            button.onClick.SetPersistentListenerState(i, UnityEngine.Events.UnityEventCallState.Off);
+        }
+        button.onClick.AddListener(() => MakeChoice(index));
     }
 
     //private void InitializeAudioInfoDictionary()
