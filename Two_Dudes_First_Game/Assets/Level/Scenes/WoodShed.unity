@@ -4257,7 +4257,7 @@ MonoBehaviour:
   BasementKey: {fileID: 21300000, guid: b28161dcced96454f8042b38811717a2, type: 3}
   BedroomKey: {fileID: 21300000, guid: 8a58b5ee9515b45bd9a2daf65f0b474d, type: 3}
   Cross: {fileID: 21300000, guid: 8c8c4134e1ec5462ba2f65108a7cc34d, type: 3}
-  KitchenKey: {fileID: 0}
+  KitchenKey: {fileID: 21300000, guid: 3aac315277a294de6ac829131d5d07e5, type: 3}
   MotorGear: {fileID: 21300000, guid: 6bd0e381a54fb4d11825fdcdf11b5009, type: 3}
   MotorPlug: {fileID: 21300000, guid: dd18388c813874040b8f1ffcdc625fcd, type: 3}
   MotorBelt: {fileID: 21300000, guid: 552a2b2adcb214d0da4a6bfb4c92d642, type: 3}
