@@ -223,6 +223,8 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `01.Calling_You_At_3AM`, `10.Farewell`, `15.Signing_Out` | Kitchen, Game Over, ending | Lost In Misery |
 | `06.There_In_Spirit` | Church | Dark Ambient Soundscape |
 | `Ambience_Janitory`, `Ambience_Cell` | Woodshed, Basement | Underground Facility Ambient Pack |
+| `07.Cold_Draft`, `16.Room_With_The_Window_Open`, `15.Like_Echoes`, `14.Heartbeats`, `03.Silent_Noise` | World Map, house hallways, Bathroom, after the bathroom, Attic | Buried In The Noise |
+| `Horror_Synth_Theme`, `Lofi_Creepy_Theme`, `Mysterious_Theme`, `Dark_Pulsating_Ambient` | Title, character select, Bedroom, Treehouse | Free Audio Asset Collection |
 
 ### Placeholders we drew to fill gaps (replace with Mike's art)
 
@@ -247,7 +249,7 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 
 Music and sound effects live in `Assets/Resources/SoundBank` (Inspector). Each scene has a track; boss fights switch to the boss track, and Game Over and the ending have their own. A blank clip is silence. Volume sliders for music and sound are in the pause menu.
 
-Waiting on OGG versions (they only came as big WAVs): title and character select (`Horror_Synth_Theme`, `Lofi_Creepy_Theme`), World Map (`07.Cold_Draft`), house hallways (`16.Room_With_The_Window_Open`), Bedroom (`Mysterious_Theme`), Bathroom (`15.Like_Echoes`), after the bathroom (`14.Heartbeats`), Attic (`03.Silent_Noise`), Treehouse (`Dark_Pulsating_Ambient`). Those areas are silent until then.
+Every area has music now.
 
 ## Testing shortcuts (Editor only)
 
@@ -269,5 +271,4 @@ Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap*
 - Tree platforming rebuild
 - Intro and outro
 - Mike's final art for the bats, Frank, the roof cross, the motor pieces and the flask
-- OGG versions of the WAV-only tracks above
 - Our own music and sound effects
