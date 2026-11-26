@@ -14,31 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundBank
   music:
   - key: title
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 05b9fcf0bf1b24905a236c3e1170df35, type: 3}
     volume: 0.7
   - key: select
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 87f16d2bce97c453696842ed1267ac22, type: 3}
     volume: 0.7
   - key: world
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: c29915eb94b4e422f81b727674060298, type: 3}
     volume: 0.7
   - key: house
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 623e9ae1480b74f3dac0a86bcd2b327f, type: 3}
     volume: 0.7
   - key: kitchen
     clip: {fileID: 8300000, guid: 97d0f4fbf4a864ebfa45f24734aaf294, type: 3}
     volume: 0.6
   - key: bedroom
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: d7deff27b23684ceda8120538c344e4f, type: 3}
     volume: 0.7
   - key: bathroom
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 70626283017474d978a4e800e65ce663, type: 3}
     volume: 0.7
   - key: postbath
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: e202d244106fd495a8414928ff5090e4, type: 3}
     volume: 0.7
   - key: attic
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 2713214a47bfc43e2bf66f073cd6a598, type: 3}
     volume: 0.7
   - key: woodshed
     clip: {fileID: 8300000, guid: 7f5868e662e334f2cbace3e75395861d, type: 3}
@@ -47,7 +47,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 30c89f87df2fd459e97d048863f49697, type: 3}
     volume: 0.7
   - key: treehouse
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: ab44c4dbcb9dd48deb2fdf9993f96f41, type: 3}
     volume: 0.7
   - key: basement
     clip: {fileID: 8300000, guid: f65d2167943904f9b9e4fa42b97d1464, type: 3}
