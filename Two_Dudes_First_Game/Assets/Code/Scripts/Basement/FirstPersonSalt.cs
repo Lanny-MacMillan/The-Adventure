@@ -86,5 +86,6 @@ public class FirstPersonSalt : MonoBehaviour
         GameObject go = new GameObject("Salt");
         go.transform.position = start;
         go.AddComponent<SaltShot>().Launch(transform.forward, saltSpeed, holy, saltSprite, saltMaterial);
+        Sound.Play("saltThrow");
     }
 }

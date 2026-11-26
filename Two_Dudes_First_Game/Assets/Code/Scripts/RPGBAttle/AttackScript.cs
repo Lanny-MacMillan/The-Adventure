@@ -66,12 +66,18 @@ public class AttackScript : MonoBehaviour
             owner.GetComponent<Animator>().Play(animationName); // plays player or boss animations
 
             targetStats.ReceiveDamage(Mathf.CeilToInt(damage), impactDelay); // damage animation itself is delayed, 1s
+            Invoke(nameof(HitSound), impactDelay);
             attackerStats.UpdateMagicFill(magicCost);
         }
         else
         {
             Invoke(nameof(SkipTurnContinueGame), 4);
         }
+    }
+
+    private void HitSound()
+    {
+        Sound.Play("candyHit");
     }
 
     public void Heal(GameObject owner)

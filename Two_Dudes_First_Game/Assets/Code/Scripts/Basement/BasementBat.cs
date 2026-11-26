@@ -61,6 +61,7 @@ public class BasementBat : BasementEnemy
         {
             awake = true;
             diving = true;
+            Sound.Play("batScreech", 0.7f);
         }
         if (!awake)
         {
@@ -107,6 +108,10 @@ public class BasementBat : BasementEnemy
             {
                 rest = 0f;
                 diving = BasementSight.Clear(transform.position, p.transform.position) && FlatDistance(transform.position, p.transform.position) < sightRange;
+                if (diving)
+                {
+                    Sound.Play("batFlap", 0.6f);
+                }
             }
         }
         BasementSight.Shade(body, transform.position, 0f, Color.white);

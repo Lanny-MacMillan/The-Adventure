@@ -12,6 +12,7 @@ public class ClosetDemonRoom : MonoBehaviour
     [SerializeField] private Sprite roomArtAfter;
 
     private bool swapped;
+    private bool talking;
 
     private void OnEnable()
     {
@@ -34,6 +35,14 @@ public class ClosetDemonRoom : MonoBehaviour
 
     private void Update()
     {
+        DialogueManager dialogue = DialogueManager.GetInstance();
+        bool now = dialogue != null && dialogue.dialogueIsPlaying;
+        if (now && !talking)
+        {
+            Sound.Play("closetDemon");
+        }
+        talking = now;
+
         if (!swapped && roomArt != null && roomArtAfter != null && HasReward())
         {
             roomArt.sprite = roomArtAfter;

@@ -42,6 +42,7 @@ public class BasementGhost : BasementEnemy
         if (!awake && dist < sightRange && BasementSight.Clear(transform.position, p.transform.position))
         {
             awake = true;
+            Sound.Play("ghostMoan", 0.8f);
         }
 
         Vector3 pos = transform.position;

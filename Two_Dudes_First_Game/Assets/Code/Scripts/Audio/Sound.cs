@@ -104,7 +104,9 @@ public class Sound : MonoBehaviour
         AudioSource s = instance.sfxSources[instance.nextSfx];
         instance.nextSfx = (instance.nextSfx + 1) % instance.sfxSources.Length;
         s.pitch = 1f + Random.Range(-e.pitchJitter, e.pitchJitter);
-        s.PlayOneShot(e.clips[Random.Range(0, e.clips.Length)], e.volume * volumeScale * SfxVolume);
+        s.clip = e.clips[Random.Range(0, e.clips.Length)];
+        s.volume = e.volume * volumeScale * SfxVolume;
+        s.Play();
     }
 
     // boss fights, Game Over and the ending swap the track until the next scene or SceneMusic()

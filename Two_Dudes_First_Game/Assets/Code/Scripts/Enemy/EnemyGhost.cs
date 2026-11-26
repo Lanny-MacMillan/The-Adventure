@@ -20,8 +20,8 @@ public class EnemyGhost : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("Dead!");
             enemyDead = true;
+            Sound.Play("ghostMoan", 0.6f);
             //Destroy(gameObject);
             animator.SetBool("enemyDead", true);
 

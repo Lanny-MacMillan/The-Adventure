@@ -313,6 +313,7 @@ public class FrankBoss : MonoBehaviour
             yield break;
         }
         Pose(spitFrames);
+        Sound.Play("frankSpit");
         Vector2 mouth = MouthPosition();
         if (Phase == 1 || Phase == 3)
         {
@@ -369,6 +370,7 @@ public class FrankBoss : MonoBehaviour
 
         // land: shake, goo off the ceiling, shockwave later on
         StartCoroutine(Shake(0.25f, 0.18f));
+        Sound.Play("frankSlam");
         Pose(landFrames);
         StartCoroutine(Squash(1.35f, 0.65f, 0.2f));
         if (Phase >= 2)
@@ -502,6 +504,7 @@ public class FrankBoss : MonoBehaviour
             transform.position = new Vector3(transform.position.x + Random.Range(-0.03f, 0.03f), Ground(), transform.position.z);
             yield return null;
         }
+        Sound.Play("frankMelt");
         if (meltFrames != null && meltFrames.Length > 0)
         {
             posed = true;

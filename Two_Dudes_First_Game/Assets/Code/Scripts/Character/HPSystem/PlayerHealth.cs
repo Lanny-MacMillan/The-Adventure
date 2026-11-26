@@ -50,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
             return;
         }
+        Sound.Play("hurt");
 
         float direction = transform.position.x >= hitFrom.x ? 1f : -1f;
         if (Mathf.Approximately(transform.position.x, hitFrom.x))
@@ -78,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         isDead = true;
+        Sound.Play("death");
         //playerChar.enabled = false;
         playerMovement.enabled = false;
 
