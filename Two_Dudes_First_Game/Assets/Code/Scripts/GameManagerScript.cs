@@ -71,6 +71,7 @@ public class GameManagerScript : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+        Sound.Music("gameover");
     }
 
     // Game Over: keep your keys, start the room again from where you came in

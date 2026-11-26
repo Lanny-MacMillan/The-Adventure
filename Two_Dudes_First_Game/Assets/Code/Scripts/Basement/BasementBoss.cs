@@ -76,6 +76,7 @@ public class BasementBoss : BasementEnemy
                 bar.SetActive(true);
             }
             fight = StartCoroutine(Fight());
+            Sound.Music("boss");
         }
         if (awake)
         {

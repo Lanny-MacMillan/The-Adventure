@@ -206,6 +206,7 @@ public class FrankBoss : MonoBehaviour
         transform.position = new Vector3(homeX, Ground(), transform.position.z);
         body.sprite = possessedSprite;
         possessed = true;
+        Sound.Music("boss");
         StartCoroutine(Shake(0.35f, 0.15f));
         StartCoroutine(Squash(1.25f, 0.8f, 0.25f));
         if (exitDoor != null)
@@ -482,6 +483,7 @@ public class FrankBoss : MonoBehaviour
     private IEnumerator Die()
     {
         dead = true;
+        Sound.SceneMusic();
         fighting = false;
         foreach (GameObject g in hazards)
         {
@@ -547,6 +549,7 @@ public class FrankBoss : MonoBehaviour
     private IEnumerator Cured()
     {
         dead = true;
+        Sound.SceneMusic();
         fighting = false;
         foreach (GameObject g in hazards)
         {

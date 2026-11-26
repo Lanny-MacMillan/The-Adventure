@@ -41,6 +41,7 @@ public class BasementEnding : MonoBehaviour
         {
             Playing = true;
             Active = true;
+            Sound.Music("ending");
             StartCoroutine(Run(cured));
         }
     }

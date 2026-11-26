@@ -12,6 +12,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47259a294649e476e8c3017372de4a0c, type: 3}
   m_Name: SoundBank
   m_EditorClassIdentifier: Assembly-CSharp::SoundBank
-  music: []
-  scenes: []
+  music:
+  - key: title
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: select
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: world
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: house
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: kitchen
+    clip: {fileID: 8300000, guid: 97d0f4fbf4a864ebfa45f24734aaf294, type: 3}
+    volume: 0.6
+  - key: bedroom
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: bathroom
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: postbath
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: attic
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: woodshed
+    clip: {fileID: 8300000, guid: 7f5868e662e334f2cbace3e75395861d, type: 3}
+    volume: 0.8
+  - key: church
+    clip: {fileID: 8300000, guid: 30c89f87df2fd459e97d048863f49697, type: 3}
+    volume: 0.7
+  - key: treehouse
+    clip: {fileID: 0}
+    volume: 0.7
+  - key: basement
+    clip: {fileID: 8300000, guid: f65d2167943904f9b9e4fa42b97d1464, type: 3}
+    volume: 0.8
+  - key: boss
+    clip: {fileID: 8300000, guid: 6a2cb906735334e2d8861ec03fb5d25b, type: 3}
+    volume: 0.7
+  - key: gameover
+    clip: {fileID: 8300000, guid: 29089f7f8c4884489a78907a2b889f56, type: 3}
+    volume: 0.7
+  - key: ending
+    clip: {fileID: 8300000, guid: 765c9127aa90444ec9d5f3852a01f72a, type: 3}
+    volume: 0.7
+  scenes:
+  - scene: CreatedBy
+    track: title
+  - scene: TitleScreen
+    track: title
+  - scene: CharacterSelect
+    track: select
+  - scene: WorldMap
+    track: world
+  - scene: HouseInterior1stFloor
+    track: house
+  - scene: HouseInterior2ndFloor
+    track: house
+  - scene: Kitchen
+    track: kitchen
+  - scene: Bedroom
+    track: bedroom
+  - scene: Bathroom
+    track: bathroom
+  - scene: TurnBasedBathroomBattle
+    track: boss
+  - scene: PostBathroom
+    track: postbath
+  - scene: Attic
+    track: attic
+  - scene: WoodShed
+    track: woodshed
+  - scene: ChurchInterior
+    track: church
+  - scene: Treehouse
+    track: treehouse
+  - scene: Basement
+    track: basement
   effects: []

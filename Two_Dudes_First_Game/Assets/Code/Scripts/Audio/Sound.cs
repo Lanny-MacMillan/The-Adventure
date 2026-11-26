@@ -160,7 +160,8 @@ public class Sound : MonoBehaviour
             to.volume = 0f;
             to.Play();
         }
-        for (float k = 0f; k < FadeTime; k += Time.unscaledDeltaTime)
+        // capped step so a long scene load doesn't skip the fade
+        for (float k = 0f; k < FadeTime; k += Mathf.Min(Time.unscaledDeltaTime, 0.05f))
         {
             float p = k / FadeTime;
             from.volume = fromStart * (1f - p);
@@ -172,8 +173,8 @@ public class Sound : MonoBehaviour
         }
         from.Stop();
         from.volume = 0f;
-        ApplyMusicVolume();
         fade = null;
+        ApplyMusicVolume();
     }
 
     private void ApplyMusicVolume()
