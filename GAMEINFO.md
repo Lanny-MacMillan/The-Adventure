@@ -192,7 +192,7 @@ Cure Frank instead of killing him.
 2. **Find the 3 motor pieces.** They only show up after you have the Treehouse key, so you have to go back to rooms you've already cleared:
    - **Gear:** Woodshed, sitting in the hole in the floor (bottom right).
    - **Spark plug:** Bedroom, on top of the closet wardrobe. Jump to grab it.
-   - **Belt:** wrecked bathroom, stuck in the smashed mirror. Jump to grab it.
+   - **Belt:** wrecked bathroom, behind the shower curtain. Stand at the tub, a bubble pops up, press up and the belt drops out.
 3. **Fix the pump.** Use the fountain to put in the pieces you're carrying. It tells you how many are still missing. With all 3, the pump roars to life and water arcs over onto the **cross on the house roof**, which starts to glow.
 4. **Fill a bottle.** Choose *Fill a bottle* to get **Holy Water**. You can come back and fill it later if you walk away.
 5. **Fight Frank holding the holy water:**
@@ -243,6 +243,9 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprMirror_*`, `sprMirrorBreak_*` | Bathroom mirror cracking |
 | `sprWallScratches` | Woodshed wall |
 | `sprTalkBubble`, `sprContinueArrow`, `sprDialogueBox9Slice` | Talk prompt and dialogue box (the box is cut from Mike's sheet) |
+| `sprDude1_battleDefend_*`, `sprDude1_battleDamaged_*`, `Dude1_*` battle clips | Dude1 in the Candy Dude fight (his overworld frames plus a generated shield glow and hit flash). His portal magic attack still shows the Dev Guy inside the portal |
+| `sprToiletHead_DevGuy` | Dev Guy's head in the wrecked bathroom toilet when you play Dude1 (the art has Dude1's head baked in) |
+| `sprArrowCover` | Black patch hiding the up arrow in the bathroom art until the ladder drops |
 | `Audio/SFX/sfx*` (35 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, menus, dialogue blips. Synthesized chiptune placeholders |
 
 ## Sound
