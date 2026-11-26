@@ -219,6 +219,12 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprSpikes_*` | Basement spike traps | Pixel Side-Scroller Animated Puzzle Elements (Thomas Feichtmeir "Cyangmou") |
 | `sprCrusher_*` | Basement crusher on a chain | Pixel Side-Scroller Animated Puzzle Elements (Thomas Feichtmeir "Cyangmou") |
 | `sprGreenFlame_*` | Basement green flame vents | fire assets, green flame (Retrope studios), shrunk down |
+| `02.Fight_Till_Death` | All boss fights: Candy Dude, Frank, The Stash | CHAOS - a collection of music |
+| `01.Calling_You_At_3AM`, `10.Farewell`, `15.Signing_Out` | Kitchen, Game Over, ending | Lost In Misery |
+| `06.There_In_Spirit` | Church | Dark Ambient Soundscape |
+| `Ambience_Janitory`, `Ambience_Cell` | Woodshed, Basement | Underground Facility Ambient Pack |
+| `07.Cold_Draft`, `16.Room_With_The_Window_Open`, `15.Like_Echoes`, `14.Heartbeats`, `03.Silent_Noise` | World Map, house hallways, Bathroom, after the bathroom, Attic | Buried In The Noise |
+| `Horror_Synth_Theme`, `Lofi_Creepy_Theme`, `Mysterious_Theme`, `Dark_Pulsating_Ambient` | Title, character select, Bedroom, Treehouse | Free Audio Asset Collection |
 
 ### Placeholders we drew to fill gaps (replace with Mike's art)
 
@@ -237,6 +243,13 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprMirror_*`, `sprMirrorBreak_*` | Bathroom mirror cracking |
 | `sprWallScratches` | Woodshed wall |
 | `sprTalkBubble`, `sprContinueArrow`, `sprDialogueBox9Slice` | Talk prompt and dialogue box (the box is cut from Mike's sheet) |
+| `Audio/SFX/sfx*` (35 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, menus, dialogue blips. Synthesized chiptune placeholders |
+
+## Sound
+
+Music and sound effects live in `Assets/Resources/SoundBank` (Inspector). Each scene has a track; boss fights switch to the boss track, and Game Over and the ending have their own. A blank clip is silence. Volume sliders for music and sound are in the pause menu.
+
+Every area has music now.
 
 ## Testing shortcuts (Editor only)
 
@@ -258,4 +271,4 @@ Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap*
 - Tree platforming rebuild
 - Intro and outro
 - Mike's final art for the bats, Frank, the roof cross, the motor pieces and the flask
-- Music and SFX
+- Our own music and sound effects

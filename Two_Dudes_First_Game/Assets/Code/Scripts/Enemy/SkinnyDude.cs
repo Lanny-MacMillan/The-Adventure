@@ -52,6 +52,7 @@ public class SkinnyDude : MonoBehaviour
             {
                 appeared = true;
                 body.enabled = true;
+                Sound.Play("skinnySting");
             }
             return;
         }

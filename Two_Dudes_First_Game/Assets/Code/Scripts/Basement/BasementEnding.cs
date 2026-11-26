@@ -41,6 +41,7 @@ public class BasementEnding : MonoBehaviour
         {
             Playing = true;
             Active = true;
+            Sound.Music("ending");
             StartCoroutine(Run(cured));
         }
     }
@@ -63,6 +64,10 @@ public class BasementEnding : MonoBehaviour
         foreach (string line in lines)
         {
             text.text = line;
+            if (line == "THE END")
+            {
+                Sound.Play("endingSting");
+            }
             yield return Hold();
         }
 

@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public float FallingThreshold = -0.01f;  //Adjust in inspector to appropriate value for the speed you want to trigger detecting a fall, probably by just testing (use negative numbers probably)
     float horizontalMove = 0f;
     private float knockbackTimer = 0f;
+    private float airTime;
+    private float stepTimer;
 
     //public CharacterController controller;
     public Animator animator;
@@ -69,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             //Touching item
             inventory.AddItem(itemWorld.GetItem());
+            Sound.Play("keyPickup");
             itemWorld.DestroySelf();
         }
     }
@@ -107,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             jump = true;
+            Sound.Play("jump");
             animator.SetBool("Jump", true);
         }
 
@@ -122,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
             // Instantiate salt prefab at the launch offset position, facing charaters direction
             SaltBehaviour salt = Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
             salt.facingRight = isFacingRight;
+            Sound.Play("saltThrow");
             animator.SetBool("Attack", true);
             //animator.SetBool("Attack", false);
         }
@@ -137,6 +142,8 @@ public class PlayerMovement : MonoBehaviour
 
         // sets animation for player based on falling state
         SetFallAnimations();
+
+        Footsteps();
 
 
         //flips player from left to right
@@ -217,6 +224,34 @@ public class PlayerMovement : MonoBehaviour
     public void onLanding()
     {
         animator.SetBool("Jump", false);
+    }
+
+    private void Footsteps()
+    {
+        if (!IsGrounded())
+        {
+            airTime += Time.deltaTime;
+            return;
+        }
+        if (airTime > 0.25f)
+        {
+            Sound.Play("land");
+            stepTimer = 0.2f;
+        }
+        airTime = 0f;
+        if (Mathf.Abs(horizontal) > 0.1f && knockbackTimer <= 0f)
+        {
+            stepTimer -= Time.deltaTime;
+            if (stepTimer <= 0f)
+            {
+                Sound.Play("step");
+                stepTimer = 0.3f;
+            }
+        }
+        else
+        {
+            stepTimer = 0.05f;
+        }
     }
 
     private bool IsGrounded()

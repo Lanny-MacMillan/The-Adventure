@@ -43,7 +43,7 @@ public class SaltBehaviour : MonoBehaviour
         // so on collision we will try and see if they have an Enemy Ghost Component, extract enemyComponent and apply functions
         if (collision.gameObject.TryGetComponent<EnemyGhost>(out EnemyGhost enemyComponent))
         {
-            Debug.Log("Hit!");
+            Sound.Play("saltHit");
             Destroy(gameObject);
             enemyComponent.TakeDamage(1);
         }
@@ -54,12 +54,14 @@ public class SaltBehaviour : MonoBehaviour
         FrankBoss frank = other.GetComponentInParent<FrankBoss>();
         if (frank != null && frank.TakeSalt(1))
         {
+            Sound.Play("saltHit");
             Destroy(gameObject);
         }
 
         AtticBat bat = other.GetComponentInParent<AtticBat>();
         if (bat != null && bat.TakeSalt())
         {
+            Sound.Play("saltHit");
             Destroy(gameObject);
         }
     }

@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
             }
             else if (CanPause())
             {
+                Sound.Play("pause");
                 SetPaused(true);
             }
         }
@@ -45,17 +46,20 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Sound.Play("menuSelect");
         SetPaused(false);
     }
 
     public void Restart()
     {
+        Sound.Play("menuSelect");
         SetPaused(false);
         gameManager.restart();
     }
 
     public void QuitToTitle()
     {
+        Sound.Play("menuSelect");
         SetPaused(false);
         gameManager.QuitToTitle();
     }

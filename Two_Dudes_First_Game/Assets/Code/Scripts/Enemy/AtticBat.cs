@@ -43,6 +43,7 @@ public class AtticBat : MonoBehaviour
 
             // shiver so you get a split second of warning
             Vector3 roost = transform.position;
+            Sound.Play("batScreech", 0.7f);
             for (float t = 0f; t < wakeTime; t += Time.deltaTime)
             {
                 transform.position = roost + (Vector3)(Random.insideUnitCircle * 0.05f);
@@ -52,6 +53,7 @@ public class AtticBat : MonoBehaviour
             transform.position = roost;
             eyes.enabled = true;
 
+            Sound.Play("batFlap", 0.6f);
             yield return Swoop();
             if (!dead)
             {

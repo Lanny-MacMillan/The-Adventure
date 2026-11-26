@@ -41,6 +41,7 @@ public class SaltShot : MonoBehaviour
             BasementEnemy e = BasementEnemy.All[i];
             if (e != null && e.Contains(next) && e.TakeSalt(holy))
             {
+                Sound.Play("saltHit");
                 Destroy(gameObject);
                 return;
             }

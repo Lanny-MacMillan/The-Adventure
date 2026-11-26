@@ -82,6 +82,7 @@ public class CandyDudeMirror : MonoBehaviour
         if (key == "mirror" && int.TryParse(value, out int stage))
         {
             SetStage(stage);
+            Sound.Play("mirrorCrack", 0.6f + 0.15f * stage);
         }
         else if (key == "summon" && !summoning)
         {
@@ -101,6 +102,7 @@ public class CandyDudeMirror : MonoBehaviour
     private IEnumerator Summon()
     {
         Vector3 home = mirror.transform.localPosition;
+        Sound.Play("mirrorCrack");
         foreach (Sprite frame in breakFrames)
         {
             mirror.sprite = frame;

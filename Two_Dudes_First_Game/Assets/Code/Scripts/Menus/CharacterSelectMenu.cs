@@ -60,6 +60,10 @@ public class CharacterSelectMenu : MonoBehaviour
         {
             return;
         }
+        if (hovered != option)
+        {
+            Sound.Play("menuMove");
+        }
         hovered = option;
         Refresh();
     }
@@ -81,6 +85,7 @@ public class CharacterSelectMenu : MonoBehaviour
             return;
         }
         starting = true;
+        Sound.Play("menuSelect");
         hovered = option;
         Refresh();
 

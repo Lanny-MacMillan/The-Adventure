@@ -76,6 +76,7 @@ public class BasementBoss : BasementEnemy
                 bar.SetActive(true);
             }
             fight = StartCoroutine(Fight());
+            Sound.Music("boss");
         }
         if (awake)
         {
@@ -113,6 +114,7 @@ public class BasementBoss : BasementEnemy
 
     private IEnumerator Spit(int count)
     {
+        Sound.Play("stashSpit");
         face.transform.localScale = new Vector3(1.1f, 0.9f, 1f);
         yield return new WaitForSeconds(0.35f);
         face.transform.localScale = Vector3.one;
@@ -140,6 +142,7 @@ public class BasementBoss : BasementEnemy
         {
             return;
         }
+        Sound.Play("stashSummon");
         for (int i = -1; i <= 1; i += 2)
         {
             Vector3 at = home + Vector3.Cross(Vector3.up, Vector3.forward) * (i * 2.5f);
@@ -207,6 +210,7 @@ public class BasementBoss : BasementEnemy
     private IEnumerator Die()
     {
         EndFight();
+        Sound.Play("stashDie");
         Vector3 start = transform.localScale;
         for (float k = 0f; k < 2f; k += Time.deltaTime)
         {
@@ -225,6 +229,7 @@ public class BasementBoss : BasementEnemy
     private IEnumerator Cured()
     {
         EndFight();
+        Sound.Play("stashCure");
         Vector3 start = transform.localScale;
         for (float k = 0f; k < 2.5f; k += Time.deltaTime)
         {

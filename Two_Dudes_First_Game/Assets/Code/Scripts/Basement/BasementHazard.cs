@@ -11,6 +11,7 @@ public class BasementHazard : MonoBehaviour
         public float duration = 1f;
         public bool deadly;
         public bool loop;
+        public string sound;
     }
 
     [SerializeField] private SpriteRenderer body;
@@ -35,6 +36,21 @@ public class BasementHazard : MonoBehaviour
         }
     }
 
+    // only the traps near you are heard
+    private void PhaseSound(string key)
+    {
+        FirstPersonPlayer p = FirstPersonPlayer.Instance;
+        if (string.IsNullOrEmpty(key) || p == null)
+        {
+            return;
+        }
+        float near = 1f - Vector3.Distance(p.transform.position, transform.position) / 9f;
+        if (near > 0f)
+        {
+            Sound.Play(key, near * near);
+        }
+    }
+
     private void Update()
     {
         if (phases == null || phases.Length == 0 || Time.timeScale == 0f)
@@ -46,6 +62,7 @@ public class BasementHazard : MonoBehaviour
         {
             timer -= phases[phase].duration;
             phase = (phase + 1) % phases.Length;
+            PhaseSound(phases[phase].sound);
         }
 
         Phase p = phases[phase];
