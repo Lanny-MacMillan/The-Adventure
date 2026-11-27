@@ -66,11 +66,26 @@ public class UI_Inventory : MonoBehaviour
         int y = -284;
         float itemSlotCellSize = 85;
 
+        // the bar holds 6 full-size slots; with more items everything shrinks so it all stays on one row
+        int count = inventory.GetItemList().Count;
+        GridLayoutGroup grid = itemSlotContainer.GetComponent<GridLayoutGroup>();
+        float fit = 1f;
+        if (grid != null)
+        {
+            float width = ((RectTransform)itemSlotContainer).rect.width + 40f;
+            fit = Mathf.Min(1f, width / (Mathf.Max(1, count) * 125f));
+            grid.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+            grid.constraintCount = 1;
+            grid.cellSize = new Vector2(85f, 85f);
+            grid.spacing = new Vector2(125f * fit - 85f, 45f);
+        }
+
         foreach (Item item in inventory.GetItemList())
         {
             // creates new itemSlotContainer and itemSlotTemplate sets itemSlotTemplate to active
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
+            itemSlotRectTransform.localScale = Vector3.one * fit;
 
             // places newly created itemSlot Container and template based off x, y position set in this function above.
             // Places Item sprite w/in the 'image' component
