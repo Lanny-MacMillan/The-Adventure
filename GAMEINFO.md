@@ -9,6 +9,7 @@ Spoiler guide: the key path, where everything is, how each fight works, and the 
 The two dudes are on a road trip when the bridge goes out, leaving them stranded at a haunted property: a house, a woodshed, a treehouse and a graveyard. Frank is up in the Treehouse, possessed, and he's the final boss.
 
 - **Start:** CreatedBy → Title → **Intro** → Character Select → **WorldMap**. You start at the far left next to the car, by the broken bridge.
+- **Splash:** the Two Dudes logo fades in and builds, the dudes hop and high five (slap and flash), "Lanny MacMillan & Mike Irwin" fades in, then it fades to the title. Any key skips.
 - **Intro:** NES-style story panels (the road trip, the bridge gone, the house, green smoke from the treehouse), ending on "They should have stayed in the car." Frank stays a surprise. Enter, Space or click for the next line, Esc skips the whole thing.
 - **Health:** 3 hearts. Getting hit knocks you back, flashes you red and gives you 1 second of invincibility.
 - **Dying:** **Try Again** sends you back to the car at the start of the World Map. You **keep your keys and items** (and anything you've unlocked or solved), but enemies come back, so you have to fight your way back. **Restart** from the pause menu wipes everything.
@@ -289,7 +290,7 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprIntro_*`, `sprOutro_*` | Intro and outro story panels. Backgrounds are renders of Mike's World Map; the car, road, bridge, smoke, sunrise and tree silhouettes are ours |
 | `sprParkedCar`, `sprBrokenBridge` | The car and the snapped bridge where you start on the World Map (you can walk out on the bridge and off the end) |
 | `sprSawSlot` | The floor slot the Attic saw blades run in |
-| `Audio/SFX/sfx*` (37 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, saw grind, menus, dialogue blips, the ending jumpscare. Synthesized chiptune placeholders |
+| `Audio/SFX/sfx*` (38 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, saw grind, menus, dialogue blips, the splash-screen high five, the ending jumpscare. Synthesized chiptune placeholders |
 
 ## Sound
 
