@@ -711,14 +711,11 @@ MonoBehaviour:
     - ...and a treehouse leaking green smoke.
   - picture: {fileID: 21300000, guid: 2b3d566edbf0949d2b1b6b86881d8e14, type: 3}
     lines:
-    - Up there was their old buddy Frank.
-    - He went down in that basement looking for the good stuff.
-    - Frank isn't Frank anymore.
+    - Green smoke, pouring out of a treehouse. At midnight.
+    - Whatever was up there, it wasn't a campfire.
   - picture: {fileID: 0}
     lines:
-    - 'ARE YOU A BAD ENOUGH DUDE
-
-      TO GET OUT ALIVE?'
+    - They should have stayed in the car.
   outro: 0
   driveDevAlone: {fileID: 0}
   driveDevFrank: {fileID: 0}
