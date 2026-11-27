@@ -9,10 +9,8 @@ public class World : SceneSwitch
     public float posY;
     public string previous;
 
-    // Try Again puts you back where you entered the room
-    public static bool Retrying;
-    private static string arrivalScene;
-    private static Vector2 arrivalPoint;
+    // Try Again sends you back to the car (StartPoint on the World Map) to fight your way back
+    public static bool BackToStart;
 
     public override void Start()
     {
@@ -50,14 +48,15 @@ public class World : SceneSwitch
             Place(target, new Vector2(posX, posY));
         }
 
-        string scene = gameObject.scene.name;
-        if (Retrying && arrivalScene == scene)
+        if (BackToStart)
         {
-            Place(target, arrivalPoint);
+            BackToStart = false;
+            GameObject start = GameObject.Find("StartPoint");
+            if (start != null)
+            {
+                Place(target, start.transform.position);
+            }
         }
-        Retrying = false;
-        arrivalScene = scene;
-        arrivalPoint = target.position;
     }
 
     private static void Place(Transform target, Vector2 position)

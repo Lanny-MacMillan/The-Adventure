@@ -76,7 +76,7 @@ public class GameManagerScript : MonoBehaviour
         Sound.Play("gameOver");
     }
 
-    // Game Over: keep your keys, start the room again from where you came in
+    // Game Over: keep your keys and items, start over at the car
     public void TryAgain()
     {
         Time.timeScale = 1f;
@@ -91,8 +91,9 @@ public class GameManagerScript : MonoBehaviour
                 p.Revive();
             }
         }
-        World.Retrying = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        World.BackToStart = true;
+        SceneSwitch.prevScene = null; // don't arrive at a door
+        SceneManager.LoadScene(firstLevelScene);
     }
 
     // fresh start: reset keys, clear everything carried between scenes, reload the World Map
