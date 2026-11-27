@@ -57,6 +57,13 @@ public class SaltBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
 
+        EvilSpirit spirit = other.GetComponentInParent<EvilSpirit>();
+        if (spirit != null && spirit.TakeSalt())
+        {
+            Sound.Play("saltHit");
+            Destroy(gameObject);
+        }
+
         AtticBat bat = other.GetComponentInParent<AtticBat>();
         if (bat != null && bat.TakeSalt())
         {
