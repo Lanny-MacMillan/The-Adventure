@@ -32,6 +32,10 @@ public class FighterStats : MonoBehaviour, IComparable
     private float startHealth;
     private float startMagic;
 
+    [Header("Hit reaction")]
+    [SerializeField] private float knockback = 0.4f; // hero pushed left, boss right
+    [SerializeField] private Color hitColor = new Color(1f, 0.25f, 0.25f, 1f);
+
     [HideInInspector]
     public int nextActTurn;
 
@@ -77,8 +81,9 @@ public class FighterStats : MonoBehaviour, IComparable
 
     public void ReceiveHeal(float heal)
     {
-        Debug.Log("Heal Received!!");
-        health += heal;
+        health = Mathf.Min(startHealth, health + heal);
+        xNewHealthScale = healthScale.x * (health / startHealth);
+        healthFill.transform.localScale = new Vector2(xNewHealthScale, healthScale.y);
     }
 
     public void ReceiveShield(float defUp)
@@ -112,6 +117,17 @@ public class FighterStats : MonoBehaviour, IComparable
 
     public void ReceiveDamage(float damage)
     {
+        ReceiveDamage(damage, 0f);
+    }
+
+    // impactDelay lines the reaction up with the projectile or swing actually landing
+    public void ReceiveDamage(float damage, float impactDelay)
+    {
+        if (damage > 0)
+        {
+            StartCoroutine(HitReaction(impactDelay));
+        }
+
         health -= damage;
         animator.Play("Damage");
 
@@ -127,6 +143,8 @@ public class FighterStats : MonoBehaviour, IComparable
                 Invoke(nameof(PostBathroomScene), 2);
 
             }
+            healthFill.transform.localScale = new Vector2(0, healthScale.y);
+            return; // fight is over, no next turn
 
         } else if ( damage > 0 )
         {
@@ -155,6 +173,46 @@ public class FighterStats : MonoBehaviour, IComparable
         Invoke(nameof(ContinueGame), 4);
     }
 
+
+    private IEnumerator HitReaction(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Vector3 start = transform.position;
+        Vector3 pushed = start + Vector3.right * (CompareTag("Hero") ? -knockback : knockback);
+        float t = 0f;
+        while (t < 0.45f && this != null)
+        {
+            float k = t < 0.1f ? t / 0.1f : 1f - (t - 0.1f) / 0.35f;
+            transform.position = Vector3.Lerp(start, pushed, Mathf.Clamp01(k));
+            if (sr != null)
+            {
+                sr.color = (Mathf.FloorToInt(t / 0.08f) % 2 == 0) ? hitColor : Color.white;
+            }
+            t += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = start;
+        if (sr != null)
+        {
+            sr.color = Color.white;
+        }
+    }
+
+    public void RegenMagic(float amount)
+    {
+        if (amount <= 0 || magic >= startMagic)
+        {
+            return;
+        }
+        magic = Mathf.Min(startMagic, magic + amount);
+        xNewMagicScale = magicScale.x * (magic / startMagic);
+        magicFill.transform.localScale = new Vector2(xNewMagicScale, magicScale.y);
+        if (CompareTag("Hero") && magic >= 20 && battleMenuMagic != null)
+        {
+            battleMenuMagic.SetActive(true);
+        }
+    }
 
     public void UpdateMagicFill(float cost)
     {

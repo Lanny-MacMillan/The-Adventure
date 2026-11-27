@@ -82,6 +82,8 @@ GameObject:
   - component: {fileID: 2186714952007846944}
   - component: {fileID: 2186714952007846951}
   - component: {fileID: 4764687398797853963}
+  - component: {fileID: 5109725738910490989}
+  - component: {fileID: 1795544787677714307}
   m_Layer: 7
   m_Name: PlayerChar(Master)
   m_TagString: Player
@@ -254,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d866b78431684eac924e6baa2e8380f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpingPower: 14
   isFacingRight: 1
   attack: 0
   lastX: 0
@@ -261,6 +264,8 @@ MonoBehaviour:
   FreeFall: 0
   jump: 0
   FallingThreshold: -0.01
+  throwPose: 0.2
+  throwCooldown: 0.3
   animator: {fileID: 2186714951440630171}
   rb: {fileID: 2186714951440630168}
   groundCheck: {fileID: 2186714951060797407}
@@ -378,6 +383,10 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   isDead: 0
   animator: {fileID: 2186714951440630171}
+  knockbackForce: {x: 6, y: 6}
+  knockbackTime: 0.25
+  invincibleTime: 1
+  hurtColor: {r: 1, g: 0.35, b: 0.35, a: 1}
 --- !u!114 &2186714952007846944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +427,38 @@ MonoBehaviour:
   dude1IdleSprite: {fileID: -2011550748, guid: 18cb8f9e886904a16a33c9cb6193ad4e, type: 3}
   animator: {fileID: 2186714951440630171}
   spriteRenderer: {fileID: 2186714951440630117}
+--- !u!114 &5109725738910490989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186714951440630116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd5c239d7d484cf7b2669fc8f81036e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
+  followCam: {fileID: 0}
+  riseAllowance: 2.8
+--- !u!114 &1795544787677714307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186714951440630116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53599efc0e96419a9f687fce8dbd2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBark
+  font: {fileID: 11400000, guid: 8120c078c99504c6fb04400a6d27b18e, type: 2}
+  box: {fileID: 21300000, guid: 0d67c7d9aa3764f97a65485d46a1a9f5, type: 3}
+  unlit: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  fontSize: 1.6
+  height: 1.5
+  duration: 2.8
 --- !u!1 &2186714951582902433
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,14 +552,14 @@ MonoBehaviour:
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
-  m_YDamping: 5
+  m_YDamping: 0.5
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.75
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0.793
+  m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8

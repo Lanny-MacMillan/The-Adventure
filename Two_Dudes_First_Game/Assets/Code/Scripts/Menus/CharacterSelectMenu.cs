@@ -2,8 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Dark stage with both characters. Hover (or left/right arrows) puts a stage light on one
-// and darkens the other. Click (or Enter) picks that character and starts the game.
 public class CharacterSelectMenu : MonoBehaviour
 {
     [SerializeField] private CharacterOption[] options;
@@ -62,6 +60,10 @@ public class CharacterSelectMenu : MonoBehaviour
         {
             return;
         }
+        if (hovered != option)
+        {
+            Sound.Play("menuMove");
+        }
         hovered = option;
         Refresh();
     }
@@ -83,6 +85,7 @@ public class CharacterSelectMenu : MonoBehaviour
             return;
         }
         starting = true;
+        Sound.Play("menuSelect");
         hovered = option;
         Refresh();
 

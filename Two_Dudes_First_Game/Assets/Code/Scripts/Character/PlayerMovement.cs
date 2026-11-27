@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float speed = 5f;
     private float FallTime = 0;
-    private float jumpingPower = 16f;
+    [SerializeField] private float jumpingPower = 14f; // ~2.5 units high; the WorldMap tree steps need 2.2
     private Inventory inventory;
     public bool isFacingRight = true;
 
@@ -24,6 +24,15 @@ public class PlayerMovement : MonoBehaviour
     public bool jump = false;
     public float FallingThreshold = -0.01f;  //Adjust in inspector to appropriate value for the speed you want to trigger detecting a fall, probably by just testing (use negative numbers probably)
     float horizontalMove = 0f;
+    private float knockbackTimer = 0f;
+    private float airTime;
+
+    // set by cutscenes like Frank waking up
+    public static bool Locked;
+    private float stepTimer;
+    private float throwTimer;
+    [SerializeField] private float throwPose = 0.2f;
+    [SerializeField] private float throwCooldown = 0.3f;
 
     //public CharacterController controller;
     public Animator animator;
@@ -46,13 +55,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public Inventory GetInventory()
+    {
+        return inventory;
+    }
+
     void Start()
     {
         lastY = transform.position.y;
         lastX = transform.position.x;
 
         inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
+        inventory.LoadOwned();
+        if (uiInventory != null) uiInventory.SetInventory(inventory);
 
     }
     
@@ -63,12 +78,31 @@ public class PlayerMovement : MonoBehaviour
         {
             //Touching item
             inventory.AddItem(itemWorld.GetItem());
+            Sound.Play("keyPickup");
             itemWorld.DestroySelf();
         }
     }
 
     void Update()
     {
+        if (PauseMenu.IsPaused)
+        {
+            return;
+        }
+
+        if (Locked)
+        {
+            horizontal = 0f;
+            animator.SetFloat("Speed", 0f);
+            return;
+        }
+
+        // this will pause player movement if bathroom dialogue window is open
+        if (DialogueManager.GetInstance() != null && DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+
         lastY = transform.position.y;
         lastX = transform.position.x;
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -90,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             jump = true;
+            Sound.Play("jump");
             animator.SetBool("Jump", true);
         }
 
@@ -99,17 +134,23 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
-        // Salt Attack / Set Animation
-        if (Input.GetButtonDown("Fire1"))
+        // salt throw: the throw pose holds long enough to see even on a tap, with a short cooldown
+        throwTimer -= Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && throwTimer <= -throwCooldown + throwPose)
         {
-            // Instantiate salt prefab at the launch offset position, facing charaters direction
-            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            SaltBehaviour salt = Instantiate(ProjectilePrefab, LaunchOffset.position, Quaternion.identity);
+            salt.facingRight = isFacingRight;
+            Sound.Play("saltThrow");
             animator.SetBool("Attack", true);
-            //animator.SetBool("Attack", false);
+            // first throw after filling up on holy water
+            if (PlayerPrefs.GetInt("holyWater") == 1 && PlayerPrefs.GetInt("blessedSaltNoticed") == 0)
+            {
+                PlayerPrefs.SetInt("blessedSaltNoticed", 1);
+                PlayerBark.Say("Huh... my salt looks different.");
+            }
+            throwTimer = throwPose;
         }
-
-        //  Reset Salt Attack Animation 
-        if (Input.GetButtonUp("Fire1"))
+        if (throwTimer <= 0f && animator.GetBool("Attack"))
         {
             animator.SetBool("Attack", false);
         }
@@ -119,6 +160,8 @@ public class PlayerMovement : MonoBehaviour
 
         // sets animation for player based on falling state
         SetFallAnimations();
+
+        Footsteps();
 
 
         //flips player from left to right
@@ -181,13 +224,55 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (knockbackTimer > 0f)
+        {
+            knockbackTimer -= Time.fixedDeltaTime;
+            return;
+        }
+
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+    }
+
+    public void Knockback(Vector2 velocity, float duration)
+    {
+        rb.linearVelocity = velocity;
+        knockbackTimer = duration;
     }
 
     public void onLanding()
     {
         animator.SetBool("Jump", false);
     }
+
+    private void Footsteps()
+    {
+        if (!IsGrounded())
+        {
+            airTime += Time.deltaTime;
+            return;
+        }
+        if (airTime > 0.25f)
+        {
+            Sound.Play("land");
+            stepTimer = 0.2f;
+        }
+        airTime = 0f;
+        if (Mathf.Abs(horizontal) > 0.1f && knockbackTimer <= 0f)
+        {
+            stepTimer -= Time.deltaTime;
+            if (stepTimer <= 0f)
+            {
+                Sound.Play("step");
+                stepTimer = 0.3f;
+            }
+        }
+        else
+        {
+            stepTimer = 0.05f;
+        }
+    }
+
+    public bool Grounded => IsGrounded();
 
     private bool IsGrounded()
     {

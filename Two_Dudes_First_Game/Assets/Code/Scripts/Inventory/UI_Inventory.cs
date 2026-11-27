@@ -22,6 +22,8 @@ public class UI_Inventory : MonoBehaviour
     private Sprite basementKey; // 5th
     [SerializeField]
     private Sprite cross; // 6th
+    [SerializeField]
+    private Sprite kitchenKey;
 
 
 
@@ -47,6 +49,12 @@ public class UI_Inventory : MonoBehaviour
 
     private void RefreshInventoryItems ()
     {
+        // a scene's placeholder copy can call this before its Awake ran
+        if (itemSlotContainer == null)
+        {
+            return;
+        }
+
         foreach (Transform child in itemSlotContainer)
         {
             if (child == itemSlotTemplate) continue;
@@ -58,11 +66,26 @@ public class UI_Inventory : MonoBehaviour
         int y = -284;
         float itemSlotCellSize = 85;
 
+        // the bar holds 6 full-size slots; with more items everything shrinks so it all stays on one row
+        int count = inventory.GetItemList().Count;
+        GridLayoutGroup grid = itemSlotContainer.GetComponent<GridLayoutGroup>();
+        float fit = 1f;
+        if (grid != null)
+        {
+            float width = ((RectTransform)itemSlotContainer).rect.width + 40f;
+            fit = Mathf.Min(1f, width / (Mathf.Max(1, count) * 125f));
+            grid.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+            grid.constraintCount = 1;
+            grid.cellSize = new Vector2(85f, 85f);
+            grid.spacing = new Vector2(125f * fit - 85f, 45f);
+        }
+
         foreach (Item item in inventory.GetItemList())
         {
             // creates new itemSlotContainer and itemSlotTemplate sets itemSlotTemplate to active
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
+            itemSlotRectTransform.localScale = Vector3.one * fit;
 
             // places newly created itemSlot Container and template based off x, y position set in this function above.
             // Places Item sprite w/in the 'image' component
@@ -95,10 +118,18 @@ public class UI_Inventory : MonoBehaviour
                 PlayerPrefs.SetInt("basementDoor", 1);
                 Debug.Log("SET PLAYER PREFS TO 1 FOR : " + image.sprite);
             }
+            else if (image.sprite == kitchenKey)
+            {
+                PlayerPrefs.SetInt("kitchenDoor", 1);
+            }
             else if (image.sprite == cross)
             {
                 PlayerPrefs.SetInt("cross", 1);
                 Debug.Log("SET PLAYER PREFS TO 1 FOR POWERUP: " + image.sprite);
+            }
+            else
+            {
+                PlayerPrefs.SetInt(item.PrefKey(), 1);
             }
 
             // adds one to x (which just logs how many items youve picked up

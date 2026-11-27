@@ -33,6 +33,14 @@ public class AttackScript : MonoBehaviour
     private float healAmount; // maximum on random scale for defense
 
 
+    [SerializeField]
+    private float shieldAmount = 10;
+
+    [SerializeField]
+    private float impactDelay = 0.6f; // seconds until the hit visibly lands // defense added by Defend, lasts the rest of the fight
+
+    public float MagicCost { get { return magicCost; } }
+
     private FighterStats attackerStats;
     private FighterStats targetStats;
     private float damage = 0.0f;
@@ -57,13 +65,19 @@ public class AttackScript : MonoBehaviour
 
             owner.GetComponent<Animator>().Play(animationName); // plays player or boss animations
 
-            targetStats.ReceiveDamage(Mathf.CeilToInt(damage)); // damage animation itself is delayed, 1s
+            targetStats.ReceiveDamage(Mathf.CeilToInt(damage), impactDelay); // damage animation itself is delayed, 1s
+            Invoke(nameof(HitSound), impactDelay);
             attackerStats.UpdateMagicFill(magicCost);
         }
         else
         {
             Invoke(nameof(SkipTurnContinueGame), 4);
         }
+    }
+
+    private void HitSound()
+    {
+        Sound.Play("candyHit");
     }
 
     public void Heal(GameObject owner)
@@ -77,7 +91,7 @@ public class AttackScript : MonoBehaviour
     public void Shield(GameObject owner)
     {
         targetStats = owner.GetComponent<FighterStats>();
-        targetStats.ReceiveShield(20);
+        targetStats.ReceiveShield(shieldAmount);
 
         Invoke(nameof(SkipTurnContinueGame), 4);
     }

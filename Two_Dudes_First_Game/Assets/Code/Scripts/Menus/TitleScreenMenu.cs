@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenMenu : MonoBehaviour
 {
-    [SerializeField] private string characterSelectScene = "CharacterSelect";
+    [SerializeField] private string characterSelectScene = "Intro";
 
     private void Start()
     {
@@ -19,9 +19,18 @@ public class TitleScreenMenu : MonoBehaviour
         }
     }
 
-    // hooked up to the Start Game button
     public void StartGame()
     {
+        Sound.Play("menuSelect");
         SceneManager.LoadScene(characterSelectScene);
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

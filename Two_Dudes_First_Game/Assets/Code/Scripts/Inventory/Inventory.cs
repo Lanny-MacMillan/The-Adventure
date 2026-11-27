@@ -45,6 +45,34 @@ public class Inventory {
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
+    // start of a run: carry everything the save says you've picked up, minus motor pieces already in the pump
+    public void LoadOwned()
+    {
+        foreach (Item.ItemType type in (Item.ItemType[])Enum.GetValues(typeof(Item.ItemType)))
+        {
+            Item item = new Item { itemType = type, amount = 1 };
+            string key = item.PrefKey();
+            if (PlayerPrefs.GetInt(key) != 1 || PlayerPrefs.GetInt(key + "Installed") == 1 || itemList.Exists(i => i.itemType == type))
+            {
+                continue;
+            }
+            itemList.Add(item);
+        }
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public bool RemoveItem(Item.ItemType type)
+    {
+        int index = itemList.FindIndex(i => i.itemType == type);
+        if (index < 0)
+        {
+            return false;
+        }
+        itemList.RemoveAt(index);
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        return true;
+    }
+
     public List<Item> GetItemList()
     {
         return itemList;

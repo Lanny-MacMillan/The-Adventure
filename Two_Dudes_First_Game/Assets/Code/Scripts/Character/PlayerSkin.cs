@@ -1,7 +1,6 @@
 using UnityEngine;
 
-// Swaps the player's look to the character picked on the select screen.
-// Only the sprites and animations change - every other script on the player stays the same.
+// swaps sprites/animations to the selected character, other scripts untouched
 public class PlayerSkin : MonoBehaviour
 {
     [Header("Dude1 (alt character)")]

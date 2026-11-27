@@ -1,0 +1,281 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47259a294649e476e8c3017372de4a0c, type: 3}
+  m_Name: SoundBank
+  m_EditorClassIdentifier: Assembly-CSharp::SoundBank
+  music:
+  - key: title
+    clip: {fileID: 8300000, guid: 05b9fcf0bf1b24905a236c3e1170df35, type: 3}
+    volume: 0.7
+  - key: select
+    clip: {fileID: 8300000, guid: 87f16d2bce97c453696842ed1267ac22, type: 3}
+    volume: 0.7
+  - key: world
+    clip: {fileID: 8300000, guid: c29915eb94b4e422f81b727674060298, type: 3}
+    volume: 0.7
+  - key: house
+    clip: {fileID: 8300000, guid: 623e9ae1480b74f3dac0a86bcd2b327f, type: 3}
+    volume: 0.7
+  - key: kitchen
+    clip: {fileID: 8300000, guid: 97d0f4fbf4a864ebfa45f24734aaf294, type: 3}
+    volume: 0.6
+  - key: bedroom
+    clip: {fileID: 8300000, guid: d7deff27b23684ceda8120538c344e4f, type: 3}
+    volume: 0.7
+  - key: bathroom
+    clip: {fileID: 8300000, guid: 70626283017474d978a4e800e65ce663, type: 3}
+    volume: 0.7
+  - key: postbath
+    clip: {fileID: 8300000, guid: e202d244106fd495a8414928ff5090e4, type: 3}
+    volume: 0.7
+  - key: attic
+    clip: {fileID: 8300000, guid: 2713214a47bfc43e2bf66f073cd6a598, type: 3}
+    volume: 0.7
+  - key: woodshed
+    clip: {fileID: 8300000, guid: 7f5868e662e334f2cbace3e75395861d, type: 3}
+    volume: 0.8
+  - key: church
+    clip: {fileID: 8300000, guid: 30c89f87df2fd459e97d048863f49697, type: 3}
+    volume: 0.7
+  - key: treehouse
+    clip: {fileID: 8300000, guid: ab44c4dbcb9dd48deb2fdf9993f96f41, type: 3}
+    volume: 0.7
+  - key: basement
+    clip: {fileID: 8300000, guid: f65d2167943904f9b9e4fa42b97d1464, type: 3}
+    volume: 0.8
+  - key: boss
+    clip: {fileID: 8300000, guid: 6a2cb906735334e2d8861ec03fb5d25b, type: 3}
+    volume: 0.7
+  - key: gameover
+    clip: {fileID: 8300000, guid: 29089f7f8c4884489a78907a2b889f56, type: 3}
+    volume: 0.7
+  - key: ending
+    clip: {fileID: 8300000, guid: 765c9127aa90444ec9d5f3852a01f72a, type: 3}
+    volume: 0.7
+  scenes:
+  - scene: CreatedBy
+    track: title
+  - scene: TitleScreen
+    track: title
+  - scene: CharacterSelect
+    track: select
+  - scene: WorldMap
+    track: world
+  - scene: HouseInterior1stFloor
+    track: house
+  - scene: HouseInterior2ndFloor
+    track: house
+  - scene: Kitchen
+    track: kitchen
+  - scene: Bedroom
+    track: bedroom
+  - scene: Bathroom
+    track: bathroom
+  - scene: TurnBasedBathroomBattle
+    track: boss
+  - scene: PostBathroom
+    track: postbath
+  - scene: Attic
+    track: attic
+  - scene: WoodShed
+    track: woodshed
+  - scene: ChurchInterior
+    track: church
+  - scene: Treehouse
+    track: treehouse
+  - scene: Basement
+    track: basement
+  - scene: Intro
+    track: title
+  - scene: Outro
+    track: ending
+  effects:
+  - key: step
+    clips:
+    - {fileID: 8300000, guid: 3090ea1e3d55643bfa4b5a74682ea38d, type: 3}
+    volume: 0.3
+    pitchJitter: 0.12
+  - key: jump
+    clips:
+    - {fileID: 8300000, guid: ce4f5acaa404747b385daed785c7a5be, type: 3}
+    volume: 0.6
+    pitchJitter: 0.05
+  - key: land
+    clips:
+    - {fileID: 8300000, guid: 4edc1d543f6b8434e83dd9128253b608, type: 3}
+    volume: 0.6
+    pitchJitter: 0.08
+  - key: hurt
+    clips:
+    - {fileID: 8300000, guid: 3bf2a84c540ed47998f9512a30d5b5d4, type: 3}
+    volume: 0.9
+    pitchJitter: 0.05
+  - key: death
+    clips:
+    - {fileID: 8300000, guid: 0e52247d829c94dcb82f8ce1e862d9e9, type: 3}
+    volume: 0.8
+    pitchJitter: 0
+  - key: saltThrow
+    clips:
+    - {fileID: 8300000, guid: 6d7f88c9e222745959c719c452f54b98, type: 3}
+    volume: 0.6
+    pitchJitter: 0.1
+  - key: saltHit
+    clips:
+    - {fileID: 8300000, guid: 7f2cfa44bef5e478594d3feafbf9ae0f, type: 3}
+    volume: 0.7
+    pitchJitter: 0.08
+  - key: ghostMoan
+    clips:
+    - {fileID: 8300000, guid: 1e419072555bc43489fbf1df43d5b386, type: 3}
+    volume: 0.7
+    pitchJitter: 0.1
+  - key: batScreech
+    clips:
+    - {fileID: 8300000, guid: 947cca05cbbc248cbbf351608cf7b4a7, type: 3}
+    volume: 0.6
+    pitchJitter: 0.12
+  - key: batFlap
+    clips:
+    - {fileID: 8300000, guid: 05204f46e69ae4324a0422589ae9cfe5, type: 3}
+    volume: 0.5
+    pitchJitter: 0.1
+  - key: skinnySting
+    clips:
+    - {fileID: 8300000, guid: 04cc7987787d14bc4bc5ecc215100e1c, type: 3}
+    volume: 0.8
+    pitchJitter: 0
+  - key: closetDemon
+    clips:
+    - {fileID: 8300000, guid: 0ee09fa97378e49ea8b8e3d9a11b1e2c, type: 3}
+    volume: 0.8
+    pitchJitter: 0.05
+  - key: candyHit
+    clips:
+    - {fileID: 8300000, guid: de88b5b1ac0044cc7a91f975de3e158a, type: 3}
+    volume: 0.8
+    pitchJitter: 0.08
+  - key: frankSpit
+    clips:
+    - {fileID: 8300000, guid: be6eaf8abfcd04a7ba13b79b0c50f610, type: 3}
+    volume: 0.7
+    pitchJitter: 0.08
+  - key: frankSlam
+    clips:
+    - {fileID: 8300000, guid: f05ec607bc3ab4707802a3ae90753e0e, type: 3}
+    volume: 0.9
+    pitchJitter: 0.05
+  - key: frankMelt
+    clips:
+    - {fileID: 8300000, guid: 29c326c9e36bd4a1e98b25492618d0b7, type: 3}
+    volume: 0.8
+    pitchJitter: 0
+  - key: doorOpen
+    clips:
+    - {fileID: 8300000, guid: 894cbcffc04674a70ac68186b21be50f, type: 3}
+    volume: 0.7
+    pitchJitter: 0.05
+  - key: doorLocked
+    clips:
+    - {fileID: 8300000, guid: 8ddcb9c46b17a4ddf87eba8f477c50ff, type: 3}
+    volume: 0.7
+    pitchJitter: 0.03
+  - key: keyPickup
+    clips:
+    - {fileID: 8300000, guid: 737d51c98487d4f6ea62f87fa57dd239, type: 3}
+    volume: 0.7
+    pitchJitter: 0
+  - key: mirrorCrack
+    clips:
+    - {fileID: 8300000, guid: ad6145eb82fcf434baf12efcf8000993, type: 3}
+    volume: 0.8
+    pitchJitter: 0.05
+  - key: fountainPump
+    clips:
+    - {fileID: 8300000, guid: 4a9ed53403a214ea685f347e4fce1046, type: 3}
+    volume: 0.7
+    pitchJitter: 0
+  - key: ladder
+    clips:
+    - {fileID: 8300000, guid: 9f405f362490e48dea28bb3b583845b9, type: 3}
+    volume: 0.6
+    pitchJitter: 0.05
+  - key: spikes
+    clips:
+    - {fileID: 8300000, guid: 51948249ee57e445499ba564b24d2e7c, type: 3}
+    volume: 0.6
+    pitchJitter: 0.1
+  - key: crusher
+    clips:
+    - {fileID: 8300000, guid: ef38f574d344641fcab9d445335a28a9, type: 3}
+    volume: 0.8
+    pitchJitter: 0.05
+  - key: flame
+    clips:
+    - {fileID: 8300000, guid: 436e641a303d148c39dc9cc6b9373cb6, type: 3}
+    volume: 0.6
+    pitchJitter: 0.08
+  - key: stashSpit
+    clips:
+    - {fileID: 8300000, guid: c22f3f875cbe440968a02f3e974ea9bb, type: 3}
+    volume: 0.7
+    pitchJitter: 0.08
+  - key: stashSummon
+    clips:
+    - {fileID: 8300000, guid: a7db4261f974b4c65a60a4afae19db0d, type: 3}
+    volume: 0.8
+    pitchJitter: 0
+  - key: stashDie
+    clips:
+    - {fileID: 8300000, guid: 97f3dbc8e3b0a458ebcd97acd337375f, type: 3}
+    volume: 0.9
+    pitchJitter: 0
+  - key: stashCure
+    clips:
+    - {fileID: 8300000, guid: d8c485dfd34c1470bacfc7ab598af664, type: 3}
+    volume: 0.8
+    pitchJitter: 0
+  - key: menuMove
+    clips:
+    - {fileID: 8300000, guid: 1ed4949bc59ad428b872c9f1f9bfb2f3, type: 3}
+    volume: 0.5
+    pitchJitter: 0
+  - key: menuSelect
+    clips:
+    - {fileID: 8300000, guid: d68ab2441ac804a7f918dd6c8de2bb19, type: 3}
+    volume: 0.6
+    pitchJitter: 0
+  - key: dialogueBlip
+    clips:
+    - {fileID: 8300000, guid: ef95c2ce6686e418ebea851f7e6078ab, type: 3}
+    volume: 0.25
+    pitchJitter: 0.06
+  - key: pause
+    clips:
+    - {fileID: 8300000, guid: f91ed376d1ea042ff93cdb2001b30f1a, type: 3}
+    volume: 0.6
+    pitchJitter: 0
+  - key: gameOver
+    clips:
+    - {fileID: 8300000, guid: 33d20f4c984cb404f98e4f46d5b508cf, type: 3}
+    volume: 0.8
+    pitchJitter: 0
+  - key: endingSting
+    clips:
+    - {fileID: 8300000, guid: 11a2455f3304f4c5bb2c7ac7131aae62, type: 3}
+    volume: 0.8
+    pitchJitter: 0
+  - key: jumpScare
+    clips:
+    - {fileID: 8300000, guid: d57be552d3a304a1983739c6f7608efd, type: 3}
+    volume: 1
+    pitchJitter: 0

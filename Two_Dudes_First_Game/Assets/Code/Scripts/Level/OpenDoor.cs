@@ -17,10 +17,31 @@ public class OpenDoor : MonoBehaviour
     [SerializeField]
     private string requiredKey;
 
+    [SerializeField] private GameObject prompt; // optional bubble shown when you can use this door
+    [SerializeField] private string useSound = "doorOpen";
+
+    [Header("Room changed (e.g. bathroom after the fight)")]
+    [SerializeField] private string changedFlag;
+    [SerializeField] private string changedSceneName;
+
     SceneSwitch sceneSwitch;
 
     [SerializeField]
     GameObject playerPrefScript;
+
+    public string SceneName
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(changedFlag) && PlayerPrefs.GetInt(changedFlag) == 1)
+            {
+                return changedSceneName;
+            }
+            return sceneName;
+        }
+    }
+    public string RequiredKey { get { return requiredKey; } }
+    public Vector2 SpawnPoint { get { return doorPos != null ? (Vector2)doorPos.position : (Vector2)transform.position; } }
 
 
     //// bool states will open doors in OpenDoor.cs
@@ -33,7 +54,7 @@ public class OpenDoor : MonoBehaviour
 
     private void Start()
     {
-        sceneSwitch = FindObjectOfType<SceneSwitch>();
+        sceneSwitch = FindAnyObjectByType<SceneSwitch>();
     }
 
     private void Update()
@@ -46,44 +67,53 @@ public class OpenDoor : MonoBehaviour
         treehouseKeyObtained = PlayerPrefs.GetInt("treehouseDoor");
         basementKeyObtained = PlayerPrefs.GetInt("basementDoor");
 
-        if (playerDetected == true)
+        if (prompt != null)
         {
-            if (requiredKey == "None" && Input.GetKeyDown(KeyCode.Return))
+            bool show = playerDetected && !PauseMenu.IsPaused && HasKey();
+            if (prompt.activeSelf != show)
             {
-                    sceneSwitch.SwitchScene(sceneName);
+                prompt.SetActive(show);
             }
-            else if
-                (requiredKey == "bedroomKey" && bedroomKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
-            {
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "woodshedKey" && woodshedKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
-            {
-                Debug.Log("woodshedKeyObtained: " + woodshedKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "bathroomKey" && bathroomKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
-            {
-                Debug.Log("bathroomKeyObtained: " + bathroomKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "treehouseKey" && treehouseKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
-            {
-                Debug.Log("treehouseKeyObtained: " + treehouseKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            else if
-                (requiredKey == "basementKey" && basementKeyObtained == 1 && Input.GetKeyDown(KeyCode.Return))
-            {
-                Debug.Log("basementKeyObtained: " + basementKeyObtained);
-                sceneSwitch.SwitchScene(sceneName);
-            }
-            return;
         }
-        return;
+
+        if (playerDetected && !PauseMenu.IsPaused && UsePressed())
+        {
+            if (HasKey())
+            {
+                Sound.Play(useSound);
+                sceneSwitch.SwitchScene(SceneName);
+            }
+            else
+            {
+                Sound.Play("doorLocked");
+            }
+        }
+    }
+
+    // blank or "None" means the door isn't locked
+    public bool HasKey()
+    {
+        switch (requiredKey)
+        {
+            case null:
+            case "":
+            case "None":         return true;
+            case "kitchenKey":   return PlayerPrefs.GetInt("kitchenDoor") == 1;
+            case "bedroomKey":   return PlayerPrefs.GetInt("bedroomDoor") == 1;
+            case "woodshedKey":  return PlayerPrefs.GetInt("woodshedDoor") == 1;
+            case "bathroomKey":  return PlayerPrefs.GetInt("bathroomDoor") == 1;
+            case "treehouseKey": return PlayerPrefs.GetInt("treehouseDoor") == 1;
+            case "basementKey":  return PlayerPrefs.GetInt("basementDoor") == 1;
+            default:             return false;
+        }
+    }
+
+    private bool UsePressed()
+    {
+        return Input.GetKeyDown(KeyCode.Return)
+            || Input.GetKeyDown(KeyCode.KeypadEnter)
+            || Input.GetKeyDown(KeyCode.UpArrow)
+            || Input.GetKeyDown(KeyCode.W);
     }
 
     private void OnDrawGizmosSelected()

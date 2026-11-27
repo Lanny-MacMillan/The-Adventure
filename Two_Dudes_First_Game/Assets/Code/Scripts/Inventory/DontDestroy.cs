@@ -1,24 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// Carries this object (player, HUD, inventory) from scene to scene. Each room has its own copy for testing;
+// when one with the same name was already carried in, the room's copy switches off and deletes itself right away
+// so nothing in the room can mistake it for the real one.
+[DefaultExecutionOrder(-1000)]
 public class DontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        //inventory is having issues cause they are the same name if you remove this part it works fine, hearts too
-        for (int i = 0; i < Object.FindObjectsOfType<DontDestroy>().Length; i++)
+        if (transform.parent != null)
         {
-            if (Object.FindObjectsOfType<DontDestroy>()[i] != this)
+            return; // children ride along with their carried parent
+        }
+        foreach (DontDestroy other in FindObjectsByType<DontDestroy>(FindObjectsInactive.Include))
+        {
+            if (other != this && other.name == name && other.gameObject.scene.name == "DontDestroyOnLoad")
             {
-                if (Object.FindObjectsOfType<DontDestroy>()[i].name == gameObject.name)
-                {
-                    Destroy(gameObject);
-                }
+                gameObject.SetActive(false);
+                Destroy(gameObject);
+                return;
             }
         }
-
         DontDestroyOnLoad(gameObject);
     }
 }

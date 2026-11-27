@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-// One character standing on the select screen, with its own stage light.
-// Needs a Collider2D so the mouse can hover / click it.
+// needs a Collider2D for mouse hover/click
 public class CharacterOption : MonoBehaviour
 {
     public int characterId;

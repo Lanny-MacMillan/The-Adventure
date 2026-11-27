@@ -56,6 +56,11 @@ public class FighterAction : MonoBehaviour
         battleMenuDefend = GameObject.Find("DefendBtn");
     }
 
+    public bool CanCastMagic()
+    {
+        return magicPrefab != null && GetComponent<FighterStats>().magic >= magicPrefab.GetComponent<AttackScript>().MagicCost;
+    }
+
     public void SelectAttack(string btn)
     {
         //fighterStats.CheckMana();
@@ -108,7 +113,7 @@ public class FighterAction : MonoBehaviour
             this.battleMenu.SetActive(false); // Disables button action menu after click
             this.battleMenuHeal.SetActive(false); // Disables heal button after click
 
-            Invoke(nameof(ResetPotion), 40);
+            healCooldown = healCooldownTurns;
 
         }
         else
@@ -122,9 +127,23 @@ public class FighterAction : MonoBehaviour
         }
     }
 
-    private void ResetPotion()
+    [SerializeField] private int healCooldownTurns = 3;
+    [SerializeField] private float magicRegenPerTurn = 5f;
+    private int healCooldown;
+
+    // heal button comes back after a few of the hero's turns
+    public void HeroTurnStarted()
     {
-        this.battleMenuHeal.SetActive(true); // Enables heal button after 3 turns
+        GetComponent<FighterStats>().RegenMagic(magicRegenPerTurn);
+
+        if (healCooldown > 0)
+        {
+            healCooldown--;
+            if (healCooldown == 0 && battleMenuHeal != null)
+            {
+                battleMenuHeal.SetActive(true);
+            }
+        }
     }
 
     private void ResetAnimationConditionals()

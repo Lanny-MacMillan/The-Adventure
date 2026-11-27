@@ -21,9 +21,30 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        HitPlayer(collision.gameObject);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        HitPlayer(collision.gameObject);
+    }
+
+    private void HitPlayer(GameObject other)
+    {
+        if (!enabled || other.tag != "Player")
         {
-            playerHealth.TakeDamage(damage);
+            return;
+        }
+
+        // inspector reference can go stale between scenes
+        PlayerHealth target = other.GetComponent<PlayerHealth>();
+        if (target == null)
+        {
+            target = playerHealth;
+        }
+        if (target != null)
+        {
+            target.TakeDamage(damage, transform.position);
         }
     }
 }

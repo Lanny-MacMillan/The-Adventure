@@ -9,6 +9,31 @@ public class GameManagerScript : MonoBehaviour
     //public CharacterController controller;
     public Animator animator;
     //public PlayerHealth playerHealth;
+
+    [SerializeField] private string firstLevelScene = "WorldMap";
+    [SerializeField] private string titleScene = "TitleScreen";
+
+    private static GameManagerScript instance;
+    private static readonly string[] doorKeys = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks", "woodshedSolved", "frankDefeated", "motorGear", "motorPlug", "motorBelt", "motorGearInstalled", "motorPlugInstalled", "motorBeltInstalled", "fountainFixed", "holyWater", "frankCured", "basementCleared", "stashCured", "blessedSaltNoticed" };
+
+    private void Awake()
+    {
+        // carried between scenes with the player so Game Over works indoors
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Game Over screen starts inactive so its DontDestroy never runs
+        if (gameOverUI != null && gameOverUI.transform.parent == null)
+        {
+            DontDestroyOnLoad(gameOverUI);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +48,16 @@ public class GameManagerScript : MonoBehaviour
 
     void Update()
     {
-        if (gameOverUI.activeInHierarchy)
+        // the turn based fight, the pause menu and dialogue choices need the mouse
+        DialogueManager dialogue = DialogueManager.GetInstance();
+        if (DisableGlobals.InBattle || PauseMenu.IsPaused || (dialogue != null && dialogue.dialogueIsPlaying))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            return;
+        }
+
+        if (gameOverUI != null && gameOverUI.activeInHierarchy)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -38,15 +72,79 @@ public class GameManagerScript : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+        Sound.Music("gameover");
+        Sound.Play("gameOver");
     }
 
+    // Game Over: keep your keys and items, start over at the car
+    public void TryAgain()
+    {
+        Time.timeScale = 1f;
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(false);
+        }
+        foreach (PlayerHealth p in FindObjectsByType<PlayerHealth>(FindObjectsInactive.Include))
+        {
+            if (p.gameObject.scene.name == "DontDestroyOnLoad")
+            {
+                p.Revive();
+            }
+        }
+        World.BackToStart = true;
+        SceneSwitch.prevScene = null; // don't arrive at a door
+        SceneManager.LoadScene(firstLevelScene);
+    }
+
+    // fresh start: reset keys, clear everything carried between scenes, reload the World Map
     public void restart()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        gameOverUI.SetActive(false);
-        animator.SetBool("isDead", false);
+        EndRun(firstLevelScene);
+    }
 
-        //playerHealth.health = playerHealth.maxHealth;
+    public void QuitToTitle()
+    {
+        EndRun(titleScene);
+    }
+
+    // beat the game: wipe the run and roll the outro
+    public void FinishGame()
+    {
+        EndRun("Outro");
+    }
+
+    private void EndRun(string nextScene)
+    {
+        Time.timeScale = 1f;
+
+        foreach (string key in doorKeys)
+        {
+            PlayerPrefs.SetInt(key, 0);
+        }
+        PlayerPrefs.Save();
+
+        HashSet<GameObject> carriedOver = new HashSet<GameObject>();
+        foreach (DontDestroy d in FindObjectsByType<DontDestroy>(FindObjectsInactive.Include))
+        {
+            carriedOver.Add(d.transform.root.gameObject);
+        }
+        foreach (SaveMe s in FindObjectsByType<SaveMe>(FindObjectsInactive.Include))
+        {
+            carriedOver.Add(s.transform.root.gameObject);
+        }
+
+        // deactivate before Destroy or the new copies see these and delete themselves
+        foreach (GameObject go in carriedOver)
+        {
+            go.SetActive(false);
+            Destroy(go);
+        }
+
+        instance = null;
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+
+        SceneManager.LoadScene(nextScene);
     }
 
     public void quitGame()
