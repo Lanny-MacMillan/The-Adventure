@@ -26834,6 +26834,63 @@ Transform:
   - {fileID: 719565571}
   m_Father: {fileID: 1603477781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1309781138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8051081386473097809, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_Name
+      value: EvilSpirit_Woodshed
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 88
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
 --- !u!1 &1312615049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2545546568738069541, guid: 52658e2317764434995569e96dca3211, type: 3}
@@ -36551,6 +36608,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1001 &1693607805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8051081386473097809, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_Name
+      value: EvilSpirit_Graveyard
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155604971825642803, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9fb7ef6cf919047d9879e77bde82cbcc, type: 3}
 --- !u!1 &1693914559
 GameObject:
   m_ObjectHideFlags: 0
@@ -47325,3 +47439,5 @@ SceneRoots:
   - {fileID: 1775867470}
   - {fileID: 2052796777}
   - {fileID: 1943828118}
+  - {fileID: 1693607805}
+  - {fileID: 1309781138}
