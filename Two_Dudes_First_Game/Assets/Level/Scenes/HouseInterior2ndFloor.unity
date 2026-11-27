@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 3
+  maxHealth: 2
   enemyDead: 0
   animator: {fileID: 166921738}
 --- !u!114 &166921734
