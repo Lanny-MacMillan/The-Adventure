@@ -36,7 +36,8 @@ public class AtticBat : MonoBehaviour
         while (!dead)
         {
             yield return null;
-            if (player == null || player.isDead || Mathf.Abs(player.transform.position.x - transform.position.x) > wakeRange)
+            // only dives down at you: standing on the branch it hangs from is safe
+            if (player == null || player.isDead || Mathf.Abs(player.transform.position.x - transform.position.x) > wakeRange || player.transform.position.y > roostY)
             {
                 continue;
             }
