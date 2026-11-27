@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 2186714952007846951}
   - component: {fileID: 4764687398797853963}
   - component: {fileID: 5109725738910490989}
+  - component: {fileID: 1795544787677714307}
   m_Layer: 7
   m_Name: PlayerChar(Master)
   m_TagString: Player
@@ -440,6 +441,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
   followCam: {fileID: 0}
   riseAllowance: 2.8
+--- !u!114 &1795544787677714307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186714951440630116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53599efc0e96419a9f687fce8dbd2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBark
+  font: {fileID: 11400000, guid: 8120c078c99504c6fb04400a6d27b18e, type: 2}
+  box: {fileID: 21300000, guid: 0d67c7d9aa3764f97a65485d46a1a9f5, type: 3}
+  unlit: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  fontSize: 1.6
+  height: 1.5
+  duration: 2.8
 --- !u!1 &2186714951582902433
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 // Editor-only test shortcuts (Franks Revenge > Dev menu). Not included in builds.
 public static class DevShortcuts
 {
-    private static readonly string[] allProgress = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks", "woodshedSolved", "frankDefeated", "motorGear", "motorPlug", "motorBelt", "motorGearInstalled", "motorPlugInstalled", "motorBeltInstalled", "fountainFixed", "holyWater", "frankCured", "basementCleared", "stashCured" };
+    private static readonly string[] allProgress = { "kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "treehouseDoor", "basementDoor", "cross", "bathroomCleared", "closetDemonDone", "closetDemonTalks", "woodshedSolved", "frankDefeated", "motorGear", "motorPlug", "motorBelt", "motorGearInstalled", "motorPlugInstalled", "motorBeltInstalled", "fountainFixed", "holyWater", "frankCured", "basementCleared", "stashCured", "blessedSaltNoticed" };
 
     [MenuItem("Franks Revenge/Dev/Start At Bathroom Fight (keys up to bathroom)")]
     private static void UpToBathroomFight()

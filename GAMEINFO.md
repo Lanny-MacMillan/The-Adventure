@@ -238,6 +238,7 @@ Cure Frank instead of killing him.
    - Your salt turns **blue**.
    - His bar becomes a blue **CURE** bar that fills up with every hit instead of draining.
    - He fights exactly as hard, so you still have to survive him.
+   - The first time you throw salt after filling up, your dude says "Huh... my salt looks different." in a little bubble.
 6. **Cure him.** When the bar fills, the green drains out of him and he's just Frank again: soaked, confused and swearing off whatever he found in the basement. He hands over the **Basement key**. Come back later and he's still chilling in the Treehouse.
 
 Secret flags: `motorGear`, `motorPlug`, `motorBelt`, `fountainFixed`, `holyWater`, `frankCured`.
