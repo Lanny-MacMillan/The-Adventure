@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Fades out after the boss and tells you how it ended, then back to the title for a fresh run.
+// Fades out after the boss and tells you how it ended, then the outro (drive away, credits) and back to the title.
 public class BasementEnding : MonoBehaviour
 {
     [SerializeField] private Image fade;
@@ -57,28 +57,25 @@ public class BasementEnding : MonoBehaviour
         fade.color = Color.black;
 
         var lines = new System.Collections.Generic.List<string>(cured ? curedLines : killedLines);
-        lines.Add(PlayerPrefs.GetInt("frankCured") == 1 ? frankCuredLine : frankDeadLine);
-        lines.Add("THE END");
+        bool frankCured = PlayerPrefs.GetInt("frankCured") == 1;
+        lines.Add(frankCured ? frankCuredLine : frankDeadLine);
 
         text.gameObject.SetActive(true);
         foreach (string line in lines)
         {
             text.text = line;
-            if (line == "THE END")
-            {
-                Sound.Play("endingSting");
-            }
             yield return Hold();
         }
 
+        StoryScene.FrankCured = frankCured;
         GameManagerScript gm = FindAnyObjectByType<GameManagerScript>();
         if (gm != null)
         {
-            gm.QuitToTitle();
+            gm.FinishGame();
         }
         else
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Outro");
         }
     }
 

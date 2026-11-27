@@ -94,6 +94,10 @@ MonoBehaviour:
     track: treehouse
   - scene: Basement
     track: basement
+  - scene: Intro
+    track: title
+  - scene: Outro
+    track: ending
   effects:
   - key: step
     clips:
@@ -269,4 +273,9 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 11a2455f3304f4c5bb2c7ac7131aae62, type: 3}
     volume: 0.8
+    pitchJitter: 0
+  - key: jumpScare
+    clips:
+    - {fileID: 8300000, guid: d57be552d3a304a1983739c6f7608efd, type: 3}
+    volume: 1
     pitchJitter: 0

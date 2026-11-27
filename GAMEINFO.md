@@ -8,7 +8,8 @@ Spoiler guide: the key path, where everything is, how each fight works, and the 
 
 The two dudes are on a road trip when the bridge goes out, leaving them stranded at a haunted property: a house, a woodshed, a treehouse and a graveyard. Frank is up in the Treehouse, possessed, and he's the final boss.
 
-- **Start:** CreatedBy → Title → Character Select → **WorldMap**.
+- **Start:** CreatedBy → Title → **Intro** → Character Select → **WorldMap**. You start at the far left next to the car, by the broken bridge.
+- **Intro:** NES-style story panels (the road trip, the bridge gone, the house, green smoke from the treehouse), ending on "They should have stayed in the car." Frank stays a surprise. Enter, Space or click for the next line, Esc skips the whole thing.
 - **Health:** 3 hearts. Getting hit knocks you back, flashes you red and gives you 1 second of invincibility.
 - **Dying:** **Try Again** restarts the room you're in from the door you came through, and you **keep your keys**. **Restart** from the pause menu wipes everything.
 - **Danger outside:** walking off the broken bridge (far left) or falling under the map is instant death.
@@ -178,7 +179,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - **Kill or cure:**
   - **Normal salt** kills it. It burns itself out and leaves a scorched, empty baggie.
   - **With holy water** (from the fountain secret) your salt is blue. The bar becomes a **CURE** bar, and the green drains out of it until it's a harmless puff of smoke.
-- **Ending:** the screen fades out, the ending text plays (it changes depending on kill or cure, and whether Frank was cured), then **THE END**, then back to the title for a fresh run. Enter or Space skips each line.
+- **Ending:** the screen fades out, the ending text plays (it changes depending on kill or cure, and whether Frank was cured), then the **outro**: the house at sunrise, then you driving off. Frank rides in the back if you cured him, otherwise the back seat is empty. Then **THE END**, the credits (Story & game design: Lanny MacMillan and Mike Irwin. Programming: Lanny MacMillan. Art, sprites & design: Mike Irwin. A Two Dudes game), then a few seconds of black silence, then Candy Dude screams in your face, then back to the title for a fresh run. Enter or Space skips each line, holding it speeds up the credits, Esc skips to the title.
 
 Flags: `basementCleared` (boss beaten), `stashCured` (cured instead of killed).
 
@@ -246,7 +247,9 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprDude1_battleDefend_*`, `sprDude1_battleDamaged_*`, `Dude1_*` battle clips | Dude1 in the Candy Dude fight (his overworld frames plus a generated shield glow and hit flash). His portal magic attack still shows the Dev Guy inside the portal |
 | `sprToiletHead_DevGuy` | Dev Guy's head in the wrecked bathroom toilet when you play Dude1 (the art has Dude1's head baked in) |
 | `sprArrowCover` | Black patch hiding the up arrow in the bathroom art until the ladder drops |
-| `Audio/SFX/sfx*` (35 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, menus, dialogue blips. Synthesized chiptune placeholders |
+| `sprIntro_*`, `sprOutro_*` | Intro and outro story panels. Backgrounds are renders of Mike's World Map; the car, road, bridge, smoke, sunrise and tree silhouettes are ours |
+| `sprParkedCar`, `sprBrokenBridge` | The car and the snapped bridge where you start on the World Map (you can walk out on the bridge and off the end) |
+| `Audio/SFX/sfx*` (36 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, menus, dialogue blips, the ending jumpscare. Synthesized chiptune placeholders |
 
 ## Sound
 
@@ -272,6 +275,5 @@ Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap*
 ## Still to come
 - Kitchen: gore "after" kitchen art (the other dude's head)
 - Tree platforming rebuild
-- Intro and outro
 - Mike's final art for the bats, Frank, the roof cross, the motor pieces and the flask
 - Our own music and sound effects

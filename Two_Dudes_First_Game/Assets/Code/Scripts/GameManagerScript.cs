@@ -106,6 +106,12 @@ public class GameManagerScript : MonoBehaviour
         EndRun(titleScene);
     }
 
+    // beat the game: wipe the run and roll the outro
+    public void FinishGame()
+    {
+        EndRun("Outro");
+    }
+
     private void EndRun(string nextScene)
     {
         Time.timeScale = 1f;
