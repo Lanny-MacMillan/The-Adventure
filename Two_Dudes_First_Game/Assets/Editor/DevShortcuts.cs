@@ -42,7 +42,7 @@ public static class DevShortcuts
     private static void FrankCureFight()
     {
         Reset();
-        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt", "fountainFixed", "holyWater");
+        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt", "motorGearInstalled", "motorPlugInstalled", "motorBeltInstalled", "fountainFixed", "holyWater");
         Done("Fountain fixed and holy water in hand. Press Play in WorldMap and climb to the Treehouse; your salt cures Frank.");
     }
 
@@ -58,7 +58,7 @@ public static class DevShortcuts
     private static void AtBasementCure()
     {
         Reset();
-        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt", "fountainFixed", "holyWater", "frankDefeated", "frankCured", "basementDoor");
+        Set("kitchenDoor", "bedroomDoor", "woodshedDoor", "bathroomDoor", "bathroomCleared", "closetDemonDone", "woodshedSolved", "treehouseDoor", "motorGear", "motorPlug", "motorBelt", "motorGearInstalled", "motorPlugInstalled", "motorBeltInstalled", "fountainFixed", "holyWater", "frankDefeated", "frankCured", "basementDoor");
         Done("Frank cured and holy water in hand. Press Play in WorldMap and take the Basement door; your salt cures the boss.");
     }
 
