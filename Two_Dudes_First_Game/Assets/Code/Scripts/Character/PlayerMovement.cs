@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     // set by cutscenes like Frank waking up
     public static bool Locked;
     private float stepTimer;
+    private float throwTimer;
+    [SerializeField] private float throwPose = 0.2f;
+    [SerializeField] private float throwCooldown = 0.3f;
 
     //public CharacterController controller;
     public Animator animator;
@@ -131,19 +134,17 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
 
-        // Salt Attack / Set Animation
-        if (Input.GetButtonDown("Fire1"))
+        // salt throw: the throw pose holds long enough to see even on a tap, with a short cooldown
+        throwTimer -= Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && throwTimer <= -throwCooldown + throwPose)
         {
-            // Instantiate salt prefab at the launch offset position, facing charaters direction
-            SaltBehaviour salt = Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            SaltBehaviour salt = Instantiate(ProjectilePrefab, LaunchOffset.position, Quaternion.identity);
             salt.facingRight = isFacingRight;
             Sound.Play("saltThrow");
             animator.SetBool("Attack", true);
-            //animator.SetBool("Attack", false);
+            throwTimer = throwPose;
         }
-
-        //  Reset Salt Attack Animation 
-        if (Input.GetButtonUp("Fire1"))
+        if (throwTimer <= 0f && animator.GetBool("Attack"))
         {
             animator.SetBool("Attack", false);
         }
@@ -264,6 +265,8 @@ public class PlayerMovement : MonoBehaviour
             stepTimer = 0.05f;
         }
     }
+
+    public bool Grounded => IsGrounded();
 
     private bool IsGrounded()
     {
