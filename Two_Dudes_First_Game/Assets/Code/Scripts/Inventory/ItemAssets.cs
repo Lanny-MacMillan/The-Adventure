@@ -4,13 +4,40 @@ using UnityEngine;
 
 public class ItemAssets : MonoBehaviour
 {
-    // singleton
-    public static ItemAssets Instance { get; private set; }
+    // the one carried between scenes; a room's spare copy never takes over (it gets deleted right after)
+    private static ItemAssets instance;
+    public static ItemAssets Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                foreach (ItemAssets a in FindObjectsByType<ItemAssets>(FindObjectsInactive.Exclude))
+                {
+                    if (instance == null || a.gameObject.scene.name == "DontDestroyOnLoad")
+                    {
+                        instance = a;
+                    }
+                }
+            }
+            return instance;
+        }
+    }
 
-    // awake is one of Unitys startup calls, Awake is called when the script object is initialised, even if script's function  isnt currently being called on
     private void Awake()
     {
-        Instance = this;
+        if (instance == null || gameObject.scene.name == "DontDestroyOnLoad")
+        {
+            instance = this;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (instance == this)
+        {
+            instance = null;
+        }
     }
 
     public Transform pfItemWorld;
