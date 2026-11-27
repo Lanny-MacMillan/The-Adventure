@@ -94,6 +94,10 @@ MonoBehaviour:
     track: treehouse
   - scene: Basement
     track: basement
+  - scene: Intro
+    track: title
+  - scene: Outro
+    track: ending
   effects:
   - key: step
     clips:

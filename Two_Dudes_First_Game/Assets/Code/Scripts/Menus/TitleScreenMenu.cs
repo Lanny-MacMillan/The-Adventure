@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenMenu : MonoBehaviour
 {
-    [SerializeField] private string characterSelectScene = "CharacterSelect";
+    [SerializeField] private string characterSelectScene = "Intro";
 
     private void Start()
     {

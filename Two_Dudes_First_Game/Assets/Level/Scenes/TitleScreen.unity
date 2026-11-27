@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcca854cd740c49d885f55cd60cc4004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TitleScreenMenu
-  characterSelectScene: CharacterSelect
+  characterSelectScene: Intro
 --- !u!4 &576486558
 Transform:
   m_ObjectHideFlags: 0

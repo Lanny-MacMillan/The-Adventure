@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Level/Scenes/TitleScreen.unity
     guid: 8ac6602c7669f4abba0fc4d3b50728d5
   - enabled: 1
+    path: Assets/Level/Scenes/Intro.unity
+    guid: 593c96f0ad3a94ffc8b2b1bcb99594b3
+  - enabled: 1
     path: Assets/Level/Scenes/CharacterSelect.unity
     guid: 5090f9af0e19e4d4f9f15248605dcbae
   - enabled: 1
@@ -59,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Treehouse.unity
     guid: 2b377c40637ea43aab95cc2efb07706c
+  - enabled: 1
+    path: Assets/Level/Scenes/Outro.unity
+    guid: 66331e4dbdbcd4cb2aa73ea4cd38a9ea
   m_configObjects: {}
