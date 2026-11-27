@@ -35,7 +35,7 @@ Each door knob is colored to match its key.
 
 | # | Key | Where you find it | What it opens |
 |---|---|---|---|
-| 1 | Kitchen key | House, 1st floor, on the floor just outside the kitchen door | Kitchen (1st floor) |
+| 1 | Kitchen key | House, 1st floor, at the far left end of the hall, past the (locked) kitchen door | Kitchen (1st floor) |
 | 2 | Bedroom key | Kitchen, on the floor in the far left corner (get past **Skinny Dude**) | Bedroom (2nd floor) |
 | 3 | Woodshed key | Bedroom: beat the **closet demon's riddles** | Woodshed (far right of the WorldMap) |
 | 4 | Bathroom key | Woodshed: solve the **lever puzzle** and the key drops down the shelves | Bathroom (2nd floor) |
@@ -46,6 +46,18 @@ Each door knob is colored to match its key.
 Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`, `bathroomDoor`, `treehouseDoor`, `basementDoor`, `closetDemonDone`, `woodshedSolved`, `bathroomCleared`, `frankDefeated`, plus the secret's flags listed below.
 
 ---
+
+## The house
+
+- Both hallways are about **twice as wide** as before, with the doors spread out. The art is Mike's, lengthened by repeating the plain wall/wainscot/floor and scattering copies of his wall marks.
+- **1st floor**, left to right: Kitchen key (far left), Kitchen door, stairs up, front door (where you come in), Basement door.
+- **2nd floor**, left to right: Bedroom door, stairs down, Bathroom door.
+- Each hallway has two ghosts: one between the left door and the stairs, one on the long stretch to the right. A spirit lurks behind one end wall.
+
+## Camera
+
+- **Outside (World Map):** follows you, including up into the trees.
+- **Inside:** the room fills the screen like an old TV. Small rooms (Kitchen, Bedroom, Bathroom, Woodshed, Treehouse) are a fixed shot; the hallways and the Attic slide sideways with you and stop at the walls. The camera never moves up or down indoors.
 
 ## The woods (World Map)
 
@@ -60,7 +72,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 ## Enemies and fights
 
 ### Ghosts (WorldMap and the house hallways)
-- Ten ghosts drift back and forth outside (seven of them in the woods), plus one in each house hallway.
+- Ten ghosts drift back and forth outside (seven of them in the woods), plus two in each house hallway.
 - Each takes **2 salt hits** to kill.
 - Touching one costs you a heart.
 
