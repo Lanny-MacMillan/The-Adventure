@@ -11,7 +11,7 @@ The two dudes are on a road trip when the bridge goes out, leaving them stranded
 - **Start:** CreatedBy → Title → **Intro** → Character Select → **WorldMap**. You start at the far left next to the car, by the broken bridge.
 - **Intro:** NES-style story panels (the road trip, the bridge gone, the house, green smoke from the treehouse), ending on "They should have stayed in the car." Frank stays a surprise. Enter, Space or click for the next line, Esc skips the whole thing.
 - **Health:** 3 hearts. Getting hit knocks you back, flashes you red and gives you 1 second of invincibility.
-- **Dying:** **Try Again** restarts the room you're in from the door you came through, and you **keep your keys**. **Restart** from the pause menu wipes everything.
+- **Dying:** **Try Again** sends you back to the car at the start of the World Map. You **keep your keys and items** (and anything you've unlocked or solved), but enemies come back, so you have to fight your way back. **Restart** from the pause menu wipes everything.
 - **Danger outside:** walking off the broken bridge (far left) or falling under the map is instant death.
 
 ## Controls
@@ -142,7 +142,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
   - Jump the shockwaves.
   - Throw salt while he's resting or in the air coming at you.
   - Standing next to him kills you in about 6 seconds.
-- **Dying:** Try Again puts you back at the Treehouse door with your keys.
+- **Dying:** Try Again puts you back at the car with your keys, and you have to make your way back up to the Treehouse.
 
 ### Bats (Attic)
 - The attic is pitch dark. You carry a small glow, and the only other light comes up through the ladder hole and off the Treehouse key.
