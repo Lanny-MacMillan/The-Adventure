@@ -40,23 +40,33 @@ Each door knob is colored to match its key.
 | 3 | Woodshed key | Bedroom: beat the **closet demon's riddles** | Woodshed (far right of the WorldMap) |
 | 4 | Bathroom key | Woodshed: solve the **lever puzzle** and the key drops down the shelves | Bathroom (2nd floor) |
 | 5 | Ladder to the Attic | Bathroom: beat **Candy Dude** | The bathroom becomes the wrecked bathroom with a rope ladder up to the Attic |
-| 6 | Treehouse key | Attic, at the far end past the **bats**. Grab it and the floor drops you into the Bedroom | Treehouse (climb the trees on the left of the WorldMap) |
+| 6 | Treehouse key | Attic, at the far end past the **bats**. Grab it and the floor drops you into the Bedroom | Treehouse (top of the tallest tree, at the far end of the woods) |
 | 7 | Basement key | Treehouse: beat **or cure** Frank | Basement (1st floor, far right) |
 
 Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`, `bathroomDoor`, `treehouseDoor`, `basementDoor`, `closetDemonDone`, `woodshedSolved`, `bathroomCleared`, `frankDefeated`, plus the secret's flags listed below.
 
 ---
 
+## The woods (World Map)
+
+- The woods start right at the car and run about 80 units before you reach the clearing with the fountain and the house. They're about 2.5 times as long as before, and everything past them (house, graveyard, Woodshed) moved over to make room.
+- **Climbable trees** are the lighter ones in front. Their branches are one-way platforms: jump up through them from below and land on top. The darker trees behind are just scenery.
+- **Two ways through:**
+  - **Ground:** run it. Ghosts patrol the forest floor, spirits lurk between the trees, and bats drop down from the branches overhead.
+  - **Canopy:** climb the second tree and you can hop tree to tree high up, all the way to the Treehouse. The bats can't dive at you up there, but two spirits patrol the treetops. There are **2 hearts** hidden up there that give you a heart back; they're back every time you return to the map.
+- **The Treehouse** sits at the top of the last and tallest tree. Climb its branches, which zig-zag up both sides of the trunk, or come across the canopy.
+- Falling doesn't hurt you; you just have to climb back up.
+
 ## Enemies and fights
 
 ### Ghosts (WorldMap and the house hallways)
-- Six ghosts drift back and forth outside, plus one in each house hallway.
+- Ten ghosts drift back and forth outside (seven of them in the woods), plus one in each house hallway.
 - Each takes **2 salt hits** to kill.
 - Touching one costs you a heart.
 
 ### Evil spirits (WorldMap and the house hallways)
 - Where they are:
-  - World Map: in the woods near the Treehouse, in the graveyard, and on the way to the Woodshed.
+  - World Map: four in the woods (two of them up in the treetops), one in the graveyard, and one on the way to the Woodshed.
   - House: one lurks just behind each hallway's end wall.
 - Purple horned spirits that hover in place until you come within about 6 units.
 - They shiver and moan, then **chase you**, straight through anything in the way. They're a little slower than you, so you can outrun them.
@@ -116,7 +126,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 
 ### Frank (Treehouse, final boss)
 - **The room:**
-  - Climb the tree platforms on the left of the WorldMap to reach the Treehouse. Smoke pours out of the window while he's in there.
+  - Climb to the top of the tallest tree at the far end of the woods to reach the Treehouse. Smoke pours out of the window while he's in there.
   - Frank twitches, then the possession kicks in.
   - The exit locks and his health bar appears. **45 HP; each salt hit does 1.**
 - **Attacks** (he never uses the same one 3 times in a row):
@@ -147,7 +157,8 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
   - Standing next to him kills you in about 6 seconds.
 - **Dying:** Try Again puts you back at the car with your keys, and you have to make your way back up to the Treehouse.
 
-### Bats (Attic)
+### Bats (Attic and the woods)
+- **In the woods**, 10 bats hang under the climbable branches. They work like the attic ones but only dive at you when you're **below** them, so standing on the branch a bat hangs from is safe.
 - The attic is pitch dark. You carry a small glow, and the only other light comes up through the ladder hole and off the Treehouse key.
 - **5 bats** hang from the rafters. In the dark you can only see their red eyes.
 - **How they attack:**
@@ -290,6 +301,5 @@ Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap*
 
 ## Still to come
 - Kitchen: gore "after" kitchen art (the other dude's head)
-- Tree platforming rebuild
 - Mike's final art for the bats, Frank, the roof cross, the motor pieces and the flask
 - Our own music and sound effects
