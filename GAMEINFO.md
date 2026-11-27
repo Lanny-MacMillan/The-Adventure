@@ -9,6 +9,7 @@ Spoiler guide: the key path, where everything is, how each fight works, and the 
 The two dudes are on a road trip when the bridge goes out, leaving them stranded at a haunted property: a house, a woodshed, a treehouse and a graveyard. Frank is up in the Treehouse, possessed, and he's the final boss.
 
 - **Start:** CreatedBy → Title → **Intro** → Character Select → **WorldMap**. You start at the far left next to the car, by the broken bridge.
+- **Splash:** the Two Dudes logo fades in and builds, the dudes hop and high five (slap and flash), then it fades to the title. Any key skips.
 - **Intro:** NES-style story panels (the road trip, the bridge gone, the house, green smoke from the treehouse), ending on "They should have stayed in the car." Frank stays a surprise. Enter, Space or click for the next line, Esc skips the whole thing.
 - **Health:** 3 hearts. Getting hit knocks you back, flashes you red and gives you 1 second of invincibility.
 - **Dying:** **Try Again** sends you back to the car at the start of the World Map. You **keep your keys and items** (and anything you've unlocked or solved), but enemies come back, so you have to fight your way back. **Restart** from the pause menu wipes everything.
@@ -217,7 +218,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - **Kill or cure:**
   - **Normal salt** kills it. It burns itself out and leaves a scorched, empty baggie.
   - **With holy water** (from the fountain secret) your salt is blue. The bar becomes a **CURE** bar, and the green drains out of it until it's a harmless puff of smoke.
-- **Ending:** the screen fades out, the ending text plays (it changes depending on kill or cure, and whether Frank was cured), then the **outro**: the house at sunrise, then you driving off. Frank rides in the back if you cured him, otherwise the back seat is empty. Then **THE END**, the credits (Story & game design: Lanny MacMillan and Mike Irwin. Programming: Lanny MacMillan. Art, sprites & design: Mike Irwin. A Two Dudes game), then a few seconds of black silence, then Candy Dude screams in your face, then back to the title for a fresh run. Enter or Space skips each line, holding it speeds up the credits, Esc skips to the title.
+- **Ending:** the screen fades out, the ending text plays (it changes depending on kill or cure, and whether Frank was cured), then the **outro**: the house at sunrise, then you driving off. Frank rides in the back if you cured him, otherwise the back seat is empty. Then **THE END**, the credits (A Two Dudes game, with portraits of Lanny and Mike next to their names. Story & game ideas: Lanny MacMillan and Mike Irwin. Programming & development: Lanny MacMillan. Sprites, design & assets: Mike Irwin), then a few seconds of black silence, then Candy Dude screams in your face, then back to the title for a fresh run. Enter or Space skips each line, holding it speeds up the credits, Esc skips to the title.
 
 Flags: `basementCleared` (boss beaten), `stashCured` (cured instead of killed).
 
@@ -289,7 +290,7 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprIntro_*`, `sprOutro_*` | Intro and outro story panels. Backgrounds are renders of Mike's World Map; the car, road, bridge, smoke, sunrise and tree silhouettes are ours |
 | `sprParkedCar`, `sprBrokenBridge` | The car and the snapped bridge where you start on the World Map (you can walk out on the bridge and off the end) |
 | `sprSawSlot` | The floor slot the Attic saw blades run in |
-| `Audio/SFX/sfx*` (37 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, saw grind, menus, dialogue blips, the ending jumpscare. Synthesized chiptune placeholders |
+| `Audio/SFX/sfx*` (38 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, saw grind, menus, dialogue blips, the splash-screen high five, the ending jumpscare. Synthesized chiptune placeholders |
 
 ## Sound
 
