@@ -30,6 +30,7 @@ public class StoryScene : MonoBehaviour
     [SerializeField] private Sprite driveDude1Frank;
     [SerializeField] private RectTransform credits;
     [SerializeField] private float creditsSpeed = 60f;
+    [SerializeField] private Image scare;
 
     // set by the Basement ending right before the run is wiped
     public static bool FrankCured;
@@ -78,6 +79,7 @@ public class StoryScene : MonoBehaviour
         if (outro && !skipAll)
         {
             yield return Credits();
+            yield return Scare();
         }
         yield return Fade(fade.color.a, 1f);
         SceneManager.LoadScene(nextScene);
@@ -158,6 +160,32 @@ public class StoryScene : MonoBehaviour
             credits.anchoredPosition += Vector2.up * speed * Time.deltaTime;
             yield return null;
         }
+    }
+
+    // after the credits: silence, then Candy Dude screams in your face, then nothing
+    private IEnumerator Scare()
+    {
+        Sound.Music("");
+        credits.gameObject.SetActive(false);
+        text.text = "";
+        picture.enabled = false;
+        fade.color = Color.black;
+        yield return new WaitForSeconds(2.5f);
+
+        fade.color = Color.clear;
+        var rt = (RectTransform)scare.transform;
+        scare.gameObject.SetActive(true);
+        Sound.Play("jumpScare");
+        for (float k = 0f; k < 0.9f; k += Time.deltaTime)
+        {
+            rt.anchoredPosition = Random.insideUnitCircle * 25f;
+            rt.localScale = Vector3.one * (1f + k * 0.2f + Random.Range(0f, 0.06f));
+            scare.color = Time.frameCount % 4 < 2 ? Color.white : new Color(1f, 0.35f, 0.35f);
+            yield return null;
+        }
+        scare.gameObject.SetActive(false);
+        fade.color = Color.black;
+        yield return new WaitForSeconds(1.5f);
     }
 
     private static bool Pressed()
