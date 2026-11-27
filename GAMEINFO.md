@@ -9,7 +9,7 @@ Spoiler guide: the key path, where everything is, how each fight works, and the 
 The two dudes are on a road trip when the bridge goes out, leaving them stranded at a haunted property: a house, a woodshed, a treehouse and a graveyard. Frank is up in the Treehouse, possessed, and he's the final boss.
 
 - **Start:** CreatedBy → Title → **Intro** → Character Select → **WorldMap**.
-- **Intro:** NES-style story panels (the road trip, the bridge gone, the house, Frank in the Treehouse), ending on "Are you a bad enough dude to get out alive?". Enter, Space or click for the next line, Esc skips the whole thing.
+- **Intro:** NES-style story panels (the road trip, the bridge gone, the house, green smoke from the treehouse), ending on "They should have stayed in the car." Frank stays a surprise. Enter, Space or click for the next line, Esc skips the whole thing.
 - **Health:** 3 hearts. Getting hit knocks you back, flashes you red and gives you 1 second of invincibility.
 - **Dying:** **Try Again** restarts the room you're in from the door you came through, and you **keep your keys**. **Restart** from the pause menu wipes everything.
 - **Danger outside:** walking off the broken bridge (far left) or falling under the map is instant death.
@@ -179,7 +179,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - **Kill or cure:**
   - **Normal salt** kills it. It burns itself out and leaves a scorched, empty baggie.
   - **With holy water** (from the fountain secret) your salt is blue. The bar becomes a **CURE** bar, and the green drains out of it until it's a harmless puff of smoke.
-- **Ending:** the screen fades out, the ending text plays (it changes depending on kill or cure, and whether Frank was cured), then the **outro**: the house at sunrise, then you driving off. Frank rides in the back if you cured him, otherwise the back seat is empty. Then **THE END**, the credits, and back to the title for a fresh run. Enter or Space skips each line, holding it speeds up the credits, Esc skips to the title.
+- **Ending:** the screen fades out, the ending text plays (it changes depending on kill or cure, and whether Frank was cured), then the **outro**: the house at sunrise, then you driving off. Frank rides in the back if you cured him, otherwise the back seat is empty. Then **THE END**, the credits (Story & game design: Lanny MacMillan and Mike Irwin. Programming: Lanny MacMillan. Art, sprites & design: Mike Irwin. A Two Dudes game), and back to the title for a fresh run. Enter or Space skips each line, holding it speeds up the credits, Esc skips to the title.
 
 Flags: `basementCleared` (boss beaten), `stashCured` (cured instead of killed).
 
