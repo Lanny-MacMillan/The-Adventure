@@ -54,6 +54,13 @@ public class RoomCamera : MonoBehaviour
         }
     }
 
+    public bool Contains(Vector2 p)
+    {
+        Bounds b = frame;
+        b.Expand(new Vector3(0.5f, 1f, 100f));
+        return b.Contains(new Vector3(p.x, p.y, b.center.z));
+    }
+
     private void Fit()
     {
         aspect = cam.aspect;
