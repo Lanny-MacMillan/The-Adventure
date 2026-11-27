@@ -57,6 +57,18 @@ public class World : SceneSwitch
                 Place(target, start.transform.position);
             }
         }
+
+        // indoors the camera doesn't follow you, so never leave you standing outside the room
+        RoomCamera room = FindAnyObjectByType<RoomCamera>();
+        if (room != null && !room.Contains(target.position))
+        {
+            OpenDoor anyDoor = backDoor != null ? backDoor : FindAnyObjectByType<OpenDoor>();
+            Debug.LogWarning("Arrived in " + gameObject.scene.name + " outside the room (came from '" + prevScene + "'), moved to the door.");
+            if (anyDoor != null)
+            {
+                Place(target, anyDoor.SpawnPoint);
+            }
+        }
     }
 
     private static void Place(Transform target, Vector2 position)
