@@ -3677,6 +3677,8 @@ MonoBehaviour:
   FreeFall: 0
   jump: 0
   FallingThreshold: -0.01
+  throwPose: 0.2
+  throwCooldown: 0.3
   animator: {fileID: 0}
   rb: {fileID: 0}
   groundCheck: {fileID: 0}
@@ -3763,7 +3765,7 @@ PrefabInstance:
       objectReference: {fileID: 8232137}
     - target: {fileID: 6773850262552165731, guid: 80d4e8434749e4818bd9701f66676564, type: 3}
       propertyPath: previous
-      value: HoueInterior1stFloor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6773850262552165731, guid: 80d4e8434749e4818bd9701f66676564, type: 3}
       propertyPath: m_Enabled
