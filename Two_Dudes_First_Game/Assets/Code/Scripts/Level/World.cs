@@ -92,7 +92,8 @@ public class World : SceneSwitch
         Physics2D.SyncTransforms();
         foreach (RaycastHit2D hit in Physics2D.RaycastAll(position + Vector2.up * 0.5f, Vector2.down, 6f))
         {
-            if (hit.collider.isTrigger || hit.collider.transform.IsChildOf(target))
+            // skip players too: a room's own placeholder player can stand right at the door
+            if (hit.collider.isTrigger || hit.collider.transform.IsChildOf(target) || hit.collider.gameObject.layer == target.gameObject.layer)
             {
                 continue;
             }
