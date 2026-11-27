@@ -2334,6 +2334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8597848370740776953}
+  - component: {fileID: 8997265408243414640}
   m_Layer: 0
   m_Name: DeadTree
   m_TagString: Untagged
@@ -2357,6 +2358,19 @@ Transform:
   - {fileID: 6400081583605704622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &8997265408243414640
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7126620381037992034}
+  m_Enabled: 1
+  m_SortingLayerID: -699362721
+  m_SortingLayer: -1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
 --- !u!1 &7396480491609030767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,7 +2575,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -699362721
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 307590a1087ca4ad2bf32ac4d0d01055, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 3
+  maxHealth: 2
   enemyDead: 0
   animator: {fileID: 4131333991276074436}
 --- !u!114 &6893182100280340214

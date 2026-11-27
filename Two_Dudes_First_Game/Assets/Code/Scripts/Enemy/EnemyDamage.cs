@@ -31,7 +31,7 @@ public class EnemyDamage : MonoBehaviour
 
     private void HitPlayer(GameObject other)
     {
-        if (other.tag != "Player")
+        if (!enabled || other.tag != "Player")
         {
             return;
         }

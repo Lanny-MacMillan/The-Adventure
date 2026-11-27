@@ -20,7 +20,7 @@ The two dudes are on a road trip when the bridge goes out, leaving them stranded
 |---|---|
 | Move | A / D or Left / Right |
 | Jump | Space (hold for higher, tap for a short hop) |
-| Throw salt | Left Ctrl / left mouse |
+| Throw salt | Left Ctrl / left mouse (a short toss, about 4 units; one every 0.3 s) |
 | Use door / talk / interact | Enter, Up arrow or W |
 | Dialogue: next line | Enter or Space |
 | Dialogue: pick a choice | Number keys 1-9, or click |
@@ -65,7 +65,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - **Climbable trees** are the lighter ones in front. Their branches are one-way platforms: jump up through them from below and land on top. The darker trees behind are just scenery.
 - **Two ways through:**
   - **Ground:** run it. Ghosts patrol the forest floor, spirits lurk between the trees, and bats drop down from the branches overhead.
-  - **Canopy:** climb the second tree and you can hop tree to tree high up, all the way to the Treehouse. The bats can't dive at you up there, but two spirits patrol the treetops. There are **2 hearts** hidden up there that give you a heart back; they're back every time you return to the map.
+  - **Canopy:** climb the second tree and you can hop tree to tree high up, all the way to the Treehouse. The bats can't dive at you up there, but two spirits patrol the treetops. There are **2 hearts** hidden up there that give you a heart back. A heart looks faded while you're at full health and ignores you until you're hurt. They're back every time you return to the map.
 - **The Treehouse** sits at the top of the last and tallest tree. Climb its branches, which zig-zag up both sides of the trunk, or come across the canopy.
 - Falling doesn't hurt you; you just have to climb back up.
 
@@ -73,7 +73,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 
 ### Ghosts (WorldMap and the house hallways)
 - Ten ghosts drift back and forth outside (seven of them in the woods), plus two in each house hallway.
-- Each takes **2 salt hits** to kill.
+- Each takes **2 salt hits** to kill. They flash red on the first hit, and can't hurt you once they're dying.
 - Touching one costs you a heart.
 
 ### Evil spirits (WorldMap and the house hallways)
