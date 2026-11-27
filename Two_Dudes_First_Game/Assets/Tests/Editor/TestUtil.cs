@@ -53,6 +53,13 @@ public static class TestUtil
     // opens a scene next to whatever you have open, runs the check, then closes it again
     public static void WithScene(string path, Action<Scene> check)
     {
+        // already open in the editor: check that copy and leave it alone
+        Scene open = SceneManager.GetSceneByPath(path);
+        if (open.IsValid() && open.isLoaded)
+        {
+            check(open);
+            return;
+        }
         Scene scene = EditorSceneManager.OpenScene(path, OpenSceneMode.Additive);
         try
         {
