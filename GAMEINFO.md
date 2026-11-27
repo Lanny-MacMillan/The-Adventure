@@ -20,7 +20,7 @@ The two dudes are on a road trip when the bridge goes out, leaving them stranded
 |---|---|
 | Move | A / D or Left / Right |
 | Jump | Space (hold for higher, tap for a short hop) |
-| Throw salt | Left Ctrl / left mouse (a short toss, about 4 units; one every 0.3 s) |
+| Throw salt | Left Ctrl / left mouse (a short arcing toss that lands about 1.5 units out; one every 0.3 s) |
 | Use door / talk / interact | Enter, Up arrow or W |
 | Dialogue: next line | Enter or Space |
 | Dialogue: pick a choice | Number keys 1-9, or click |

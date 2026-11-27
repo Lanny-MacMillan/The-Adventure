@@ -1,10 +1,10 @@
 using UnityEngine;
 
-// A thrown handful of salt: flies straight out of your hand, hits the first enemy it touches, breaks on walls and floors, and is gone once the puff fades.
+// A tossed handful of salt: arcs out of your hand, hits the first enemy it touches, and is gone when it lands.
 public class SaltBehaviour : MonoBehaviour
 {
-    [SerializeField] private float speed = 7f;
-    [SerializeField] private float life = 0.6f;
+    [SerializeField] private float speed = 6f;
+    [SerializeField] private float life = 2f; // only if it never lands
     public PlayerMovement playerMovement;
 
     // set when thrown so turning around doesn't steer salt already in the air
@@ -30,7 +30,7 @@ public class SaltBehaviour : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.gravityScale = 0f;
+            rb.gravityScale = 1f;
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             rb.interpolation = RigidbodyInterpolation2D.Interpolate;
             rb.linearVelocity = new Vector2(facingRight ? speed : -speed, 0f);
@@ -73,8 +73,8 @@ public class SaltBehaviour : MonoBehaviour
             return;
         }
 
-        // walls stop it; the floor under it, one-way tree branches and pickups don't (the hitbox is tall so bobbing ghosts still count)
-        if (!other.isTrigger && !other.usedByEffector && other.bounds.max.y > transform.position.y - 0.3f)
+        // lands on floors, branches and walls
+        if (!other.isTrigger)
         {
             spent = true;
             Destroy(gameObject);
