@@ -112,7 +112,7 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - **His moves:** blood rain and hook throws. He heals himself too (+30).
 - **Hits:** both sides get knocked back and flash red.
 - **Win:** the bathroom is wrecked (Cissy torn apart, head in the toilet), and a rope ladder drops from the attic hole.
-- **Lose:** you're KO'd and fade back into the bathroom to try again.
+- **Lose:** "Not Good Enough...", then you wake up back at the car with your keys and items, same as any Game Over.
 
 ### Frank (Treehouse, final boss)
 - **The room:**
