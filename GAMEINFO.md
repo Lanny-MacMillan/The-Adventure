@@ -54,6 +54,13 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - Each takes **2 salt hits** to kill.
 - Touching one costs you a heart.
 
+### Evil spirits (WorldMap: graveyard and on the way to the Woodshed)
+- Purple horned spirits that hover in place until you come within about 6 units.
+- They shiver and moan, then **chase you**, straight through anything in the way. They're a little slower than you, so you can outrun them.
+- They give up once you're about 11 units away and drift back home.
+- Touching one costs a heart, and then it backs off for a moment.
+- **3 salt hits** to kill; each hit knocks it back.
+
 ### Skinny Dude (Kitchen)
 - The kitchen looks empty when you walk in. Once you pass the fridge with your back to it, he's standing in the fridge light behind you.
 - **He only moves while your back is turned.** Face him and he freezes instantly. He twitches while he moves.
@@ -148,6 +155,11 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 - **How to beat them:**
   - Stop, or step back, when one shivers, and let it miss.
   - Or throw salt as it comes down. One hit kills it.
+- **Saw blades:** two bloody saws run back and forth in slots in the floor:
+  - one under the bats in the middle of the room;
+  - one just before the drop to the Bedroom.
+
+  They can't be killed, so jump over them. You can hear them grinding before you can see them.
 - **Key:** grab the Treehouse key at the far end and the floor drops you into the Bedroom.
 
 ### Basement (first person, final boss)
@@ -249,7 +261,8 @@ We want everything in the game to be our own. Until it is, these stand-ins keep 
 | `sprArrowCover` | Black patch hiding the up arrow in the bathroom art until the ladder drops |
 | `sprIntro_*`, `sprOutro_*` | Intro and outro story panels. Backgrounds are renders of Mike's World Map; the car, road, bridge, smoke, sunrise and tree silhouettes are ours |
 | `sprParkedCar`, `sprBrokenBridge` | The car and the snapped bridge where you start on the World Map (you can walk out on the bridge and off the end) |
-| `Audio/SFX/sfx*` (36 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, menus, dialogue blips, the ending jumpscare. Synthesized chiptune placeholders |
+| `sprSawSlot` | The floor slot the Attic saw blades run in |
+| `Audio/SFX/sfx*` (37 sounds) | Every sound effect: footsteps, jump, salt, enemies, doors, keys, traps, saw grind, menus, dialogue blips, the ending jumpscare. Synthesized chiptune placeholders |
 
 ## Sound
 
