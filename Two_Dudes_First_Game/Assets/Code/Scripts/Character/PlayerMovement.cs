@@ -142,6 +142,12 @@ public class PlayerMovement : MonoBehaviour
             salt.facingRight = isFacingRight;
             Sound.Play("saltThrow");
             animator.SetBool("Attack", true);
+            // first throw after filling up on holy water
+            if (PlayerPrefs.GetInt("holyWater") == 1 && PlayerPrefs.GetInt("blessedSaltNoticed") == 0)
+            {
+                PlayerPrefs.SetInt("blessedSaltNoticed", 1);
+                PlayerBark.Say("Huh... my salt looks different.");
+            }
             throwTimer = throwPose;
         }
         if (throwTimer <= 0f && animator.GetBool("Attack"))
