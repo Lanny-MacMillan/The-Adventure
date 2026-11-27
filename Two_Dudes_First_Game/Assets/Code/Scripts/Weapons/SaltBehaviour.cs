@@ -33,20 +33,19 @@ public class SaltBehaviour : MonoBehaviour
         }
     }
 
+    // breaks on anything solid (floors, walls, ghosts), not just objects tagged Ground
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            return;
         }
-
-        // so on collision we will try and see if they have an Enemy Ghost Component, extract enemyComponent and apply functions
         if (collision.gameObject.TryGetComponent<EnemyGhost>(out EnemyGhost enemyComponent))
         {
             Sound.Play("saltHit");
-            Destroy(gameObject);
             enemyComponent.TakeDamage(1);
         }
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

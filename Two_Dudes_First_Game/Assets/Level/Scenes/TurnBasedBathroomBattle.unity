@@ -3612,6 +3612,7 @@ GameObject:
   - component: {fileID: 1474264302}
   - component: {fileID: 1474264301}
   - component: {fileID: 1474264305}
+  - component: {fileID: 1474264306}
   m_Layer: 7
   m_Name: Hero
   m_TagString: Hero
@@ -3783,6 +3784,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleMenu: {fileID: 0}
   battleText: {fileID: 0}
+--- !u!114 &1474264306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474264298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a776e5300a812428a8aae2a425dba976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleSkin
+  animator: {fileID: 1474264304}
+  body: {fileID: 1474264300}
+  portrait: {fileID: 1474898134}
+  dude1Animations: {fileID: 22100000, guid: f3e4c223a523842b7bb30d1e5c6cd112, type: 2}
+  dude1Idle: {fileID: -2011550748, guid: 18cb8f9e886904a16a33c9cb6193ad4e, type: 3}
+  dude1Portrait: {fileID: 21300000, guid: 47187b6b0934f4c4d8b9761af268ef96, type: 3}
 --- !u!1 &1474898130
 GameObject:
   m_ObjectHideFlags: 0

@@ -75,6 +75,7 @@ public class FountainSecret : MonoBehaviour
             if (PlayerPrefs.GetInt(new Item { itemType = piece }.PrefKey()) == 1)
             {
                 found++;
+                PlayerPrefs.SetInt(new Item { itemType = piece }.PrefKey() + "Installed", 1);
                 if (inventory != null)
                 {
                     inventory.RemoveItem(piece);

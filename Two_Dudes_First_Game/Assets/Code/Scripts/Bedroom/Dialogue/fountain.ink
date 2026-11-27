@@ -36,7 +36,7 @@ Water shoots clean over the roof and pours down the cross.
 The water running off the cross is warm. And it's glowing. #speaker:
     * [Fill a bottle]
         You fill a bottle with it. Holy water. #holywater: get
-        Frank could use a bath.
+        Wonder what this could be used for.
         -> END
     * [Leave it]
         -> END

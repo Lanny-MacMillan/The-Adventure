@@ -100,6 +100,8 @@ public class FrankBoss : MonoBehaviour
         {
             camHome = cam.position;
         }
+        // you can't move or throw until he's turned
+        PlayerMovement.Locked = true;
         StartCoroutine(Fight());
     }
 
@@ -206,6 +208,7 @@ public class FrankBoss : MonoBehaviour
         transform.position = new Vector3(homeX, Ground(), transform.position.z);
         body.sprite = possessedSprite;
         possessed = true;
+        PlayerMovement.Locked = false;
         Sound.Music("boss");
         StartCoroutine(Shake(0.35f, 0.15f));
         StartCoroutine(Squash(1.25f, 0.8f, 0.25f));
@@ -668,6 +671,7 @@ public class FrankBoss : MonoBehaviour
 
     private void OnDisable()
     {
+        PlayerMovement.Locked = false;
         if (cam != null)
         {
             cam.position = camHome;

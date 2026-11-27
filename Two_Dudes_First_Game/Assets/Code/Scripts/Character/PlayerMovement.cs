@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     private float knockbackTimer = 0f;
     private float airTime;
+
+    // set by cutscenes like Frank waking up
+    public static bool Locked;
     private float stepTimer;
 
     //public CharacterController controller;
@@ -60,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         lastX = transform.position.x;
 
         inventory = new Inventory();
+        inventory.LoadOwned();
         if (uiInventory != null) uiInventory.SetInventory(inventory);
 
     }
@@ -80,6 +84,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PauseMenu.IsPaused)
         {
+            return;
+        }
+
+        if (Locked)
+        {
+            horizontal = 0f;
+            animator.SetFloat("Speed", 0f);
             return;
         }
 
