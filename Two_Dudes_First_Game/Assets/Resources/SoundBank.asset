@@ -88,8 +88,6 @@ MonoBehaviour:
     track: attic
   - scene: WoodShed
     track: woodshed
-  - scene: ChurchInterior
-    track: church
   - scene: Treehouse
     track: treehouse
   - scene: Basement
