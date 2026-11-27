@@ -62,6 +62,22 @@ public static class DevShortcuts
         Done("Frank cured and holy water in hand. Press Play in WorldMap and take the Basement door; your salt cures the boss.");
     }
 
+    // ghosts, bats and evil spirits stay away while this is ticked (editor only)
+    [MenuItem("Franks Revenge/Dev/Mobs Off", false, 100)]
+    private static void ToggleMobs()
+    {
+        bool off = !EditorPrefs.GetBool(DevNoMobs.Key, false);
+        EditorPrefs.SetBool(DevNoMobs.Key, off);
+        Debug.Log(off ? "Mobs off: no ghosts, bats or evil spirits next time a scene loads." : "Mobs back on.");
+    }
+
+    [MenuItem("Franks Revenge/Dev/Mobs Off", true)]
+    private static bool ToggleMobsCheck()
+    {
+        Menu.SetChecked("Franks Revenge/Dev/Mobs Off", EditorPrefs.GetBool(DevNoMobs.Key, false));
+        return true;
+    }
+
     [MenuItem("Franks Revenge/Dev/Reset Progress")]
     private static void ResetProgress()
     {
