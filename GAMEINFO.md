@@ -49,12 +49,15 @@ Saved progress flags (PlayerPrefs): `kitchenDoor`, `bedroomDoor`, `woodshedDoor`
 
 ## Enemies and fights
 
-### Ghosts (WorldMap)
-- Three ghosts drift around outside.
+### Ghosts (WorldMap and the house hallways)
+- Six ghosts drift back and forth outside, plus one in each house hallway.
 - Each takes **2 salt hits** to kill.
 - Touching one costs you a heart.
 
-### Evil spirits (WorldMap: graveyard and on the way to the Woodshed)
+### Evil spirits (WorldMap and the house hallways)
+- Where they are:
+  - World Map: in the woods near the Treehouse, in the graveyard, and on the way to the Woodshed.
+  - House: one lurks just behind each hallway's end wall.
 - Purple horned spirits that hover in place until you come within about 6 units.
 - They shiver and moan, then **chase you**, straight through anything in the way. They're a little slower than you, so you can outrun them.
 - They give up once you're about 11 units away and drift back home.
