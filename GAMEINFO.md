@@ -298,6 +298,19 @@ Music and sound effects live in `Assets/Resources/SoundBank` (Inspector). Each s
 
 Every area has music now.
 
+## Tests
+
+Run them before merging: **Window → General → Test Runner → EditMode → Run All** (about two minutes). They live in `Assets/Tests/Editor`.
+
+- **Build scenes:** the game starts on the splash, every scene exists, and every scene a door, script or story scene asks for is in Build Settings.
+- **Sound bank:** every sound and music track the code plays exists and has a clip; scene music points at real scenes and tracks.
+- **Progress:** every flag the game saves is wiped by Restart (and by Dev → Reset Progress); volume and character choice are kept.
+- **Rooms:** every room has the room camera, every door's spawn point is on the floor and on camera.
+- **Gameplay data:** ghosts take 2 salt hits, salt is an arcing toss, climbable branches are one-way platforms, the player prefab has its helpers.
+- **Play mode:** real door arrivals (one player, at the door, no drop), two tosses kill a ghost that can't hurt you while dying, hearts heal, the splash reaches the title.
+
+The tests share the editor's save, so the play-mode ones back it up first and put it back afterwards, along with the Mobs Off setting. Any error logged while they play fails the test.
+
 ## Testing shortcuts (Editor only)
 
 Use **Franks Revenge → Dev** in the Unity menu, then press Play in **WorldMap**.
