@@ -300,7 +300,7 @@ Every area has music now.
 
 ## Tests
 
-Run them before merging: **Window → General → Test Runner → EditMode → Run All** (about two minutes). They live in `Assets/Tests/Editor`.
+Run them before merging: **Window → General → Test Runner → EditMode → Run All** (about five minutes; the play-mode ones open and play scenes, so let it finish). They live in `Assets/Tests/Editor`.
 
 - **Build scenes:** the game starts on the splash, every scene exists, and every scene a door, script or story scene asks for is in Build Settings.
 - **Sound bank:** every sound and music track the code plays exists and has a clip; scene music points at real scenes and tracks.
@@ -308,6 +308,10 @@ Run them before merging: **Window → General → Test Runner → EditMode → R
 - **Rooms:** every room has the room camera, every door's spawn point is on the floor and on camera.
 - **Gameplay data:** ghosts take 2 salt hits, salt is an arcing toss, climbable branches are one-way platforms, the player prefab has its helpers.
 - **Play mode:** real door arrivals (one player, at the door, no drop), two tosses kill a ghost that can't hurt you while dying, hearts heal, the splash reaches the title.
+- **Boss fights and endings:** curing or killing the Stash reaches the outro with the right Frank ending; losing to Candy Dude goes to the car and winning wrecks the bathroom; killing or curing Frank unlocks the exit and gives the Basement key.
+- **Story and menus:** the outro picks the right drive-off panel for each dude and Frank's fate, Esc skips the intro and outro, and picking a dude saves the choice and skins the player.
+
+**Coverage:** the tests run about 53% of the game's code (`Assets/Code`). To check it: Window → Analysis → Code Coverage, tick *Enable Code Coverage*, then run the tests; the report lands in `CodeCoverage/` (ignored by git). Coverage needs the editor in Debug mode (the bug icon, bottom right).
 
 The tests share the editor's save, so the play-mode ones back it up first and put it back afterwards, along with the Mobs Off setting. Any error logged while they play fails the test.
 
