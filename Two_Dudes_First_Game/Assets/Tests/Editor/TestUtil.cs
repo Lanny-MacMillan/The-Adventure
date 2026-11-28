@@ -31,6 +31,11 @@ public static class TestUtil
         {
             yield return (f.Replace('\\', '/'), File.ReadAllText(f));
         }
+        // a few older scripts sit loose in the Assets folder
+        foreach (string f in Directory.GetFiles("Assets", "*.cs", SearchOption.TopDirectoryOnly))
+        {
+            yield return (f.Replace('\\', '/'), File.ReadAllText(f));
+        }
         foreach (string f in Directory.GetFiles("Assets/Editor", "*.cs", SearchOption.AllDirectories))
         {
             yield return (f.Replace('\\', '/'), File.ReadAllText(f));
