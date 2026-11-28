@@ -6,73 +6,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-// Plays the real game for a few seconds at a time. Your save and the Mobs Off setting are put back afterwards.
-public class PlayFlowTests
+// Plays the real game for a few seconds at a time: doors, salt vs ghosts, hearts, the splash.
+public class PlayFlowTests : PlayTestBase
 {
-    private const string NoMobs = "FranksRevenge.NoMobs";
-    private const string NoMobsBackup = "FranksRevenge.Test.NoMobsWas";
-
-    private static PlayerHealth Player()
-    {
-        return Object.FindObjectsByType<PlayerHealth>(FindObjectsInactive.Exclude).FirstOrDefault(p => p.gameObject.scene.name == "DontDestroyOnLoad");
-    }
-
-    private static IEnumerator Load(string scene, string from)
-    {
-        SceneSwitch.prevScene = from;
-        SceneManager.LoadScene(scene);
-        yield return null;
-        yield return null;
-    }
-
-    // game time, not test-runner ticks (the runner can tick several times per game frame)
-    private static IEnumerator Seconds(float s)
-    {
-        float end = Time.time + s;
-        while (Time.time < end)
-        {
-            yield return null;
-        }
-    }
-
-    // before play mode: snapshot the save and pick whether mobs show up
-    private static void Prepare(bool mobs)
-    {
-        SaveGuard.Backup();
-        if (!SessionState.GetBool(NoMobsBackup + ".set", false))
-        {
-            SessionState.SetBool(NoMobsBackup, EditorPrefs.GetBool(NoMobs, false));
-            SessionState.SetBool(NoMobsBackup + ".set", true);
-        }
-        EditorPrefs.SetBool(NoMobs, !mobs);
-    }
-
-    private static IEnumerator StartOnTheWorldMap()
-    {
-        AudioListener.volume = 0f;
-        yield return Load("WorldMap", "WorldMap");
-        yield return Seconds(0.5f);
-    }
-
-    // runs after every test, passed or failed
-    [UnityTearDown]
-    public IEnumerator PutEverythingBack()
-    {
-        if (Application.isPlaying)
-        {
-            AudioListener.volume = 1f;
-            Time.timeScale = 1f;
-            yield return new ExitPlayMode();
-        }
-        if (SessionState.GetBool(NoMobsBackup + ".set", false))
-        {
-            EditorPrefs.SetBool(NoMobs, SessionState.GetBool(NoMobsBackup, false));
-            SessionState.EraseBool(NoMobsBackup);
-            SessionState.EraseBool(NoMobsBackup + ".set");
-        }
-        SaveGuard.Restore();
-    }
-
     private static readonly string[][] Doors =
     {
         new[] { "Treehouse", "WorldMap" }, new[] { "WorldMap", "Treehouse" },
