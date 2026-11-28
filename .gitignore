@@ -73,3 +73,9 @@ crashlytics-build.properties
 
 # Code Coverage package output
 /[Cc]ode[Cc]overage/
+
+# macOS
+.DS_Store
+
+# crash logs
+mono_crash.*.json
